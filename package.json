@@ -8,6 +8,8 @@
     },
     "devDependencies": {
         "cross-env": "^5.1",
-        "laravel-mix": "^1.0"
+        "laravel-mix": "^1.0",
+        "reset-css": "*",
+        "fontello-cli": "^0.4.0"
     }
 }

@@ -1,4 +1,5 @@
 @import "~reset-css/_reset";
+@import "../fontello/css/fontello";
 @import "colors";
 @import "mixins";
 
@@ -182,10 +183,11 @@ section {
             overflow: hidden;
 
             p {
-                width: 50%;
+                width: 75%;
                 float: left;
 
                 + p {
+                    width: 25%;
                     text-align: right;
                 }
             }
@@ -316,6 +318,21 @@ section {
 
             @include list;
         }
+    }
+}
+
+.page-footer {
+    @media print {
+        display: none;
+    }
+
+    background: #fff;
+    text-align: center;
+    padding: 0 0 4rem;
+    font-size: 1.5rem;
+
+    p {
+        line-height: 2rem;
     }
 }
 
