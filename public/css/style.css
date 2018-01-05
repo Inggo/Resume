@@ -139,23 +139,47 @@ table {
   border-spacing: 0;
 }
 
+html {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 body {
   color: #69113E;
-  font-size: 16px;
   font-family: Calibri, Arial, sans-serif;
-  margin: 16px;
+  margin: 0 1.5rem;
   line-height: 1.5rem;
-  background: #fff;
+}
+
+@media (min-width: 768px) {
+  body {
+    background: #333;
+  }
 }
 
 nav {
-  position: fixed;
-  top: 124.8px;
-  left: 0;
-  right: 0;
-  padding: 24px 0;
-  text-align: center;
-  font-family: Calibri, Arial, sans-serif;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    display: block;
+    position: fixed;
+    top: 10.25rem;
+    left: 3rem;
+    right: 3rem;
+    padding-bottom: .5rem;
+    text-align: center;
+    font-family: Calibri, Arial, sans-serif;
+    background: #fff;
+    -webkit-box-shadow: 0px 16px 16px white;
+    box-shadow: 0px 16px 16px white;
+  }
 }
 
 h1 {
@@ -169,21 +193,14 @@ h2 {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.2rem;
   font-weight: bold;
-  border-bottom: 1px solid #460024;
+  border-bottom: 2px solid #460024;
   line-height: 2.4rem;
 }
 
 h3 {
-  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.4rem;
   font-weight: bold;
   line-height: 2.1rem;
-}
-
-h4 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  line-height: 1.8rem;
 }
 
 h4 {
@@ -197,45 +214,112 @@ a {
   text-decoration: none;
 }
 
+a:hover,
 a:active {
   color: #801D15;
+  text-decoration: underline;
 }
 
 main {
-  padding-top: 196.8px;
+  background: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    padding: 0 2rem 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  article {
+    padding-top: 13rem;
+    margin-bottom: -11rem;
+  }
+
+  article:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media print {
+  article {
+    page-break-inside: avoid;
+  }
 }
 
 section {
-  padding: .5rem 0 .5rem 240px;
+  padding: .5rem;
   position: relative;
-  min-height: 56px;
-  border-bottom: 1px solid #D28CAF;
+  min-height: 3.5rem;
+  border-bottom: 2px solid #D28CAF;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 0 0 0 15rem;
+  }
 }
 
 section header {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  section header {
+    position: absolute;
+    width: 15rem;
+    left: 0;
+  }
+}
+
+section header p {
+  font-style: italic;
+}
+
+section header aside {
   position: absolute;
-  left: 0;
+  top: 0;
+  right: 0;
+  line-height: 2.1rem;
+}
+
+@media (min-width: 768px) {
+  section header aside {
+    position: relative;
+    top: auto;
+    right: auto;
+    line-height: 1.5rem;
+  }
 }
 
 section details {
   font-family: Calibri, Arial, sans-serif;
   position: relative;
+  padding: 0 0 .25rem;
 }
 
 section details summary {
   cursor: pointer;
   position: relative;
-  padding-right: 220px;
+  line-height: 1.8rem;
+}
+
+@media (min-width: 768px) {
+  section details summary {
+    padding-right: 13.75rem;
+  }
 }
 
 section details summary h4 {
   display: inline;
 }
 
-section details summary aside {
-  position: absolute;
-  right: 0;
-  top: 0;
+@media (min-width: 768px) {
+  section details summary aside {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 
 section details li {
@@ -243,57 +327,182 @@ section details li {
   margin-left: 1rem;
 }
 
-section details + details {
-  margin-top: .25rem;
+@media (min-width: 768px) {
+  section details {
+    border-left: 1px solid #D28CAF;
+    padding-left: .5rem;
+    overflow: hidden;
+  }
+
+  section details + details {
+    border-top: 1px solid #D28CAF;
+  }
+
+  section details p {
+    width: 50%;
+    float: left;
+  }
+
+  section details p + p {
+    text-align: right;
+  }
 }
 
 section:last-child {
   border-bottom: none;
 }
 
-.page-heading {
-  position: fixed;
-  top: 0;
-  left: 0;
+@media print {
+  section {
+    page-break-inside: avoid;
+  }
+}
+
+.portfolio {
+  padding: 0 7.5rem 0 0;
+}
+
+.portfolio > header {
+  width: 7.5rem;
+  left: auto;
   right: 0;
-  padding: 24px 0;
+}
+
+.portfolio > header p {
+  padding: .25rem 0 .25rem .75rem;
+}
+
+.portfolio details {
+  padding-bottom: 0;
+  border-left: none;
+  border-right: 1px solid #D28CAF;
+}
+
+.portfolio details summary {
+  padding-right: 20rem;
+}
+
+.portfolio details summary aside {
+  right: .75rem;
+}
+
+.portfolio details p {
+  width: auto;
+  float: none;
+  margin-bottom: .25rem;
+}
+
+@media print {
+  .portfolio details a:not(.self-link)::after {
+    content: " (" attr(href) ")";
+  }
+}
+
+.portfolio details + details {
+  border-top: 2px solid #D28CAF;
+}
+
+.list-based .details {
+  border-left: 1px solid #D28CAF;
+  padding-left: .5rem;
+}
+
+.list-based .details li {
+  list-style: disc outside;
+  margin-left: 1rem;
+}
+
+.portfolio-details {
+  padding: 0 0 0 10rem;
+  min-height: 0;
+  border-top: 1px solid #D28CAF;
+  border-bottom: none;
+}
+
+.portfolio-details header {
+  padding: .125rem;
+  font-size: 1rem;
+  text-decoration: underline;
+  position: absolute;
+  left: 0;
+  width: 9.5rem;
+  text-align: right;
+}
+
+.portfolio-details .details {
+  border-left: 1px solid #D28CAF;
+  margin-bottom: 0;
+  padding: .25rem;
+}
+
+.responsibilities,
+.features,
+.technologies {
+  font-size: 0.9rem;
+}
+
+.page-heading {
+  padding: 3.5rem 0 1rem;
   text-align: center;
   font-size: 1.2rem;
   line-height: 1.8rem;
 }
 
-.page-subheading li,
-nav li {
-  display: inline-block;
-  padding-left: 24px;
-  position: relative;
-}
-
-.page-subheading li:first-child,
-nav li:first-child {
-  padding-left: 0;
-}
-
-.page-subheading li:first-child::before,
-nav li:first-child::before {
-  display: none;
-}
-
-.page-subheading li::before,
-nav li::before {
-  text-align: center;
-  content: "\B7";
-  width: 24px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #8C2F5E;
-}
-
-@media print {
-  .header {
+@media (min-width: 768px) {
+  .page-heading {
     position: fixed;
     top: 0;
+    left: 1.5rem;
+    right: 1.5rem;
+    background: #fff;
   }
+}
+
+.page-heading,
+nav {
+  z-index: 11;
+}
+
+@media all and (min-width: 768px) {
+  .page-subheading li,
+  nav li {
+    display: inline-block;
+    padding-left: 24px;
+    position: relative;
+  }
+
+  .page-subheading li:first-child,
+  nav li:first-child {
+    padding-left: 0;
+  }
+
+  .page-subheading li:first-child::before,
+  nav li:first-child::before {
+    display: none;
+  }
+
+  .page-subheading li::before,
+  nav li::before {
+    text-align: center;
+    content: "\B7";
+    width: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #8C2F5E;
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  font-weight: normal;
 }
 
