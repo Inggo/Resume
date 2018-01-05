@@ -1,0 +1,299 @@
+@charset "UTF-8";
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  color: #69113E;
+  font-size: 16px;
+  font-family: Calibri, Arial, sans-serif;
+  margin: 16px;
+  line-height: 1.5rem;
+  background: #fff;
+}
+
+nav {
+  position: fixed;
+  top: 124.8px;
+  left: 0;
+  right: 0;
+  padding: 24px 0;
+  text-align: center;
+  font-family: Calibri, Arial, sans-serif;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-bottom: 1px solid #460024;
+  line-height: 2.4rem;
+}
+
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 2.1rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.8rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.8rem;
+}
+
+a {
+  color: #AA4139;
+  text-decoration: none;
+}
+
+a:active {
+  color: #801D15;
+}
+
+main {
+  padding-top: 196.8px;
+}
+
+section {
+  padding: .5rem 0 .5rem 240px;
+  position: relative;
+  min-height: 56px;
+  border-bottom: 1px solid #D28CAF;
+}
+
+section header {
+  position: absolute;
+  left: 0;
+}
+
+section details {
+  font-family: Calibri, Arial, sans-serif;
+  position: relative;
+}
+
+section details summary {
+  cursor: pointer;
+  position: relative;
+  padding-right: 220px;
+}
+
+section details summary h4 {
+  display: inline;
+}
+
+section details summary aside {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+section details li {
+  list-style: disc outside;
+  margin-left: 1rem;
+}
+
+section details + details {
+  margin-top: .25rem;
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+.page-heading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 0;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.page-subheading li,
+nav li {
+  display: inline-block;
+  padding-left: 24px;
+  position: relative;
+}
+
+.page-subheading li:first-child,
+nav li:first-child {
+  padding-left: 0;
+}
+
+.page-subheading li:first-child::before,
+nav li:first-child::before {
+  display: none;
+}
+
+.page-subheading li::before,
+nav li::before {
+  text-align: center;
+  content: "\B7";
+  width: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #8C2F5E;
+}
+
+@media print {
+  .header {
+    position: fixed;
+    top: 0;
+  }
+}
+

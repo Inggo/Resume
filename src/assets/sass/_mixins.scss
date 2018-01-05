@@ -1,0 +1,14 @@
+@mixin list {
+    padding-left: 24px;
+    position: relative;
+
+    &::before {
+        text-align: center;
+        content: "·";
+        width: 24px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $primary;
+    }
+}

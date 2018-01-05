@@ -1,1 +1,144 @@
-@import 'print';
+@import "~reset-css/_reset";
+@import "colors";
+@import "mixins";
+
+$serif: Georgia, "Times New Roman", serif;
+$sans-serif: Calibri, Arial, sans-serif;
+
+body {
+    color: $primary-darker;
+    font-size: 16px;
+    font-family: $sans-serif;
+    margin: 16px;
+    line-height: 1.5rem;
+    background: $bg;
+}
+
+nav {
+    position: fixed;
+    top: 124.8px;
+    left: 0;
+    right: 0;
+    padding: 24px 0;
+    text-align: center;
+    font-family: $sans-serif;
+}
+
+h1 {
+    font-family: $serif;
+    font-size: 1.8rem;
+    line-height: 1.8*1.5rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: $serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-bottom: 1px solid $primary-darkest;
+    line-height: 1.2*2rem;
+}
+
+h3 {
+    font-family: $serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.4*1.5rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.2*1.5rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.2*1.5rem;
+}
+
+a {
+    color: $secondary;
+    text-decoration: none;
+
+    &:active {
+        color: $secondary-darker;
+    }
+}
+
+main {
+    padding-top: 124.8 + 72px;
+}
+
+section {
+    padding: .5rem 0 .5rem 240px;
+    position: relative;
+    min-height: 56px;
+    border-bottom: 1px solid $primary-lightest;
+
+    header {
+        position: absolute;
+        left: 0;
+    }
+
+    details {
+        font-family: $sans-serif;
+        position: relative;
+
+        summary {
+            cursor: pointer;
+            position: relative;
+            padding-right: 220px;
+            h4 {
+                display: inline;
+            }
+            aside {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+
+        li {
+            list-style: disc outside;
+            margin-left: 1rem;
+        }
+
+        + details {
+            margin-top: .25rem;
+        }
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.page-heading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 0;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.2*1.5rem;
+}
+
+.page-subheading, nav {
+    li {
+        display: inline-block;
+
+        &:first-child {
+            padding-left: 0;
+            &::before {
+                display: none;
+            }
+        }
+
+        @include list;
+    }
+}
+
+@import "print";
