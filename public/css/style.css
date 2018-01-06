@@ -413,12 +413,12 @@ section details li {
   }
 
   section details p {
-    width: 75%;
+    width: 70%;
     float: left;
   }
 
   section details p + p {
-    width: 25%;
+    width: 30%;
     text-align: right;
   }
 }
@@ -467,12 +467,6 @@ section:last-child {
   margin-bottom: .25rem;
 }
 
-@media print {
-  .portfolio details a:not(.self-link)::after {
-    content: " (" attr(href) ")";
-  }
-}
-
 .portfolio details + details {
   border-top: 2px solid #D28CAF;
 }
@@ -485,6 +479,14 @@ section:last-child {
 .list-based .details li {
   list-style: disc outside;
   margin-left: 1rem;
+}
+
+@media print {
+  .portfolio a:not(.self-link)::after,
+  .list-based .details a:not(.self-link)::after {
+    content: " (" attr(href) ")";
+    white-space: nowrap;
+  }
 }
 
 .portfolio-details {
@@ -596,5 +598,11 @@ h4 small,
 h5 small,
 h6 small {
   font-weight: normal;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
 }
 
