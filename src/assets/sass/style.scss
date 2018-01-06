@@ -173,8 +173,7 @@ section {
         padding: 0 0 .25rem;
 
         li {
-            list-style: disc outside;
-            margin-left: 1rem;
+            @include list-item;
         }
 
         @media #{$gt-mobile} {
@@ -265,8 +264,7 @@ section {
             padding-left: .5rem;
         }
         li {
-            list-style: disc outside;
-            margin-left: 1rem;
+            @include list-item;
         }
     }
 }

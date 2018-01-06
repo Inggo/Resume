@@ -405,8 +405,16 @@ section details summary h4 {
 }
 
 section details li {
-  list-style: disc outside;
+  position: relative;
   margin-left: 1rem;
+}
+
+section details li:before {
+  content: "\2022";
+  position: absolute;
+  text-align: center;
+  width: 1rem;
+  left: -1rem;
 }
 
 @media (min-width: 769px) {
@@ -499,8 +507,16 @@ section:last-child {
 }
 
 .list-based .details li {
-  list-style: disc outside;
+  position: relative;
   margin-left: 1rem;
+}
+
+.list-based .details li:before {
+  content: "\2022";
+  position: absolute;
+  text-align: center;
+  width: 1rem;
+  left: -1rem;
 }
 
 @media print {

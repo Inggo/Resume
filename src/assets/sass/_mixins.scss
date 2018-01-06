@@ -12,3 +12,16 @@
         color: $primary;
     }
 }
+
+@mixin list-item {
+    position: relative;
+    margin-left: 1rem;
+
+    &:before {
+        content: "•";
+        position: absolute;
+        text-align: center;
+        width: 1rem;
+        left: -1rem;
+    }
+}
