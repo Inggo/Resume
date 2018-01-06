@@ -3,7 +3,7 @@
 @import "colors";
 @import "mixins";
 
-$gt-mobile: "(min-width: 768px)";
+$gt-mobile: "(min-width: 769px)";
 
 $serif: Georgia, "Times New Roman", serif;
 $sans-serif: Calibri, Arial, sans-serif;
@@ -23,6 +23,11 @@ body {
     @media #{$gt-mobile} {
         background: #333;
     }
+}
+
+.page-heading, .page-footer, nav, main {
+    max-width: 75rem;
+    margin: 0 auto;
 }
 
 nav {
@@ -204,52 +209,66 @@ section {
 }
 
 .portfolio {
-    padding: 0 7.5rem 0 0;
+    details {
+        padding-top: .5rem;
+        border-bottom: 1px solid $primary-lightest;
 
-    > header {
-        width: 7.5rem;
-        left: auto;
-        right: 0;
-
-        p {
-            padding: .25rem 0 .25rem .75rem;
+        &:last-child {
+            border-bottom: none;
         }
     }
 
-    details {
-        padding-bottom: 0;
+    @media #{$gt-mobile} {
+        padding: 0 7.5rem 0 0;
 
-        summary {
-            padding-right: 20rem;
-            aside {
-                right: .75rem
+        > header {
+            width: 7.5rem;
+            left: auto;
+            right: 0;
+
+            p {
+                padding: .25rem 0 .25rem .75rem;
             }
         }
 
-        p {
-            width: auto;
-            float: none;
-            margin-bottom: .25rem;
-        }
+        details {
+            padding-bottom: 0;
 
-        border-left: none;
-        border-right: 1px solid $primary-lightest;
+            summary {
+                padding-right: 20rem;
+                aside {
+                    right: .75rem
+                }
+            }
 
-        + details {
-            border-top: 2px solid $primary-lightest;
+            p {
+                width: auto;
+                float: none;
+                margin-bottom: .25rem;
+            }
+
+            border-left: none;
+            border-bottom: none;
+            border-right: 1px solid $primary-lightest;
+
+            + details {
+                border-top: 2px solid $primary-lightest;
+            }
         }
     }
 }
 
 .list-based {
     .details {
-        border-left: 1px solid $primary-lightest;
-        padding-left: .5rem;
+        @media #{$gt-mobile} {
+            border-left: 1px solid $primary-lightest;
+            padding-left: .5rem;
+        }
         li {
             list-style: disc outside;
             margin-left: 1rem;
         }
-    }    
+    }
 }
 
 .portfolio,
@@ -263,26 +282,33 @@ section {
 }
 
 .portfolio-details {
-    padding: 0 0 0 10rem;
-    min-height: 0;
-
     header {
-        padding: .125rem;
-        font-size: 1rem;
         text-decoration: underline;
-        position: absolute;
-        left: 0;
-        width: 9.5rem;
-        text-align: right;
     }
 
-    border-top: 1px solid $primary-lightest;
     border-bottom: none;
+    padding: 0;
 
-    .details {
-        border-left: 1px solid $primary-lightest;
-        margin-bottom: 0;
-        padding: .25rem;
+    @media #{$gt-mobile} {
+        padding: 0 0 0 10rem;
+        min-height: 0;
+
+        header {
+            padding: .125rem;
+            font-size: 1rem;
+            position: absolute;
+            left: 0;
+            width: 9.5rem;
+            text-align: right;
+        }
+
+        border-top: 1px solid $primary-lightest;
+
+        .details {
+            border-left: 1px solid $primary-lightest;
+            margin-bottom: 0;
+            padding: .25rem;
+        }
     }
 }
 
@@ -332,11 +358,14 @@ section {
 
     background: #fff;
     text-align: center;
-    padding: 0 0 4rem;
-    font-size: 1.5rem;
+    padding: 2rem 2rem 4rem;
 
-    p {
-        line-height: 2rem;
+    @media #{$gt-mobile} {
+        font-size: 1.5rem;
+
+        p {
+            line-height: 2rem;
+        }
     }
 }
 
