@@ -475,6 +475,10 @@ body {
   font-size: 12px;
   line-height: 1.5rem;
   color: #8C2F5E;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 @media screen and (min-width: 769px) {
@@ -516,6 +520,87 @@ h1 + .subtitle {
   h1 + .subtitle {
     font-size: 2.5rem;
     line-height: 3.5rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  border-bottom: 1px solid #69113E;
+  padding-bottom: .5rem;
+  margin-bottom: .5rem;
+  position: relative;
+}
+
+@media screen and (min-width: 769px) {
+  h2 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+@media screen and (min-width: 769px) {
+  h3 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  h3 + .subtitle {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.work-titles {
+  padding-top: .5rem;
+}
+
+.work-contents > li {
+  padding-bottom: .5rem;
+  margin-bottom: .5rem;
+  border-bottom: 1px solid #D28CAF;
+}
+
+.work-contents > li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.work-responsibilities {
+  padding-bottom: .5rem;
+}
+
+.work-responsibilities > li {
+  padding-left: 1.5rem;
+}
+
+.work-responsibilities > li::before {
+  content: "\25CF";
+  position: absolute;
+  left: .25rem;
+}
+
+h4 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@media screen and (min-width: 769px) {
+  h4 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  h4 + .subtitle {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
 
@@ -648,8 +733,8 @@ a:hover {
 }
 
 .cube-container section {
-  background: #fff;
   margin: 0;
+  background: #fff;
   width: calc(90vw - 4px);
   height: calc(90vw - 4px);
   display: block;
@@ -766,7 +851,7 @@ a:hover {
   display: none;
   position: absolute;
   bottom: .25rem;
-  right: .25rem;
+  right: 1.25rem;
   left: .25rem;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
@@ -875,14 +960,39 @@ a:hover {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100%;
-  padding: 1rem;
+  padding: 0 1rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 176, 170, 0.1)), to(rgba(40, 3, 57, 0.1)));
   background: linear-gradient(to bottom right, rgba(255, 176, 170, 0.1), rgba(40, 3, 57, 0.1));
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: flex;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+@media screen and (min-width: 769px) {
+  .face-content-container {
+    padding-right: 7rem;
+  }
+}
+
+.face-contents {
+  min-height: 0;
+  position: relative;
+  padding: 1rem 0;
 }
 
 li {
-  line-height: 1.7y5rem;
+  line-height: 1.5rem;
+  position: relative;
+}
+
+@media screen and (min-width: 769px) {
+  li {
+    line-height: 1.75rem;
+  }
 }
 

@@ -102,7 +102,7 @@ const app = new Vue({
         face: "right",
         name: "Work Experience",
         icon: "icon-briefcase",
-        content: data.work,
+        content: data.work_experience,
         "content-type": "work"
       });
 

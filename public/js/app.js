@@ -1184,7 +1184,7 @@ var app = new Vue({
         face: "right",
         name: "Work Experience",
         icon: "icon-briefcase",
-        content: data.work,
+        content: data.work_experience,
         "content-type": "work"
       });
 
@@ -31508,6 +31508,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'InggoCubeFace',
@@ -31632,6 +31652,50 @@ var render = function() {
                   )
                 ])
               ])
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.faceID == "work"
+          ? _c("div", { staticClass: "face-contents" }, [
+              _c("h2", [_vm._v("Work Experience")]),
+              _vm._v(" "),
+              _c(
+                "ul",
+                { staticClass: "work-contents" },
+                _vm._l(_vm.content, function(item) {
+                  return _c("li", [
+                    _c("h3", [_vm._v(_vm._s(item.company))]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "subtitle" }, [
+                      _vm._v(_vm._s(item.location))
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "ul",
+                      { staticClass: "work-titles" },
+                      _vm._l(item.titles, function(title) {
+                        return _c("li", [
+                          _c("h4", [_vm._v(_vm._s(title.name))]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "subtitle" }, [
+                            _vm._v(_vm._s(title.date))
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "ul",
+                            { staticClass: "work-responsibilities" },
+                            _vm._l(title.responsibilities, function(
+                              responsibility
+                            ) {
+                              return _c("li", [_vm._v(_vm._s(responsibility))])
+                            })
+                          )
+                        ])
+                      })
+                    )
+                  ])
+                })
+              )
             ])
           : _vm._e()
       ])
