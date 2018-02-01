@@ -1,27 +1,19 @@
-@mixin list {
-    padding-left: 24px;
-    position: relative;
+@mixin show-face($face, $rotate) {
+  &.show-#{$face} {
+    transform: translateZ(-$hw + vw) $rotate;
 
-    &::before {
-        text-align: center;
-        content: "·";
-        width: 24px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        color: $primary;
+    @media screen and #{$gt-mobile} {
+      transform: translateZ(-$hw + vh) $rotate;
     }
+  }
 }
 
-@mixin list-item {
-    position: relative;
-    margin-left: 1rem;
+@mixin face($face, $rotate) {
+  &.#{$face} {
+    transform: $rotate translateZ($hw + vw);
 
-    &:before {
-        content: "•";
-        position: absolute;
-        text-align: center;
-        width: 1rem;
-        left: -1rem;
+    @media screen and #{$gt-mobile} {
+      transform: $rotate translateZ($hw + vh);
     }
+  }
 }

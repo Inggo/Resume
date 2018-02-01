@@ -11,5 +11,11 @@
         "laravel-mix": "^1.0",
         "reset-css": "*",
         "fontello-cli": "^0.4.0"
+    },
+    "dependencies": {
+        "axios": "^0.17.1",
+        "lodash": "^4.17.4",
+        "vue": "^2.5.13",
+        "vuex": "^3.0.1"
     }
 }

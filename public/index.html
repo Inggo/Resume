@@ -1,442 +1,49 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Inggo Espinosa</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Inggo Espinosa</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="manifest" href="site.webmanifest">
-        <link rel="apple-touch-icon" href="icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
 
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+  <div id="app" class="app-container">
+    <cube-controls :is-mobile="true" :current-face="currentFace"></cube-controls>
+    <cube></cube>
+  </div>
 
-        <header id="pageHeader" class="page-heading">
-            <h1>Ramon Iñigo M. Espinosa</h1>
-            <ul class="page-subheading">
-                <li>Senior Web Developer
-                <li><a href="http://inggo.xyz" target="_blank">http://inggo.xyz</a>
-                <li><a href="http://github.com" target="_blank">https://github.com/inggo/</a>
-            </ul>
-            <ul class="page-subheading">
-                <li><a href="mailto:inggo.espinosa@gmail.com">inggo.espinosa@gmail.com</a>
-                <li><a href="tel:+639065558311">+63 906 5558311</a>
-            </ul>
-        </header>
+  <aside class="bgcube-background">
+    <div class="bgcube-container">
+      <div class="cube">
+        <div class="cube-face"></div>
+        <div class="cube-face"></div>
+        <div class="cube-face"></div>
+        <div class="cube-face"></div>
+        <div class="cube-face"></div>
+        <div class="cube-face"></div>
+      </div>
+    </div>
+    <div class="bgcube-container">
+      <div class="cube">
+        <div class="cube-face"></div>
+        <div class="cube-face"></div>
+        <div class="cube-face"></div>
+        <div class="cube-face"></div>
+        <div class="cube-face"></div>
+        <div class="cube-face"></div>
+      </div>
+    </div>
+  </aside>
 
-        <nav>
-            <ol>
-                <li><a href="#work-experience">Work Experience</a>
-                <li><a href="#education">Education</a>
-                <li><a href="#project-portfolio">Featured Project Portfolio</a>
-                <li><a href="#skills-achievements">Skills and Achievements</a>
-            </ol>
-        </nav>
-
-        <main>
-            <article id="work-experience">
-                <h2>Work Experience</h2>
-
-                <section>
-                    <header>
-                        <h3>Hampton Peak</h3>
-                        <aside>Telecommuting to Singapore</aside>
-                    </header>
-                    <details open>
-                        <summary>
-                            <h4>Lead Developer</h4>
-                            <aside>July 2015 to July 2017</aside>
-                        </summary>
-                        <ul class="details">
-                            <li>Led the development team of inHomePortal.com.
-                            <li>Architected features such as advertising and front-end user management.
-                            <li>Developed the base theme and modules.
-                            <li>Assisted in the building and improving of the facilities booking system.
-                        </ul>
-                    </details>
-                </section>
-
-                <section>
-                    <header>
-                        <h3>Sytian IT Solutions</h3>
-                        <aside>Quezon City, Philippines</aside>
-                    </header>
-                    <details open>
-                        <summary>
-                            <h4>Chief Technologist</h4>
-                            <aside>May 2014 to June 2015</aside>
-                        </summary>
-                        <ul>
-                            <li>Developed complex websites and web applications for clients.
-                            <li>Trained interns and development team on latest technologies and best practices.
-                            <li>Built, managed, and maintained internal servers and office network.
-                            <li>Ensures the high quality of all projects handled by developers.
-                        </ul>
-                    </details>
-                    <details open>
-                        <summary>
-                            <h4>Senior Web Developer</h4>
-                            <aside>December 2012 to May 2014</aside>
-                        </summary>
-                        <ul>
-                            <li>Developed websites and web applications for clients.
-                            <li>Transformed Photoshop layouts into working responsive websites.
-                            <li>Revamped the company website.
-                        </ul>
-                    </details>
-                </section>
-
-                <section>
-                    <header>
-                        <h3>Teleperformance</h3>
-                        <aside>Makati City, Philippines</aside>
-                    </header>
-                    <details open>
-                        <summary>
-                            <h4>Technical Support Representative</h4>
-                            <aside>January to June 2012</aside>
-                        </summary>
-                        <ul class="details">
-                            <li>Handled customer concerns via in-game chat and email for Star Wars: The Old Republic&trade;.
-                            <li>Trained on proper communication protocols for email, chat, and voice
-                        </ul>
-                    </details>
-                </section>
-            </article>
-
-            <article id="education">
-                <h2>Education</h2>
-
-                <section>
-                    <header>
-                        <h3>Secondary Education</h3>
-                    </header>
-
-                    <details open>
-                        <summary>
-                            <h4>University of the Philippines Open University</h4>
-                            <aside>2009 to 2011</aside>
-                        </summary>
-                        <p>Associate in Arts, Faculty of Education</p>
-                        <p><a href="https://www.upou.edu.ph" target="_blank" class="self-link">http://www.upou.edu.ph</a></p>
-                    </details>
-
-                    <details open>
-                        <summary>
-                            <h4>De La Salle &ndash; College of Saint Benilde</h4>
-                            <aside>2007 to 2009</aside>
-                        </summary>
-                        <p>Completed Coursework towards B.S. Information Systems</p>
-                        <p>Malate, Manila</p>
-                    </details>
-
-                    <details open>
-                        <summary>
-                            <h4>University of the Philippines, Diliman</h4>
-                            <aside>2004 to 2007</aside>
-                        </summary>
-                        <p>Completed Coursework towards B.S. Computer Science</p>
-                        <p>Diliman, Quezon City</p>
-                    </details>
-                </section>
-
-                <section>
-                    <header>
-                        <h3>Primary Education</h3>
-                    </header>
-
-                    <details open>
-                        <summary>
-                            <h4>University of the Philippines Integrated School</h4>
-                            <aside>1994 to 2004</aside>
-                        </summary>
-                        <p>Kindergarten to Grade 10, Graduated with Honors</p>
-                        <p>Diliman, Quezon City</p>
-                    </details>
-                </section>
-            </article>
-
-            <article id="project-portfolio">
-                <h2>Featured Project Portfolio</h2>
-
-                <section class="portfolio">
-                    <header>
-                        <p>Under Hampton Peak</p>
-                    </header>
-
-                    <details open>
-                        <summary>
-                            <h4>inHomePortal.com</h4>
-                            <aside>Web Portals for Condominiums in Singapore</aside>
-                        </summary>
-                        <p>Used by multiple condominiums, such as <a href="https://www.sky11.com.sg" target="_blank">Sky@eleven</a>, <a href="https://homethomsonthree.com.sg" target="_blank">Thomson Three</a>, and <a href="https://homethetembusu.com.sg" target="_blank">The Tembusu</a>.</p>
-                        <section class="portfolio-details role">
-                            <header>Role</header>
-                            <p class="details"><strong>Lead Developer</strong></p>
-                        </section>
-                        <section class="portfolio-details responsibilities">
-                            <header>Responsibilities</header>
-                            <ul class="details">
-                                <li>Led a small development team taking on a full-stack role
-                                <li>Architected and developed product modules
-                                <li>Aligned deliverables with product owner and ensured they are met for all sprints
-                                <li>Produced development processes for the team with agile methodology in mind
-                                <li>Supervised junior team members on day-to-day tasks and growth
-                                <li>Assisted in product quality assurance
-                                <li>Resolved product issues
-                            </ul>
-                        </section>
-                        <section class="portfolio-details features">
-                            <header>Main Features</header>
-                            <ul class="details">
-                                <li>Semi-automated creation of new tenant sites via Linux terminal
-                                <li>Robust facilities booking for residents
-                                <li>Front-end user management for condominium managers
-                            </ul>
-                        </section>
-                        <section class="portfolio-details technologies">
-                            <header>Technologies Used</header>
-                            <p class="details">WordPress Multisite, Twitter Bootstrap, jQuery, Vue.js, Atlassian Jira Software, Git via Beanstalk</p>
-                        </section>
-                    </details>
-                </section>
-                <section class="portfolio">
-                    <header>
-                        <p>Under Sytian IT Solutions</p>
-                    </header>
-
-                    <details open>
-                        <summary>
-                            <h4>harlan+holden <small>and</small> Soak Swimwear</h4>
-                            <aside>eCommerce websites with Customized CMS</aside>
-                        </summary>
-                        <p>Used by <a href="http://www.harlanholden.com/" target="_blank">harlan+holden</a> and <a href="http://www.soakswimwear.com/" target="_blank">Soak Swimwear</a>.</p>
-                        <section class="portfolio-details role">
-                            <header>Role</header>
-                            <p class="details"><strong>Lead Developer</strong></p>
-                        </section>
-                        <section class="portfolio-details responsibilities">
-                            <header>Responsibilities</header>
-                            <ul class="details">
-                                <li>Architected and developed product back-end
-                                <li>Developed front-end management interface for client staff
-                                <li>Developed most of the front-end for website visitors
-                            </ul>
-                        </section>
-                        <section class="portfolio-details features">
-                            <header>Main Features</header>
-                            <ul class="details">
-                                <li>Customized widget-based CMS
-                                <li>Customized eCommerce system
-                                <li>Fully responsive front-end with customizable design
-                            </ul>
-                        </section>
-                        <section class="portfolio-details technologies">
-                            <header>Technologies Used</header>
-                            <p class="details">Laravel, Twitter Bootstrap, jQuery, Git via Atlassian Bitbucket</p>
-                        </section>
-                    </details>
-
-                    <details open>
-                        <summary>
-                            <h4>Sytian Productions</h4>
-                            <aside>Official website revamp</aside>
-                        </summary>
-                        <p>Company website of <a href="https://www.sytian-productions.com/" target="_blank">Sytian Productions</a>.</p>
-                        <section class="portfolio-details role">
-                            <header>Role</header>
-                            <p class="details"><strong>Lead Developer</strong></p>
-                        </section>
-                        <section class="portfolio-details responsibilities">
-                            <header>Responsibilities</header>
-                            <ul class="details">
-                                <li>Revamped and refactored company website
-                                <li>Ensured fast speed and applied best practices available
-                            </ul>
-                        </section>
-                        <section class="portfolio-details features">
-                            <header>Main Features</header>
-                            <ul class="details">
-                                <li>Smart and secure contact forms
-                                <li>Dynamic portfolio loading
-                                <li>Fully-responsive front-end
-                            </ul>
-                        </section>
-                        <section class="portfolio-details technologies">
-                            <header>Technologies Used</header>
-                            <p class="details">PHP, HTML, YAML CSS Framework, jQuery</p>
-                        </section>
-                    </details>
-
-                    <details open class="no-print">
-                        <summary>
-                            <h4>Others</h4>
-                        </summary>
-                        <p>Completed at least 50 website projects using different technologies
-                            with features such as eCommerce, local payment gateway integrations, 
-                            booking solutions, scheduling systems, internal systems, and galleries.</p>
-                    </details>
-                </section>
-                <section class="portfolio">
-                    <header>
-                        <p>Personal and Freelance Works</p>
-                    </header>
-
-                    <details open>
-                        <summary>
-                            <h4>Custom WordPress Themes and Plugins</h4>
-                        </summary>
-                        <p>WordPress themes and plugins developed for various clients or personal use.</p>
-                        <section class="portfolio-details samples">
-                            <header>Samples</header>
-                            <ul class="details">
-                                <li><a href="https://github.com/Inggo/theme-cura" target="_blank">Customized WordPress Theme for Cura Property</a></li>
-                                <li><a href="https://github.com/Inggo/cmo-wordpress-plugin" target="_blank">Belle Vue Coaches Coach Manager Online (CMO)</a></li>
-                                <li><a href="https://github.com/Inggo/cf1971-contests" target="_blank">Contests for CrossFit 1971</a></li>
-                                <li><a href="https://github.com/Inggo/sela" target="_blank">Sela child theme</a></li>
-                            </ul>
-                        </section>
-                    </details>
-
-                    <details open>
-                        <summary>
-                            <h4>Philotto</h4>
-                        </summary>
-                        <p>Website for Lottery results at <a href="https://philotto.inggo.xyz" target="_blank" class="self-link">https://philotto.inggo.xyz</a>.</p>
-                        <section class="portfolio-details features">
-                            <header>Main Features</header>
-                            <ul class="details">
-                                <li>Automatic scraping of lottery results from official source
-                                <li>Filtering of games and results based on user tickets
-                                <li>Able to apply to other lotteries by creating applicable scrapers
-                            </ul>
-                        </section>
-                        <section class="portfolio-details technologies">
-                            <header>Technologies Used</header>
-                            <p class="details">Laravel, Vue.js, Bulma, Git via Github</p>
-                        </section>
-                    </details>
-
-                    <details open>
-                        <summary>
-                            <h4>Inggo Noms...</h4>
-                        </summary>
-                        <p><a href="https://eat.nyo.me" target="_blank">Personal weblog on Blogger</a> chronicling food adventures in and out of the Philippines
-                            using a customized theme written in Blogger's markup.</p>
-                    </details>
-                    
-                </section>
-            </article>
-
-            <article id="skills-achievements">
-                <h2>Skills and Achievements</h2>
-                <section class="list-based">
-                    <header>
-                        <h3>Web Development Skills</h3>
-                    </header>
-
-                    <ul class="details">
-                        <li>Has excellent understanding of HTML, CSS, and Javascript.
-                        <li>Highly proficient in the PHP web programming language.
-                        <li>Familiar with in SQL syntax and can work with various SQL database management systems.
-                        <li>Adept in working with PHP frameworks, especially Laravel.
-                        <li>Develops and maintains websites using content management systems such as WordPress.
-                        <li>Familiar with responsive website design and applies concepts where possible.
-                        <li>Knowledgeable in using jQuery and Twitter Bootstrap.
-                        <li>Able to use version control systems, particularly Git and Subversion.
-                        <li>Capable in utilizing front-end Javascript frameworks with preference to Vue.js.
-                        <li>Knows his way with the Unix terminal and can build and maintain web servers using Ubuntu.
-                        <li>Can learn and use any front-end or back-end framework given a reasonable time frame.
-                    </ul>
-                </section>
-
-                <section class="list-based">
-                    <header>
-                        <h3>Programming Skills</h3>
-                    </header>
-
-                    <ul class="details">
-                        <li>Proficient in Python, Java, C#, and C programming languages.
-                        <li>Knowledgeable in both procedural and SOLID object-oriented programming.
-                        <li>Able to learn new programming languages in a reasonable amount of time.
-                    </ul>
-                </section>
-
-                <section class="list-based">
-                    <header>
-                        <h3>Computer-Related Skills</h3>
-                    </header>
-
-                    <ul class="details">
-                        <li>Adept in using Microsoft Office programs; specifically Word, Excel, and PowerPoint; and their Google or LibreOffice counterparts.
-                        <li>Able to write custom Scripts and Add-ons for Google Sheets used in various applications.
-                        <li>Can build desktop computers using custom manufacturer parts.
-                        <li>Can touch-type; encodes with excellent speed and accuracy.
-                    </ul>
-                </section>
-
-                <section class="list-based">
-                    <header>
-                        <h3>Communication Skills</h3>
-                    </header>
-
-                    <ul class="details">
-                        <li>Has good grasp of both English and Filipino Languages.
-                        <li>Blogs as a hobby; owns and writes a <a href="https://eat.nyo.me" target="_blank">personal food blog</a>.
-                    </ul>
-                </section>
-
-                <section class="list-based">
-                    <header>
-                        <h3>Achievements and Conferences</h3>
-                    </header>
-
-                    <ul class="details">
-                        <li>Attended the DevCon AngularJS Code Camp 2015 and is among the winners of the mini-hackathon.
-                        <li>Attended multiple DevCon summits and hackatons since 2013.
-                        <li>Participated in the 2005 ACM Intercollegiate Computer Programming Competition in Ateneo University.
-                        <li>Participated and won a number of Programming Competitions within the Computer Science department in University of the Philippines, Diliman.
-                    </ul>
-                </section>
-            </article>
-        </main>
-
-        <footer class="page-footer">
-            <p>
-                <a target="_blank" href="https://github.com/Inggo/"><i class="icon icon-github-circled"></i></a>
-                <a target="_blank" href="mailto:inggo.espinosa@gmail.com"><i class="icon icon-mail"></i></a>
-                <a target="_blank" href="https://inggo.xyz"><i class="icon icon-link"></i></a>
-            </p>
-            <p>&copy; 2018 Inggo Espinosa &middot; All Rights Reserved</p>
-        </footer>
-
-        <aside class="cube-background">
-            <div class="cube-container">
-                <div class="cube">
-                    <div class="cube-face"></div>
-                    <div class="cube-face"></div>
-                    <div class="cube-face"></div>
-                    <div class="cube-face"></div>
-                    <div class="cube-face"></div>
-                    <div class="cube-face"></div>
-                </div>
-            </div>
-            <div class="cube-container">
-                <div class="cube">
-                    <div class="cube-face"></div>
-                    <div class="cube-face"></div>
-                    <div class="cube-face"></div>
-                    <div class="cube-face"></div>
-                    <div class="cube-face"></div>
-                    <div class="cube-face"></div>
-                </div>
-            </div>
-        </aside>
-    </body>
+  <script src="js/app.js"></script>
+</body>
 </html>

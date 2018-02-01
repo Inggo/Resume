@@ -42,7 +42,7 @@
   }
 }
 
-.cube-background {
+.bgcube-background {
   opacity: .05;
   width: 512px;
   height: 512px;
@@ -50,7 +50,7 @@
   bottom: 0;
   right: 512px;
   perspective: 1000px;
-  z-index: 1000;
+  z-index: 0;
   pointer-events: none;
 
   @media print {
@@ -58,14 +58,14 @@
   }
 }
 
-.cube-container {
+.bgcube-container {
   perspective: 1000px;
   position: absolute;
   &:nth-child(1) { top: 25%; left: 25%; transform: scale3d(5,5,5) rotate3d(0,0,1,30deg) }
   &:nth-child(2) { top: -50%; left: -50%; transform: scale3d(4,4,4) rotate3d(0,1,0,-30deg) }
 }
 
-.cube-container {
+.bgcube-container {
   &:nth-child(1) .cube {
     animation: cube 240s linear infinite;
   }
