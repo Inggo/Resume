@@ -1127,7 +1127,6 @@ var store = new Vuex.Store({
   },
   mutations: {
     setFace: function setFace(state, payload) {
-      console.log(payload);
       state.faceContents[payload.face] = payload;
     },
     setVisibleFace: function setVisibleFace(state, face) {
@@ -1175,7 +1174,7 @@ var app = new Vue({
       store.commit("setFace", {
         face: "left",
         name: "Education",
-        icon: "icon-graduation-cap",
+        icon: "icon-education",
         content: data.education,
         "content-type": "education"
       });
@@ -1193,7 +1192,7 @@ var app = new Vue({
       store.commit("setFace", {
         face: "top",
         name: "Portfolio",
-        icon: "icon-folder-open",
+        icon: "icon-folder",
         content: data.portfolio,
         "content-type": "portfolio"
       });
@@ -31375,6 +31374,7 @@ var render = function() {
             "a",
             {
               class: _vm.controlClass(face.face),
+              attrs: { title: face.name },
               on: {
                 click: function($event) {
                   _vm.setVisibleFace(face.face)
@@ -31468,6 +31468,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'InggoCubeFace',
@@ -31482,6 +31522,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   computed: {
     faceClass: function faceClass() {
       return this.face.faceClass;
+    },
+    faceID: function faceID() {
+      return this.$store.state.faceContents[this.faceClass]['content-type'];
+    },
+    content: function content() {
+      return this.$store.state.faceContents[this.faceClass].content;
     }
   }
 });
@@ -31496,12 +31542,137 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { class: _vm.faceClass },
-    [_c("cube-controls", { attrs: { "current-face": _vm.faceClass } })],
+    { class: _vm.faceClass, attrs: { id: _vm.faceID } },
+    [
+      _c("cube-controls", { attrs: { "current-face": _vm.faceClass } }),
+      _vm._v(" "),
+      _c("div", { staticClass: "face-content-container" }, [
+        _vm.faceID == "bio"
+          ? _c("div", { staticClass: "face-contents" }, [
+              _c("h1", [_vm._v(_vm._s(_vm.content.full_name))]),
+              _vm._v(" "),
+              _c("p", { staticClass: "subtitle" }, [
+                _vm._v(_vm._s(_vm.content.title))
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "bio-links" }, [
+                _c("li", [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: _vm.content.links.website,
+                        target: "_blank"
+                      }
+                    },
+                    [
+                      _vm._m(0),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "label link" }, [
+                        _vm._v(_vm._s(_vm.content.links.website))
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: _vm.content.links.github,
+                        target: "_blank"
+                      }
+                    },
+                    [
+                      _vm._m(1),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "label link" }, [
+                        _vm._v(_vm._s(_vm.content.links.github))
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "mailto:" + _vm.content.links.email,
+                        target: "_blank"
+                      }
+                    },
+                    [
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "label link" }, [
+                        _vm._v(_vm._s(_vm.content.links.email))
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: _vm.content.links.mobile.link,
+                        target: "_blank"
+                      }
+                    },
+                    [
+                      _vm._m(3),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "label link" }, [
+                        _vm._v(_vm._s(_vm.content.links.mobile.label))
+                      ])
+                    ]
+                  )
+                ])
+              ])
+            ])
+          : _vm._e()
+      ])
+    ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon" }, [
+      _c("i", { staticClass: "icon-link" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon" }, [
+      _c("i", { staticClass: "icon-github" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon" }, [
+      _c("i", { staticClass: "icon-mail" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon" }, [
+      _c("i", { staticClass: "icon-mobile" })
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

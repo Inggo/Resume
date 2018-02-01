@@ -1,5 +1,6 @@
 @import '~reset-css/reset';
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700');
+@import url('https://fonts.googleapis.com/css?family=Ovo');
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700');
 @import '../fontello/css/fontello';
 @import 'colors';
 @import 'mixins';
@@ -7,18 +8,63 @@
 
 $gt-mobile: '(min-width: 769px)';
 
-$serif: Georgia, 'Times New Roman', serif;
-$sans-serif: Calibri, Arial, sans-serif;
+$serif: Ovo, serif;
+$sserif: Muli, sans-serif;
 
 $cw: 90;
 $hw: $cw/2;
 
 html, body {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: $sserif;
   font-size: 12px;
+  line-height: 1.5rem;
+  color: $primary;
 
   @media screen and #{$gt-mobile} {
     font-size: 16px;
+  }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $serif;
+  font-weight: bold;
+  color: $primary-darker;
+}
+
+h1 {
+  font-size: 1.75rem;
+  line-height: 2rem;
+
+  @media screen and #{$gt-mobile} {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+
+  + .subtitle {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+
+    @media screen and #{$gt-mobile} {
+      font-size: 2.5rem;
+      line-height: 3.5rem;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $secondary-darkest;
+  opacity: .667;
+  transition: .4s opacity;
+
+  &:hover {
+    opacity: 1;
   }
 }
 
@@ -89,21 +135,28 @@ html, body {
   }
 }
 
-.icon {
-  color: $primary;
-  display: block;
-  text-align: center;
-  position: relative;
-  font-size: 1.5rem;
+.cube-controls .icon {
   width: 3.25rem;
   height: 3.25rem;
   line-height: 3.25rem;
+  font-size: 1.5rem;
+
   @media screen and #{$gt-mobile} {
     font-size: 1rem;
     width: 1.25rem;
     height: 1.25rem;
     line-height: 1.25rem;
   }
+}
+
+.icon {
+  color: $primary;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  width: 1.25rem;
+  height: 1.25rem;
+  line-height: 1.25rem;
 }
 
 .cube-controls {
@@ -179,8 +232,24 @@ html, body {
       .icon {
         position: absolute;
         top: .375rem;
-        left: .125rem;
+        left: .2rem;
       }
     }
   }
+}
+
+.face-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom right, transparentize($secondary-lightest, .9), transparentize($tertiary-darkest, .9));
+}
+
+li {
+  line-height: 1.7y5rem;
 }

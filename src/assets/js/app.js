@@ -46,7 +46,6 @@ const store = new Vuex.Store({
   },
   mutations: {
     setFace (state, payload) {
-      console.log(payload);
       state.faceContents[payload.face] = payload;
     },
     setVisibleFace (state, face) {
@@ -93,7 +92,7 @@ const app = new Vue({
       store.commit("setFace", {
         face: "left",
         name: "Education",
-        icon: "icon-graduation-cap",
+        icon: "icon-education",
         content: data.education,
         "content-type": "education"
       });
@@ -111,7 +110,7 @@ const app = new Vue({
       store.commit("setFace", {
         face: "top",
         name: "Portfolio",
-        icon: "icon-folder-open",
+        icon: "icon-folder",
         content: data.portfolio,
         "content-type": "portfolio"
       });
