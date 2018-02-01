@@ -3,8 +3,13 @@
     'cube-controls': true,
     'is-mobile': isMobile
   }">
-    <a v-for="face in faces" :class="controlClass(face.face)" @click="setVisibleFace(face.face)" v-if="isMobile || face.face != currentFace">
-      {{ face.name }}
+    <a v-for="face in faces" :class="controlClass(face.face)" @click="setVisibleFace(face.face)" v-if="face.name && (isMobile || face.face != currentFace)">
+      <span class="icon" v-if="face.icon">
+        <i :class="face.icon"></i>
+      </span>
+      <span class="label" v-if="!isMobile">
+        {{ face.name }}
+      </span>
     </a>
   </div>
 </template>

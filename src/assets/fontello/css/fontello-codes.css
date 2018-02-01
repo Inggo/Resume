@@ -1,5 +1,12 @@
 
+.icon-home:before { content: '\e800'; } /* '' */
 .icon-mail:before { content: '\e801'; } /* '' */
 .icon-print:before { content: '\e802'; } /* '' */
 .icon-link:before { content: '\e803'; } /* '' */
+.icon-folder-open:before { content: '\e804'; } /* '' */
+.icon-briefcase:before { content: '\e805'; } /* '' */
+.icon-tools:before { content: '\e806'; } /* '' */
+.icon-spin:before { content: '\e834'; } /* '' */
 .icon-github-circled:before { content: '\f09b'; } /* '' */
+.icon-graduation-cap:before { content: '\f19d'; } /* '' */
+.icon-bio:before { content: '\f2bb'; } /* '' */

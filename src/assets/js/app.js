@@ -8,31 +8,47 @@ const store = new Vuex.Store({
     faceContents: {
       front: {
         face: 'front',
-        name: 'Front'
-      },
-      back: {
-        face: 'back',
-        name: 'Back'
+        name: null,
+        icon: null,
+        content: null
       },
       right: {
         face: 'right',
-        name: 'Right'
+        name: null,
+        icon: null,
+        content: null
       },
       left: {
         face: 'left',
-        name: 'Left'
+        name: null,
+        icon: null,
+        content: null
       },
       top: {
         face: 'top',
-        name: 'Top'
+        name: '',
+        icon: null,
+        content: null
       },
       bottom: {
         face: 'bottom',
-        name: 'Bottom'
+        name: null,
+        icon: null,
+        content: null
+      },
+      back: {
+        face: 'back',
+        name: null,
+        icon: null,
+        content: null
       }
     }
   },
   mutations: {
+    setFace (state, payload) {
+      console.log(payload);
+      state.faceContents[payload.face] = payload;
+    },
     setVisibleFace (state, face) {
       state.visibleFace = face;
     }
@@ -49,6 +65,74 @@ const app = new Vue({
   computed: {
     currentFace () {
       return store.state.visibleFace;
+    }
+  },
+  mounted () {
+    // Load data
+    axios.get('/data.json')
+      .then((response) => {
+        this.populateContents(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
+  methods: {
+    populateContents (data) {
+
+      // Commit Bio
+      store.commit("setFace", {
+        face: "front",
+        name: "Bio",
+        icon: "icon-bio",
+        content: data.info,
+        "content-type": "bio"
+      });
+
+      // Commit education
+      store.commit("setFace", {
+        face: "left",
+        name: "Education",
+        icon: "icon-graduation-cap",
+        content: data.education,
+        "content-type": "education"
+      });
+
+      // Commit work
+      store.commit("setFace", {
+        face: "right",
+        name: "Work Experience",
+        icon: "icon-briefcase",
+        content: data.work,
+        "content-type": "work"
+      });
+
+      // Commit portfolio
+      store.commit("setFace", {
+        face: "top",
+        name: "Portfolio",
+        icon: "icon-folder-open",
+        content: data.portfolio,
+        "content-type": "portfolio"
+      });
+
+      // Commit skills
+      store.commit("setFace", {
+        face: "bottom",
+        name: "Skills",
+        icon: "icon-tools",
+        content: data.work,
+        "content-type": "skills"
+      });
+
+      // Commit links
+      store.commit("setFace", {
+        face: "back",
+        name: "Links",
+        icon: "icon-link",
+        content: data.info,
+        "content-type": "links"
+      });
     }
   }
 });

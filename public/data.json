@@ -1,309 +1,308 @@
 {
-  info: {
-    name: 'Inggo Espinosa',
-    full_name: 'Ramon Iñigo M. Espinosa',
-    title: 'Senior Web Developer',
-    links: {
-      website: 'https://inggo.xyz',
-      github: 'https://github.com/inggo/',
-      email: 'inggo.espinosa@gmail.com',
-      mobile: {
-        link: 'tel:+639065558311'
-        label: '+63 906 5558311'
+  "info": {
+    "name": "Inggo Espinosa",
+    "full_name": "Ramon Iñigo M. Espinosa",
+    "title": "Senior Web Developer",
+    "links": {
+      "website": "https://inggo.xyz",
+      "github": "https://github.com/inggo/",
+      "email": "inggo.espinosa@gmail.com",
+      "mobile": {
+        "link": "tel:+639065558311",
+        "label": "+63 906 5558311"
       }
     },
-    address: {
-      line1: '110 Chico St.',
-      line2: 'Quirino 2-B',
-      city: 'Quezon City',
-      province: 'Metro Manila',
-      country: 'Philippines',
-      zip: '1102'
+    "address": {
+      "line1": "110 Chico St.",
+      "line2": "Quirino 2-B",
+      "city": "Quezon City",
+      "province": "Metro Manila",
+      "country": "Philippines",
+      "zip": "1102"
     },
-    copyright: '&copy; 2018 Inggo Espinosa · All Rights Reserved'
+    "copyright": "&copy; 2018 Inggo Espinosa · All Rights Reserved"
   },
-  work_experience: [
+  "work_experience": [
     {
-      company: 'Hampton Peak',
-      location: 'Telecommuting to Singapore',
-      titles: [
+      "company": "Hampton Peak",
+      "location": "Telecommuting to Singapore",
+      "titles": [
         {
-          name: 'Lead Developer',
-          date: 'July 2015 to July 2017',
-          responsibilities: [
-            'Led the development team of inHomePortal.com.',
-            'Architected features such as advertising and front-end user management.',
-            'Developed the base themes and modules.',
-            'Assisted in building and improving of the facilities booking system.'
+          "name": "Lead Developer",
+          "date": "July 2015 to July 2017",
+          "responsibilities": [
+            "Led the development team of inHomePortal.com.",
+            "Architected features such as advertising and front-end user management.",
+            "Developed the base themes and modules.",
+            "Assisted in building and improving of the facilities booking system."
           ]
         }
       ]
     },
     {
-      company: 'Sytian IT Solutions',
-      location: 'Quezon City, Philippines',
-      titles: [
+      "company": "Sytian IT Solutions",
+      "location": "Quezon City, Philippines",
+      "titles": [
         {
-          name: 'Chief Technologist',
-          date: 'May 2013 to June 2015',
-          responsibilities: [
-            'Developed complex websites and web applications for local and international clients.',
-            'Trained interns and development team on latest technologies and best practices.',
-            'Built, managed, and maintained internal servers and office network.',
-            'Ensures high quality of projects handled by developers.'
+          "name": "Chief Technologist",
+          "date": "May 2013 to June 2015",
+          "responsibilities": [
+            "Developed complex websites and web applications for local and international clients.",
+            "Trained interns and development team on latest technologies and best practices.",
+            "Built, managed, and maintained internal servers and office network.",
+            "Ensures high quality of projects handled by developers."
           ]
         },
         {
-          name: 'Senior Web Developer',
-          date: 'December 2012 to May 2013',
-          responsibilities: [
-            'Developed websites and web applications for local and international clients.',
-            'Transformed Photoshop layouts into working responsive websites.',
-            'Revamped the company website.'
+          "name": "Senior Web Developer",
+          "date": "December 2012 to May 2013",
+          "responsibilities": [
+            "Developed websites and web applications for local and international clients.",
+            "Transformed Photoshop layouts into working responsive websites.",
+            "Revamped the company website."
           ]
         }
       ]
     },
     {
-      company: 'Teleperformance',
-      location: 'Makati City, Philippines',
-      titles: [
+      "company": "Teleperformance",
+      "location": "Makati City, Philippines",
+      "titles": [
         {
-          name: 'Technical Support Representative',
-          date: 'January to June 2012',
-          responsibilities: [
-            'Handled customer concerns via in-game chat and email for Star Wars: The Old Republic &trade;.',
-            'Trained on proper communication protocols for email, chat, and voice'
+          "name": "Technical Support Representative",
+          "date": "January to June 2012",
+          "responsibilities": [
+            "Handled customer concerns via in-game chat and email for Star Wars: The Old Republic &trade;.",
+            "Trained on proper communication protocols for email, chat, and voice"
           ]
         }
       ]
     }
   ],
-  education: {
-    secondary: [
+  "education": {
+    "secondary": [
       {
-        institution: 'University of the Philippines Open University',
-        date: '2009 to 2011',
-        degree: 'Associate in Arts, Faculty of Education',
-        link: https://www.upou.edu.ph
+        "institution": "University of the Philippines Open University",
+        "date": "2009 to 2011",
+        "degree": "Associate in Arts, Faculty of Education",
+        "link": "https://www.upou.edu.ph"
       },
       {
-        institution: 'De La Salle &ndash; College of Saint Benilde',
-        date: '2007 to 2009',
-        degree: 'Completed Coursework towards B.S. Information Systems',
-        location: 'Manila, Philippines'
+        "institution": "De La Salle &ndash; College of Saint Benilde",
+        "date": "2007 to 2009",
+        "degree": "Completed Coursework towards B.S. Information Systems",
+        "location": "Manila, Philippines"
       },
       {
-        institution: 'University of the Philippines, Diliman',
-        date: '2004 to 2007',
-        degree: 'Completed Coursework towards B.S. Computer Science',
-        location: 'Quezon City, Philippines'
+        "institution": "University of the Philippines, Diliman",
+        "date": "2004 to 2007",
+        "degree": "Completed Coursework towards B.S. Computer Science",
+        "location": "Quezon City, Philippines"
       }
     ],
-    primary: [
+    "primary": [
       {
-        institution: 'University of the Philippines Integrated School',
-        date: '1994 to 2004',
-        degree: 'Kindergarten to Grade 10, Graduated with Honors',
-        location: 'Quezon City, Philippines'
+        "institution": "University of the Philippines Integrated School",
+        "date": "1994 to 2004",
+        "degree": "Kindergarten to Grade 10, Graduated with Honors",
+        "location": "Quezon City, Philippines"
       }
     ]
   },
-  portfolio: [
+  "portfolio": [
     {
-      category: 'Under Hampton Peak',
-      items: [
+      "category": "Under Hampton Peak",
+      "items": [
         {
-          name: 'inHomePortal.com',
-          info: 'Web Portals for Condominiums in Singapore',
-          links: [
+          "name": "inHomePortal.com",
+          "info": "Web Portals for Condominiums in Singapore",
+          "links": [
             {
-              url: 'https://sky11.com.sg',
-              label: 'Sky@eleven'
+              "url": "https://sky11.com.sg",
+              "label": "Sky@eleven"
             },
             {
-              url: 'https://homethomsonthree.com.sg',
-              label: 'Thomson Three'
+              "url": "https://homethomsonthree.com.sg",
+              "label": "Thomson Three"
             },
             {
-              url: 'https://homethetembusu.com.sg',
-              label: 'The Tembusu'
+              "url": "https://homethetembusu.com.sg",
+              "label": "The Tembusu"
             }
           ],
-          role: 'Lead Developer',
-          responsibilities: [
-            'Led a small development team taking on a full-stack role',
-            'Architected and developed product modules',
-            'Aligned deliverables with product owner and ensured they are met for all sprints',
-            'Produced development processes for the team with agile methodology in mind',
-            'Supervised junior team members on day-to-day tasks and growth',
-            'Assisted in product quality assurance',
-            'Resolved product issues'
+          "role": "Lead Developer",
+          "responsibilities": [
+            "Led a small development team taking on a full-stack role",
+            "Architected and developed product modules",
+            "Aligned deliverables with product owner and ensured they are met for all sprints",
+            "Produced development processes for the team with agile methodology in mind",
+            "Supervised junior team members on day-to-day tasks and growth",
+            "Assisted in product quality assurance",
+            "Resolved product issues"
           ],
-          features: [
-            'Fast and semi-automated creation of new tenant sites via Linux terminal',
-            'Robust faciltiies booking system for residents that can cater to complex condominium house rules',
-            'Front-end user management for condominium managers'
+          "features": [
+            "Fast and semi-automated creation of new tenant sites via Linux terminal",
+            "Robust faciltiies booking system for residents that can cater to complex condominium house rules",
+            "Front-end user management for condominium managers"
           ],
-          technologies: [
-            'WordPress Multisite',
-            'Twitter Bootstrap',
-            'Vue.js',
-            'Atlassian Jira Software',
-            'Git via Beanstalk'
+          "technologies": [
+            "WordPress Multisite",
+            "Twitter Bootstrap",
+            "Vue.js",
+            "Atlassian Jira Software",
+            "Git via Beanstalk"
           ]
         }
       ]
     },
     {
-      category: 'Under Sytian IT Solutions',
-      items: [
+      "category": "Under Sytian IT Solutions",
+      "items": [
         {
-          name: 'Sytian Store',
-          description: 'eCommerce websites with Customized Content Management System used by [harlan+holden](http://harlanholden.com) and [Soak Swimwear](http://www.soakswimwear.com)',
-          links: [
+          "name": "Sytian Store",
+          "description": "eCommerce websites with Customized Content Management System used by [harlan+holden](http://harlanholden.com) and [Soak Swimwear](http://www.soakswimwear.com)",
+          "links": [
             {
-              url: 'http://harlanholden.com',
-              label: 'harlan+holden'
+              "url": "http://harlanholden.com",
+              "label": "harlan+holden"
             },
             {
-              url: 'http://soakswimwear.com',
-              label: 'Soak Swimwear'
+              "url": "http://soakswimwear.com",
+              "label": "Soak Swimwear"
             }
-          ]
-          role: 'Lead Developer',
-          responsibilities: [
-            'Architected and developed product back-end',
-            'Developed front-end management interface for client staff',
-            'Developed most of the front-end for website visitors'
           ],
-          features: [
-            'Customized widget-based CMS',
-            'Customized eCommerce system integrated with PayPal and local payment gateways',
-            'Fully responsive front-end with customizable design'
+          "role": "Lead Developer",
+          "responsibilities": [
+            "Architected and developed product back-end",
+            "Developed front-end management interface for client staff",
+            "Developed most of the front-end for website visitors"
           ],
-          technologies: [
-            'Laravel 4.2',
-            'Twitter Bootstrap',
-            'jQuery',
-            'Git via Atlassian Bitbucket'
-          ]
-        },
-        {
-          name: 'Sytian Productions',
-          description: 'Official company website of [Sytian IT Solutions](https://www.sytian-productions.com)',
-          link: 'https://www.sytian-productions.com',
-          responsibilities: [
-            'Revamped and refactored company website',
-            'Ensured fast speed and applied best practices available'
+          "features": [
+            "Customized widget-based CMS",
+            "Customized eCommerce system integrated with PayPal and local payment gateways",
+            "Fully responsive front-end with customizable design"
           ],
-          features: [
-            'Smart and secure contact forms',
-            'Dynamic portfolio loading',
-            'Fully-responsive front-end'
-          ],
-          technologies: [
-            'PHP',
-            'HTML',
-            'YAML CSS Framework',
-            'jQuery'
+          "technologies": [
+            "Laravel 4.2",
+            "Twitter Bootstrap",
+            "jQuery",
+            "Git via Atlassian Bitbucket"
           ]
         },
         {
-          name: 'Others',
-          description: 'Completed at least 50 website projects using different technologies with features such as eCommerce, local payment gateway integrations, hotel booking solutions, scheduling systems, internal systems, and photo or product galleries'
+          "name": "Sytian Productions",
+          "description": "Official company website of [Sytian IT Solutions](https://www.sytian-productions.com)",
+          "link": "https://www.sytian-productions.com",
+          "responsibilities": [
+            "Revamped and refactored company website",
+            "Ensured fast speed and applied best practices available"
+          ],
+          "features": [
+            "Smart and secure contact forms",
+            "Dynamic portfolio loading",
+            "Fully-responsive front-end"
+          ],
+          "technologies": [
+            "PHP",
+            "HTML",
+            "YAML CSS Framework",
+            "jQuery"
+          ]
+        },
+        {
+          "name": "Others",
+          "description": "Completed at least 50 website projects using different technologies with features such as eCommerce, local payment gateway integrations, hotel booking solutions, scheduling systems, internal systems, and photo or product galleries"
         }
       ]
     },
     {
-      category: 'Personal and Freelance Works',
-      items: [
+      "category": "Personal and Freelance Works",
+      "items": [
         {
-          name: 'Custom WordPress Themes and Plugins',
-          description: 'WordPress themes and plugins developed for various clients or personal use',
-          samples: [
+          "name": "Custom WordPress Themes and Plugins",
+          "description": "WordPress themes and plugins developed for various clients or personal use",
+          "samples": [
             {
-              url: 'https://github.com/Inggo/theme-cura',
-              label: 'Customized WordPress Theme for Cura Property',
+              "url": "https://github.com/Inggo/theme-cura",
+              "label": "Customized WordPress Theme for Cura Property"
             },
             {
-              url: 'https://github.com/Inggo/cmo-wordpress-plugin',
-              label: 'Belle Vue Coaches Coach Manager Online (CMO) integration',
+              "url": "https://github.com/Inggo/cmo-wordpress-plugin",
+              "label": "Belle Vue Coaches Coach Manager Online (CMO) integration"
             },
             {
-              url: 'https://github.com/Inggo/cf1971-contests',
-              label: 'Contests for CrossFit 1971'
+              "url": "https://github.com/Inggo/cf1971-contests",
+              "label": "Contests for CrossFit 1971"
             }
           ]
         },
         {
-          name: 'Philotto',
-          description: 'Website for unofficial Philippine Charity Sweepstakes Office lottery results',
-          link: 'https://philotto.inggo.xyz',
-          features: [
-            'Automatic scraping of lottery results from official source',
-            'Filtering of games and results based on user tickets',
-            'Able to apply to other lotteries by creating applicable scrapers'
+          "name": "Philotto",
+          "description": "Website for unofficial Philippine Charity Sweepstakes Office lottery results",
+          "link": "https://philotto.inggo.xyz",
+          "features": [
+            "Automatic scraping of lottery results from official source",
+            "Filtering of games and results based on user tickets",
+            "Able to apply to other lotteries by creating applicable scrapers"
           ]
         },
         {
-          name: 'Inggo Noms...',
-          description: '[Personal weblog on Blogger](https://eat.nyo.me) chronicling food adventures in and out of the Philippines using a customized theme written in Blogger\'s markup',
-          link: 'https://eat.nyo.me'
+          "name": "Inggo Noms...",
+          "description": "[Personal weblog on Blogger](https://eat.nyo.me) chronicling food adventures in and out of the Philippines using a customized theme written in Blogger's markup",
+          "link": "https://eat.nyo.me"
         }
       ]
     }
   ],
-  skills: [
+  "skills": [
     {
-      category: 'Web Development Skills',
-      items: [
-        'Has excellent understanding of HTML, CSS, and Javascript.',
-        'Highly proficient in the PHP web programming language.',
-        'Familiar with in SQL syntax and can work with various SQL database management systems.',
-        'Adept in working with PHP frameworks, especially Laravel.',
-        'Develops and maintains websites using content management systems such as WordPress.',
-        'Familiar with responsive website design and applies concepts where possible.',
-        'Knowledgeable in using jQuery and Twitter Bootstrap.',
-        'Able to use version control systems, particularly Git and Subversion.',
-        'Capable in utilizing front-end Javascript frameworks with preference to Vue.js.',
-        'Knows his way with the Unix terminal and can build and maintain web servers using Ubuntu.',
-        'Can learn and use any front-end or back-end framework given a reasonable time frame.'
+      "category": "Web Development Skills",
+      "items": [
+        "Has excellent understanding of HTML, CSS, and Javascript.",
+        "Highly proficient in the PHP web programming language.",
+        "Familiar with in SQL syntax and can work with various SQL database management systems.",
+        "Adept in working with PHP frameworks, especially Laravel.",
+        "Develops and maintains websites using content management systems such as WordPress.",
+        "Familiar with responsive website design and applies concepts where possible.",
+        "Knowledgeable in using jQuery and Twitter Bootstrap.",
+        "Able to use version control systems, particularly Git and Subversion.",
+        "Capable in utilizing front-end Javascript frameworks with preference to Vue.js.",
+        "Knows his way with the Unix terminal and can build and maintain web servers using Ubuntu.",
+        "Can learn and use any front-end or back-end framework given a reasonable time frame."
       ]
     },
     {
-      category: 'Programming Skills',
-      items: [
-        'Proficient in Python, Java, C#, and C programming languages.',
-        'Knowledgeable in both procedural and SOLID object-oriented programming.',
-        'Able to learn new programming languages and frameworks in a reasonable amount of time.'
+      "category": "Programming Skills",
+      "items": [
+        "Proficient in Python, Java, C#, and C programming languages.",
+        "Knowledgeable in both procedural and SOLID object-oriented programming.",
+        "Able to learn new programming languages and frameworks in a reasonable amount of time."
       ]
     },
     {
-      category: 'Computer-Related Skills',
-      items: [
-        'Adept in using Microsoft Office programs; specifically Word, Excel, and PowerPoint; and their Google or LibreOffice counterparts.',
-        'Able to write custom Scripts and Add-ons for Google Sheets used in various applications.',
-        'Can build desktop computers using custom manufacturer parts.',
-        'Can touch-type; encodes with excellent speed and accuracy.'
+      "category": "Computer-Related Skills",
+      "items": [
+        "Adept in using Microsoft Office programs; specifically Word, Excel, and PowerPoint; and their Google or LibreOffice counterparts.",
+        "Able to write custom Scripts and Add-ons for Google Sheets used in various applications.",
+        "Can build desktop computers using custom manufacturer parts.",
+        "Can touch-type; encodes with excellent speed and accuracy."
       ]
     },
     {
-      category: 'Communication Skills',
-      items: [
-        'Has good grasp of both English and Filipino Languages.'
-        'Blogs as a hobby; owns and writes a [personal food blog](https://eat.nyo.me).'
+      "category": "Communication Skills",
+      "items": [
+        "Has good grasp of both English and Filipino Languages.",
+        "Blogs as a hobby; owns and writes a [personal food blog](https://eat.nyo.me)."
       ]
     },
     {
-      category: 'Achievements and Conferences',
-      items: [
-        'Attended the DevCon AngularJS Code Camp 2015 and is among the winners of the mini-hackathon.',
-        'Attended multiple DevCon summits and hackatons since 2013.',
-        'Participated in the 2005 ACM Intercollegiate Computer Programming Competition in Ateneo University.',
-        'Participated and won a number of Programming Competitions within the Computer Science department in University of the Philippines, Diliman.'
+      "category": "Achievements and Conferences",
+      "items": [
+        "Attended the DevCon AngularJS Code Camp 2015 and is among the winners of the mini-hackathon.",
+        "Attended multiple DevCon summits and hackatons since 2013.",
+        "Participated in the 2005 ACM Intercollegiate Computer Programming Competition in Ateneo University.",
+        "Participated and won a number of Programming Competitions within the Computer Science department in University of the Philippines, Diliman."
       ]
-    },
-    
+    }
   ]
 }
