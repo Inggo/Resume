@@ -9,7 +9,7 @@
           </span>
         </a>
         <transition name="fade">
-          <div ref="contents" v-if="!modalActive">
+          <div ref="contents" v-show="!modalActive">
             <content-bio v-if="faceID == 'bio'" :content="content"></content-bio>
             <content-work v-if="faceID == 'work'" :content="content"></content-work>
             <content-educ v-if="faceID == 'education'" :content="content"></content-educ>

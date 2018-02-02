@@ -1,15 +1,15 @@
 <template>
   <div class="app-container">
-    <cube-controls :is-mobile="true" v-if="loaded"></cube-controls>
+    <cube-controls :is-mobile="true" v-show="loaded"></cube-controls>
     <div class="main-container">
       <transition name="start" @after-enter="loadingComplete">
-        <div :class="cubeClass" v-if="loading || loaded">
+        <div :class="cubeClass" v-show="loading || loaded">
           <cube-face v-for="face in faces" :face="face" :key="face.id"></cube-face>
         </div>
       </transition>
     </div>
     <transition name="fade-zoom">
-      <modal v-if="modalContents" :contents="modalContents"></modal>
+      <modal v-show="modalContents" :contents="modalContents"></modal>
     </transition>
   </div>
 </template>
