@@ -1,6 +1,7 @@
 @import '~reset-css/reset';
 @import url('https://fonts.googleapis.com/css?family=Ovo');
 @import url('https://fonts.googleapis.com/css?family=Muli:400,700');
+@import '../fontello/css/animation';
 @import '../fontello/css/fontello';
 @import 'colors';
 @import 'mixins';
@@ -123,6 +124,10 @@ li {
   }
 }
 
+footer {
+  text-align: center;
+}
+
 .app-container {
   display: flex;
   position: fixed;
@@ -189,6 +194,10 @@ li {
     @include face(left, rotateY(-90deg));
     @include face(top, rotateX(90deg));
     @include face(bottom, rotateX(-90deg));
+
+    &.is-visible {
+      z-index: 10;
+    }
   }
 }
 
@@ -235,6 +244,7 @@ li {
     align-items: center;
     justify-content: center;
     top: .25rem;
+    right: .75rem;
     left: auto;
 
     &.is-mobile {
@@ -345,17 +355,19 @@ li {
 .modal-contents {
   background: $bg;
   padding: 1.5rem;
-  min-height: 100%;
+  min-height: calc(100% - 3rem);
 }
 
 .show-zoom {
   top: .25rem;
   right: 1rem;
+  cursor: zoom-in;
 }
 
 .hide-zoom {
   bottom: .25rem;
   right: 1.75rem;
+  cursor: zoom-out;
 }
 
 .hide-zoom,
@@ -414,8 +426,6 @@ li {
 }
 
 .educ-info {
-  font-size: .9rem;
-  line-height: 1.35rem;
   display: flex;
   justify-content: space-between;
 }
@@ -444,4 +454,11 @@ li {
 .fade-zoom-enter, .fade-zoom-leave-to {
   opacity: 0;
   transform: scale(.5);
+}
+
+.info {
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  font-weight: bold;
 }

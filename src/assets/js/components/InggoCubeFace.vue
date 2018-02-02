@@ -1,6 +1,6 @@
 <template>
   <section :class="faceClass" :id="faceID">
-    <cube-controls :current-face="faceClass"></cube-controls>
+    <cube-controls :current-face="face.faceClass"></cube-controls>
     <div class="face-content-container" ref="container">
       <div class="face-contents">
         <a v-if="showZoom" class="show-zoom" @click="toggleZoom">
@@ -13,6 +13,9 @@
             <content-bio v-if="faceID == 'bio'" :content="content"></content-bio>
             <content-work v-if="faceID == 'work'" :content="content"></content-work>
             <content-educ v-if="faceID == 'education'" :content="content"></content-educ>
+            <content-folio v-if="faceID == 'portfolio'" :content="content"></content-folio>
+            <content-skills v-if="faceID == 'skills'" :content="content"></content-skills>
+            <content-links v-if="faceID == 'links'" :content="content"></content-links>
           </div>
         </transition>
       </div>
@@ -38,19 +41,23 @@ export default {
   },
   computed: {
     faceClass () {
-      return this.face.faceClass;
+      var classes = {
+        'is-visible': this.isVisible
+      };
+      classes[this.face.faceClass] = true;
+      return classes;
     },
     faceID () {
-      return this.$store.state.faceContents[this.faceClass]['content-type'];
+      return this.$store.state.faceContents[this.face.faceClass]['content-type'];
     },
     isVisible () {
-      return this.faceClass == this.$store.state.visibleFace;
+      return this.face.faceClass == this.$store.state.visibleFace;
     },
     isMobile () {
       return window.innerWidth < 768;
     },
     content () {
-      return this.$store.state.faceContents[this.faceClass].content;
+      return this.$store.state.faceContents[this.face.faceClass].content;
     },
     modalActive () {
       return this.$store.state.modalContents;
