@@ -179,12 +179,14 @@ a {
 
   transition: transform 1s;
 
-  @include show-face(front, rotateY(0));
-  @include show-face(back, rotateX(-180deg));
-  @include show-face(right, rotateY(-90deg));
-  @include show-face(left, rotateY(90deg));
-  @include show-face(top, rotateX(-90deg));
-  @include show-face(bottom, rotateX(90deg));
+  @include cube-transform(rot(0, 0, 0));
+
+  @include show-face(front, 0, 0, 0);
+  @include show-face(back, -180, 0, 0);
+  @include show-face(right, 0, -90, 0);
+  @include show-face(left, 0, 90, 0);
+  @include show-face(top, -90, 0, 0);
+  @include show-face(bottom, 90, 0, 0);
 
   section {
     margin: 0;
@@ -346,4 +348,12 @@ li {
   @media screen and #{$gt-mobile} {
     line-height: 1.75rem;
   }
+}
+
+.start-enter-active, .start-leave-active {
+  transition: transform 2.5s;
+}
+
+.start-enter, .start-leave-to {
+  transform: scale(0) translateZ(-10000vh) rotateX(45deg) rotateY(45deg) rotateZ(45deg);
 }

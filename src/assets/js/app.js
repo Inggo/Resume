@@ -61,6 +61,11 @@ Vue.component("cube", require("./components/InggoCube.vue"));
 const app = new Vue({
   el: "#app",
   store,
+  data () {
+    return {
+      loaded: false
+    };
+  },
   computed: {
     currentFace () {
       return store.state.visibleFace;
@@ -102,7 +107,7 @@ const app = new Vue({
         face: "right",
         name: "Work Experience",
         icon: "icon-briefcase",
-        content: data.work_experience,
+        content: data.work,
         "content-type": "work"
       });
 
@@ -132,6 +137,8 @@ const app = new Vue({
         content: data.info,
         "content-type": "links"
       });
+
+      this.loaded = true;
     }
   }
 });

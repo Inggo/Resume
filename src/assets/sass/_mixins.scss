@@ -1,10 +1,20 @@
-@mixin show-face($face, $rotate) {
-  &.show-#{$face} {
-    transform: translateZ(-$hw + vw) $rotate;
+@mixin cube-transform($rotate) {
+  transform: scale(1) translateZ(-$hw + vw) $rotate;
 
-    @media screen and #{$gt-mobile} {
-      transform: translateZ(-$hw + vh) $rotate;
-    }
+  @media screen and #{$gt-mobile} {
+    transform: scale(1) translateZ(-$hw + vh) $rotate;
+  }
+}
+
+@function rot($rx, $ry, $rz) {
+  @return rotateX($rx + deg) rotateY($ry + deg) rotateZ($rz + deg);
+}
+
+@mixin show-face($face, $rx, $ry, $rz) {
+  $rotate: rot($rx, $ry, $rz);
+
+  &.show-#{$face} {
+    @include cube-transform($rotate);
   }
 }
 
