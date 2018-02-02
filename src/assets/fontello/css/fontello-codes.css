@@ -6,6 +6,8 @@
 .icon-folder:before { content: '\e804'; } /* '' */
 .icon-briefcase:before { content: '\e805'; } /* '' */
 .icon-tools:before { content: '\e806'; } /* '' */
+.icon-zoom-in:before { content: '\e807'; } /* '' */
+.icon-zoom-out:before { content: '\e808'; } /* '' */
 .icon-spin:before { content: '\e834'; } /* '' */
 .icon-github:before { content: '\f09b'; } /* '' */
 .icon-mobile:before { content: '\f10b'; } /* '' */

@@ -1,17 +1,19 @@
 <template>
-  <div :class="{
-    'cube-controls': true,
-    'is-mobile': isMobile
-  }">
-    <a v-for="face in faces" :class="controlClass(face.face)" @click="setVisibleFace(face.face)" v-if="face.name && (isMobile || face.face != currentFace)" :title="face.name">
-      <span class="icon" v-if="face.icon">
-        <i :class="face.icon"></i>
-      </span>
-      <span class="label" v-if="!isMobile">
-        {{ face.name }}
-      </span>
-    </a>
-  </div>
+  <transition name="fade">
+    <div :class="{
+      'cube-controls': true,
+      'is-mobile': isMobile
+    }" v-if="isActive">
+      <a v-for="face in faces" :class="{ 'is-active': (isMobile || face.face == currentFace) && face.face == visibleFace }" @click="setVisibleFace(face.face)" v-if="face.name" :title="face.name">
+        <span class="icon" v-if="face.icon">
+          <i :class="face.icon"></i>
+        </span>
+        <span class="label" v-if="!isMobile">
+          {{ face.name }}
+        </span>
+      </a>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -28,16 +30,19 @@
       }
     },
     computed: {
+      isActive () {
+        return this.isMobile || this.visibleFace == this.currentFace;
+      },
       faces () {
         return this.$store.state.faceContents;
+      },
+      visibleFace () {
+        return this.$store.state.visibleFace;
       }
     },
     methods: {
       setVisibleFace (face) {
         this.$store.commit('setVisibleFace', face);
-      },
-      controlClass (face) {
-        return 'to-' + face;
       }
     }
   }

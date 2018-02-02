@@ -23,8 +23,6 @@ html, body {
   @media screen and #{$gt-mobile} {
     font-size: 16px;
   }
-
-  user-select: none;
 }
 
 
@@ -89,34 +87,6 @@ h3 {
   }
 }
 
-.work-titles {
-  padding-top: .5rem;
-}
-
-.work-contents > li {
-  padding-bottom: .5rem;
-  margin-bottom: .5rem;
-  border-bottom: 1px solid $primary-lightest;
-
-  &:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-  }
-}
-
-.work-responsibilities {
-  padding-bottom: .5rem;
-  > li {
-    padding-left: 1.5rem;
-
-    &::before {
-      content: "●";
-      position: absolute;
-      left: .25rem;
-    }
-  }
-}
-
 h4 {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -141,6 +111,15 @@ a {
 
   &:hover {
     opacity: 1;
+  }
+}
+
+li {
+  line-height: 1.5rem;
+  position: relative;
+
+  @media screen and #{$gt-mobile} {
+    line-height: 1.75rem;
   }
 }
 
@@ -289,6 +268,15 @@ a {
       transition: opacity .4s;
     }
 
+    &.is-active {
+      opacity: .8;
+      color: $primary-darkest;
+      font-weight: bold;
+      &::before {
+        opacity: .33;
+      }
+    }
+
     &:hover {
       &::before {
         opacity: .33;
@@ -325,7 +313,7 @@ a {
   height: 100%;
   padding: 0 1rem;
   @media screen and #{$gt-mobile} {
-    padding-right: 7rem;
+    padding-right: 8rem;
   }
   box-sizing: border-box;
   background: $bg;
@@ -339,15 +327,97 @@ a {
   min-height: 0;
   position: relative;
   padding: 1rem 0;
+  width: 100%;
 }
 
-li {
-  line-height: 1.5rem;
-  position: relative;
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background: $bg-base;
+  overflow: hidden;
+  overflow-y: auto;
+}
 
-  @media screen and #{$gt-mobile} {
-    line-height: 1.75rem;
+.modal-contents {
+  background: $bg;
+  padding: 1.5rem;
+  min-height: 100%;
+}
+
+.show-zoom {
+  top: .25rem;
+  right: 1rem;
+}
+
+.hide-zoom {
+  bottom: .25rem;
+  right: 1.75rem;
+}
+
+.hide-zoom,
+.show-zoom {
+  opacity: 1;
+  position: fixed;
+  border: 1px solid $tertiary-darkest;
+  color: $tertiary-darkest;
+  background: $bg-base;
+  border-radius: .5rem;
+  z-index: 11;
+
+  .icon {
+    background: $bg;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
   }
+}
+
+.work-titles {
+  padding-top: .5rem;
+}
+
+.educ-contents > li {
+  padding: 1rem 0;
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.educ-institutes > li,
+.work-contents > li {
+  padding-bottom: .5rem;
+  margin-bottom: .5rem;
+  border-bottom: 1px solid $primary-lightest;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+}
+
+.work-responsibilities {
+  padding-bottom: .5rem;
+  > li {
+    padding-left: 1.5rem;
+
+    &::before {
+      content: "●";
+      position: absolute;
+      left: .25rem;
+    }
+  }
+}
+
+.educ-info {
+  font-size: .9rem;
+  line-height: 1.35rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .start-enter-active, .start-leave-active {
@@ -356,4 +426,22 @@ li {
 
 .start-enter, .start-leave-to {
   transform: scale(0) translateZ(-10000vh) rotateX(45deg) rotateY(45deg) rotateZ(45deg);
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all .4s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+  transform: scale(1.2);
+}
+
+.fade-zoom-enter-active, .fade-zoom-leave-active {
+  transition: all .4s;
+}
+
+.fade-zoom-enter, .fade-zoom-leave-to {
+  opacity: 0;
+  transform: scale(.5);
 }

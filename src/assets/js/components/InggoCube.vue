@@ -1,9 +1,15 @@
 <template>
-  <div class="main-container">
-    <transition name="start" @after-enter="loadingComplete">
-      <div :class="cubeClass" v-if="loading || loaded">
-        <cube-face v-for="face in faces" :face="face" :key="face.id"></cube-face>
-      </div>
+  <div class="app-container">
+    <cube-controls :is-mobile="true" v-if="loaded"></cube-controls>
+    <div class="main-container">
+      <transition name="start" @after-enter="loadingComplete">
+        <div :class="cubeClass" v-if="loading || loaded">
+          <cube-face v-for="face in faces" :face="face" :key="face.id"></cube-face>
+        </div>
+      </transition>
+    </div>
+    <transition name="fade-zoom">
+      <modal v-if="modalContents" :contents="modalContents"></modal>
     </transition>
   </div>
 </template>
@@ -38,6 +44,9 @@
           'show-top': this.loaded && this.visibleFace == 'top',
           'show-bottom': this.loaded && this.visibleFace == 'bottom'
         };
+      },
+      modalContents () {
+        return this.$store.state.modalContents;
       },
       visibleFace () {
         return this.$store.state.visibleFace;

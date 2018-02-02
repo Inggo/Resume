@@ -4,6 +4,7 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
+    modalContents: null,
     visibleFace: 'front',
     faceContents: {
       front: {
@@ -50,13 +51,23 @@ const store = new Vuex.Store({
     },
     setVisibleFace (state, face) {
       state.visibleFace = face;
+    },
+    setModal (state, payload) {
+      state.modalContents = payload;
+    },
+    closeModal (state) {
+      state.modalContents = null;
     }
   }
 });
 
 Vue.component("cube-controls", require("./components/InggoCubeControls.vue"));
+Vue.component("content-bio", require("./components/InggoContentBio.vue"));
+Vue.component("content-work", require("./components/InggoContentWork.vue"));
+Vue.component("content-educ", require("./components/InggoContentEduc.vue"));
 Vue.component("cube-face", require("./components/InggoCubeFace.vue"));
 Vue.component("cube", require("./components/InggoCube.vue"));
+Vue.component("modal", require("./components/InggoModal.vue"));
 
 const app = new Vue({
   el: "#app",
@@ -107,7 +118,7 @@ const app = new Vue({
         face: "right",
         name: "Work Experience",
         icon: "icon-briefcase",
-        content: data.work,
+        content: data.work_experience,
         "content-type": "work"
       });
 
