@@ -9,14 +9,7 @@
           </span>
         </a>
         <transition name="fade">
-          <div ref="contents" v-show="!modalActive">
-            <content-bio v-if="faceID == 'bio'" :content="content"></content-bio>
-            <content-work v-if="faceID == 'work'" :content="content"></content-work>
-            <content-educ v-if="faceID == 'education'" :content="content"></content-educ>
-            <content-folio v-if="faceID == 'portfolio'" :content="content"></content-folio>
-            <content-skills v-if="faceID == 'skills'" :content="content"></content-skills>
-            <content-links v-if="faceID == 'links'" :content="content"></content-links>
-          </div>
+          <component ref="contents" v-show="!modalActive" :is="currentView" :content="content"></component>
         </transition>
       </div>
     </div>
@@ -40,6 +33,9 @@ export default {
     }
   },
   computed: {
+    currentView () {
+      return 'content-' + this.faceID;
+    },
     faceClass () {
       var classes = {
         'is-visible': this.isVisible
@@ -66,7 +62,7 @@ export default {
   methods: {
     adjustForContentHeight () {
       var containerHeight = this.$el.offsetHeight;
-      var contentHeight = this.$refs.contents.offsetHeight;
+      var contentHeight = this.$refs.contents.$el.offsetHeight;
       this.showZoom = contentHeight > containerHeight;
     },
     resetScroll (step) {
@@ -78,7 +74,7 @@ export default {
       }, 15);
     },
     toggleZoom () {
-      this.$store.commit('setModal', this.$refs.contents.innerHTML);
+      this.$store.commit('setModal', this.$refs.contents.$el.innerHTML);
     }
   },
   watch: {
