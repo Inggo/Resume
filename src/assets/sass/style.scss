@@ -15,17 +15,94 @@ $sserif: Muli, sans-serif;
 $cw: 90;
 $hw: $cw/2;
 
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  line-height: 1.5em;
+}
+
 html, body {
   font-family: $sserif;
   font-size: 12px;
-  line-height: 1.5rem;
   color: $primary;
 
   @media screen and #{$gt-mobile} {
     font-size: 16px;
   }
 }
-
 
 h1,
 h2,
@@ -36,71 +113,49 @@ h6 {
   font-family: $serif;
   font-weight: bold;
   color: $primary-darker;
+  line-height: 1.25em;
 }
 
 h1 {
   font-size: 1.75rem;
-  line-height: 2rem;
 
   @media screen and #{$gt-mobile} {
     font-size: 3.5rem;
-    line-height: 4rem;
+
+    + .subtitle {
+      font-size: 2.5rem;
+    }
   }
 
   + .subtitle {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-
-    @media screen and #{$gt-mobile} {
-      font-size: 2.5rem;
-      line-height: 3.5rem;
-    }
+    font-size: 1.5rem;
   }
 }
 
 h2 {
   font-size: 1.5rem;
-  line-height: 1.75rem;
   border-bottom: 1px solid $primary-darker;
   padding-bottom: .5rem;
-  margin-bottom: .5rem;
   position: relative;
 
   @media screen and #{$gt-mobile} {
     font-size: 1.75rem;
-    line-height: 2rem;
   }
 }
 
 h3 {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 2rem;
 
   @media screen and #{$gt-mobile} {
     font-size: 2rem;
-    line-height: 2.5rem;
-
-    + .subtitle {
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
   }
 }
 
 h4 {
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 1.3rem;
 
   @media screen and #{$gt-mobile} {
-    font-size: 1.5rem;
-    line-height: 2rem;
-
-    + .subtitle {
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
+    font-size: 1.4rem;
   }
 }
 
@@ -116,12 +171,7 @@ a {
 }
 
 li {
-  line-height: 1.5rem;
   position: relative;
-
-  @media screen and #{$gt-mobile} {
-    line-height: 1.75rem;
-  }
 }
 
 footer {
@@ -315,6 +365,9 @@ footer {
 }
 
 .face-content-container {
+  &.is-overflowed {
+    justify-content: flex-start;
+  }
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -323,14 +376,13 @@ footer {
   height: 100%;
   padding: 0 1rem;
   @media screen and #{$gt-mobile} {
-    padding-right: 8rem;
+    padding-right: 7rem;
   }
   box-sizing: border-box;
   background: $bg;
   flex: 1;
   display: flex;
   overflow: hidden;
-  overflow-y: auto;
 }
 
 .face-contents {
@@ -347,26 +399,39 @@ footer {
   right: 0;
   bottom: 0;
   z-index: 999;
-  background: $bg-base;
   overflow: hidden;
   overflow-y: auto;
+  background: $bg-base;
+}
+
+.modal-backdrop {
+  background: $bg;
+  min-height: 100%;
 }
 
 .modal-contents {
-  background: $bg;
+  max-width: 75rem;
+  margin: 0 auto;
   padding: 1.5rem 1.5rem 3rem;
-  min-height: calc(100% - 4.5rem);
+
+  li {
+    display: block !important;
+  }
+
+  .dynamic-controls {
+    display: none;
+  }
 }
 
 .show-zoom {
-  top: .25rem;
-  right: .25rem;
+  top: .333rem;
+  right: .333rem;
   cursor: zoom-in;
 }
 
 .hide-zoom {
-  bottom: .5rem;
-  right: .5rem;
+  bottom: 1rem;
+  right: 2rem;
   cursor: zoom-out;
 }
 
@@ -389,8 +454,60 @@ footer {
   }
 }
 
-.work-titles {
+.line {
+  padding-left: calc(7.75rem + 1px);
+  position: relative;
+
+  > :not(.dynamic-controls) {
+    padding-top: .1rem;
+    padding-bottom: .1rem;
+  }
+
+  h3 {
+    padding-top: .5rem;
+  }
+}
+
+.line-label {
+  font-size: .8rem;
+  text-align: right;
+  width: 7rem;
+  padding-right: .25rem;
+  position: absolute;
+  left: .25rem;
+  top: 0;
+  border-right: 1px solid $tertiary-lightest;
+  color: $tertiary;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: .9rem;
+}
+
+h3 + .line-label {
   padding-top: .5rem;
+  line-height: 30px;
+
+  @media screen and #{$gt-mobile} {
+    line-height: 40px;
+  }
+}
+
+h4 + .line-label {
+  line-height: 22px;
+
+  @media screen and #{$gt-mobile} {
+    line-height: 30px;
+  }
+}
+
+.subtitle + .line-label {
+  line-height: 16px;
+
+  @media screen and #{$gt-mobile} {
+    line-height: 21px;
+  }
 }
 
 .educ-contents > li {
@@ -400,10 +517,40 @@ footer {
   }
 }
 
+.work-titles > li {
+  > .line:last-of-type > .line-label {
+    padding-bottom: .5rem;
+    border-bottom: 1px solid $tertiary-lightest;
+  }
+
+  &:last-of-type .work-responsibilities {
+    border-bottom: none;
+  }
+}
+
+.is-dynamic {
+  .work-contents,
+  .work-titles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-basis: 100%;
+    overflow: hidden;
+    > li {
+      flex: 0 0 auto;
+      max-width: 100%;
+      border-bottom: none;
+    }
+  }
+}
+
+.is-dynamic .work-responsibilities {
+  border-bottom: none;
+}
+
 .educ-institutes > li,
 .work-contents > li {
   padding-bottom: .5rem;
-  margin-bottom: .5rem;
   border-bottom: 1px solid $primary-lightest;
 
   &:last-child {
@@ -413,7 +560,11 @@ footer {
 }
 
 .work-responsibilities {
-  padding-bottom: .5rem;
+  margin-left: -.25rem;
+  margin-bottom: -1px;
+  padding-top: .25rem;
+  border-bottom: 1px solid $tertiary-lightest;
+
   > li {
     padding-left: 1.5rem;
 
@@ -438,6 +589,49 @@ footer {
   transform: scale(0) translateZ(-10000vh) rotateX(45deg) rotateY(45deg) rotateZ(45deg);
 }
 
+.info {
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.dynamic-controls {
+  padding: 0;
+  a {
+    position: absolute;
+    z-index: 111;
+
+    top: 50%;
+    margin-top: -1rem;
+    line-height: 2rem;
+    height: 2rem;
+    width: 2rem;
+    text-align: center;
+    cursor: pointer;
+
+    &:first-child {
+      left: 0;
+    }
+
+    &:last-child {
+      right: 0;
+    }
+  }
+}
+
+.list-enter-active, .list-leave-active {
+  transition: all .4s;
+
+  .list-enter-active, .list-leave-active {
+    transition: none;
+  }
+}
+
+.list-enter, .list-leave-to {
+  opacity: 0;
+  transform: translateX(-2rem);
+}
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity .4s;
@@ -469,11 +663,4 @@ footer {
   @media screen and #{$gt-mobile} {
     transform: scale(.5);
   }
-}
-
-.info {
-  font-size: 2rem;
-  line-height: 3rem;
-  text-align: center;
-  font-weight: bold;
 }

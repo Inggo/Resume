@@ -89,6 +89,18 @@
       "css": "zoom-out",
       "code": 59400,
       "src": "fontawesome"
+    },
+    {
+      "uid": "d870630ff8f81e6de3958ecaeac532f2",
+      "css": "left",
+      "code": 59401,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "399ef63b1e23ab1b761dfbb5591fa4da",
+      "css": "right",
+      "code": 59402,
+      "src": "fontawesome"
     }
   ]
 }

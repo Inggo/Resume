@@ -1,7 +1,10 @@
 <template>
   <section :class="faceClass" :id="faceID">
     <cube-controls :current-face="face.faceClass"></cube-controls>
-    <div class="face-content-container" ref="container">
+    <div :class="{
+      'face-content-container': true,
+      'is-overflowed': showZoom
+    }" ref="container">
       <div class="face-contents">
         <a v-if="showZoom" class="show-zoom" @click="toggleZoom">
           <span class="icon">
@@ -9,7 +12,13 @@
           </span>
         </a>
         <transition name="fade">
-          <component ref="contents" v-show="!modalActive" :is="currentView" :content="content"></component>
+          <component
+            ref="contents"
+            v-show="!modalActive"
+            :is="currentView"
+            :content="content"
+            :overflow="showZoom"
+          ></component>
         </transition>
       </div>
     </div>
@@ -61,6 +70,7 @@ export default {
   },
   methods: {
     adjustForContentHeight () {
+      this.showZoom = false;
       var containerHeight = this.$el.offsetHeight;
       var contentHeight = this.$refs.contents.$el.offsetHeight;
       this.showZoom = contentHeight > containerHeight;

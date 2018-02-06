@@ -8,6 +8,8 @@
 .icon-tools:before { content: '\e806'; } /* '' */
 .icon-zoom-in:before { content: '\e807'; } /* '' */
 .icon-zoom-out:before { content: '\e808'; } /* '' */
+.icon-left:before { content: '\e809'; } /* '' */
+.icon-right:before { content: '\e80a'; } /* '' */
 .icon-spin:before { content: '\e834'; } /* '' */
 .icon-github:before { content: '\f09b'; } /* '' */
 .icon-mobile:before { content: '\f10b'; } /* '' */
