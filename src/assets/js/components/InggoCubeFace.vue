@@ -30,15 +30,11 @@ export default {
   name: 'InggoCubeFace',
   props: {
     face: {
+      timeout: null,
       type: Object,
       default: {
         faceClass: 'front'
       }
-    }
-  },
-  data () {
-    return {
-      showZoom: false
     }
   },
   computed: {
@@ -66,37 +62,14 @@ export default {
     },
     modalActive () {
       return this.$store.state.modalContents;
+    },
+    showZoom () {
+      return this.$store.state.faceContents[this.face.faceClass].showZoom;
     }
   },
   methods: {
-    adjustForContentHeight () {
-      this.showZoom = false;
-      var containerHeight = this.$el.offsetHeight;
-      var contentHeight = this.$refs.contents.$el.offsetHeight;
-      this.showZoom = contentHeight > containerHeight;
-    },
-    resetScroll (step) {
-      setTimeout(() => {
-        this.$refs.container.scrollTop -= step;
-        if (this.$refs.container.scrollTop > 0) {
-          this.resetScroll(step);
-        }
-      }, 15);
-    },
     toggleZoom () {
       this.$store.commit('setModal', this.$refs.contents.$el.innerHTML);
-    }
-  },
-  watch: {
-    isVisible: function (isVisibleNow, wasVisible) {
-      if (isVisibleNow && !wasVisible) {
-        return this.adjustForContentHeight();
-      }
-
-      if (wasVisible && !isVisibleNow) {
-        var step = this.$refs.container.scrollTop / (1000 / 15);
-        return this.resetScroll(step);
-      }
     }
   }
 }

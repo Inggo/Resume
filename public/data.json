@@ -24,6 +24,22 @@
   },
   "work_experience": [
     {
+      "company": "Philippine School of Business Administration",
+      "location": "Manila, Philippines",
+      "titles": [
+        {
+          "name": "E-Learning Portal Coordinator",
+          "date": "January 2018 to Present",
+          "responsibilities": [
+            "Administers, Handles, and Improves E-Learning Portal for the Institution.",
+            "Acts as managing editors for publications for the Institution.",
+            "Assists in the Information and Communication Technology Department of the Institution.",
+            "Coordinates with fellows of the Disaster Risk Management Unit."
+          ]
+        }
+      ]
+    },
+    {
       "company": "Hampton Peak",
       "location": "Telecommuting to Singapore",
       "titles": [

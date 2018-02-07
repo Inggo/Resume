@@ -11,43 +11,49 @@ const store = new Vuex.Store({
         face: 'front',
         name: null,
         icon: null,
-        content: null
+        content: null,
+        showZoom: false
       },
       right: {
         face: 'right',
         name: null,
         icon: null,
-        content: null
+        content: null,
+        showZoom: false
       },
       left: {
         face: 'left',
         name: null,
         icon: null,
-        content: null
+        content: null,
+        showZoom: false
       },
       top: {
         face: 'top',
         name: '',
         icon: null,
-        content: null
+        content: null,
+        showZoom: false
       },
       bottom: {
         face: 'bottom',
         name: null,
         icon: null,
-        content: null
+        content: null,
+        showZoom: false
       },
       back: {
         face: 'back',
         name: null,
         icon: null,
-        content: null
+        content: null,
+        showZoom: false
       }
     }
   },
   mutations: {
     setFace (state, payload) {
-      state.faceContents[payload.face] = payload;
+      Object.assign(state.faceContents[payload.face], payload);
     },
     setVisibleFace (state, face) {
       state.visibleFace = face;
@@ -114,7 +120,8 @@ const app = new Vue({
         name: "Education",
         icon: "icon-education",
         content: data.education,
-        "content-type": "education"
+        "content-type": "education",
+        showZoom: true
       });
 
       // Commit work
@@ -123,7 +130,8 @@ const app = new Vue({
         name: "Work Experience",
         icon: "icon-briefcase",
         content: data.work_experience,
-        "content-type": "work"
+        "content-type": "work",
+        showZoom: true
       });
 
       // Commit portfolio
@@ -132,7 +140,8 @@ const app = new Vue({
         name: "Portfolio",
         icon: "icon-folder",
         content: data.portfolio,
-        "content-type": "portfolio"
+        "content-type": "portfolio",
+        showZoom: true
       });
 
       // Commit skills
@@ -141,7 +150,8 @@ const app = new Vue({
         name: "Skills",
         icon: "icon-tools",
         content: data.skills,
-        "content-type": "skills"
+        "content-type": "skills",
+        showZoom: true
       });
 
       // Commit links
@@ -150,7 +160,8 @@ const app = new Vue({
         name: "Links",
         icon: "icon-link",
         content: data.info,
-        "content-type": "links"
+        "content-type": "links",
+        showZoom: true
       });
 
       this.loaded = true;
