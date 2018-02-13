@@ -115,7 +115,9 @@ h6 {
   font-family: $serif;
   font-weight: bold;
   color: $primary-darker;
-  line-height: 1.25em;
+  padding-top: .25em;
+  line-height: .9em;
+  padding-bottom: .25em;
 }
 
 h1 {
@@ -367,12 +369,6 @@ footer {
 }
 
 .face-content-container {
-  &.is-overflowed {
-    justify-content: flex-start;
-    .face-contents {
-      min-height: 100%;
-    }
-  }
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -422,11 +418,40 @@ footer {
   li {
     display: block !important;
     transform: none !important;
+    left: auto !important;
     opacity: 1 !important;
+
+    @media screen and #{$gt-mobile} {
+      .line {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
   }
 
   .dynamic-controls {
     display: none;
+  }
+  .work-titles > li {
+    padding-left: .5rem;
+
+    @media screen and #{$gt-mobile} {
+      padding-left: 0;
+      > :first-child {
+        padding-top: .25rem;
+      }
+
+      > :last-child {
+        padding-bottom: .25rem;
+      }
+
+      + li {
+        margin-top: -.25rem;
+        > :first-child {
+          padding-top: .5rem;
+        }
+      }
+    }
   }
 }
 
@@ -470,13 +495,15 @@ footer {
 
   position: relative;
 
-  > :not(.dynamic-controls) {
-    padding-top: .1rem;
-    padding-bottom: .1rem;
+  @media screen and #{$gt-mobile} {
+    &:not(.dynamic-controls) {
+      padding-top: .1rem;
+      padding-bottom: .1rem;
+    }
   }
 
   h3 {
-    padding-top: .5rem;
+    padding-top: .4rem;
   }
 }
 
@@ -485,7 +512,7 @@ footer {
 
   @media screen and #{$gt-mobile} {
     display: block;
-    font-size: .8rem;
+    font-size: .75rem;
     text-align: right;
     width: 6.75rem;
     padding-right: .25rem;
@@ -503,27 +530,20 @@ footer {
 }
 
 h3 + .line-label {
-  padding-top: .5rem;
-  line-height: 30px;
-
   @media screen and #{$gt-mobile} {
-    line-height: 40px;
+    line-height: 34px;
   }
 }
 
 h4 + .line-label {
-  line-height: 22px;
-
   @media screen and #{$gt-mobile} {
-    line-height: 30px;
+    line-height: 25px;
   }
 }
 
 .subtitle + .line-label {
-  line-height: 16px;
-
   @media screen and #{$gt-mobile} {
-    line-height: 21px;
+    line-height: 24px;
   }
 }
 
@@ -543,7 +563,10 @@ h4 + .line-label {
 
     > .line-label {
       padding-bottom: .5rem;
+      padding-top: .1rem;
       border-bottom: 1px solid $tertiary-lightest;
+      border-right: 1px solid $tertiary-lightest;
+      line-height: .9rem;
     }
   }
 
@@ -556,14 +579,6 @@ h4 + .line-label {
   .work-contents {
     width: calc(100% - 3rem);
     margin: 0 auto;
-
-    @media screen and #{$only-mobile} {
-      > li > .line {
-        &:nth-child(-n + 2) {
-          margin: 0 -1.5rem;
-        }
-      }
-    }
   }
 
   .work-titles {
@@ -573,13 +588,15 @@ h4 + .line-label {
   .work-contents,
   .work-titles {
     position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
     
     > li {
+      flex: 0 0 auto;
       border-bottom: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      max-width: 100%;  
     }
   }
 }
@@ -590,7 +607,7 @@ h4 + .line-label {
 
 .educ-institutes > li,
 .work-contents > li {
-  padding-bottom: .5rem;
+  padding: 0 0 .4rem;
   border-bottom: 1px solid $primary-lightest;
 
   &:last-child {
@@ -602,7 +619,6 @@ h4 + .line-label {
 .work-responsibilities {
   margin-left: -.25rem;
   margin-bottom: -1px;
-  padding-top: .25rem;
   border-bottom: 1px solid $tertiary-lightest;
 
   > li {

@@ -1,16 +1,8 @@
 <template>
   <div v-if="content" :class="{ 'is-dynamic': overflow }">
     <h2>Work Experience</h2>
-    <transition-group
-      tag="ul" 
-      :css="false"
-      @before-enter="beforeEnter"
-      @enter="enter"
-      @leave="leave"
-      @after-leave="afterLeave"
-      class="work-contents"
-    >
-      <li v-for="(item, index) in content" v-show="!overflow || index == companyIndex" :key="index">
+    <ul class="work-contents">
+      <li v-for="(item, i) in content" :key="i" ref="contents">
         <div class="line">
           <h3>{{ item.company }}</h3>
           <span class="line-label">Company</span>
@@ -19,15 +11,8 @@
           <p class="subtitle">{{ item.location }}</p>
           <span class="line-label">Location</span>
         </div>
-        <transition-group
-          tag="ul" 
-          :css="false"
-          @before-enter="beforeEnter"
-          @enter="enter"
-          @leave="leave"
-          class="work-titles"
-        >
-          <li v-for="(title, index) in item.titles" v-show="!overflow || index == titleIndex" :key="index">
+        <ul class="work-titles">
+          <li v-for="(title, j) in item.titles" :key="j" :ref="'titles' + i">
             <div class="line">
               <h4>{{ title.name }}</h4>
               <span class="line-label">Title</span>
@@ -43,10 +28,10 @@
               <span class="line-label">Responsibilities &amp; Accomplishments</span>
             </div>
           </li>
-        </transition-group>
+        </ul>
       </li>
-    </transition-group>
-    <transition-group name="fade" tag="div" class="dynamic-controls" v-if="content.length > 1">
+    </ul>
+    <div class="dynamic-controls" v-if="content.length > 1">
       <a @click="prev" v-show="hasPrev" key="prev">
         <span class="icon">
           <i class="icon-left"></i>
@@ -57,7 +42,7 @@
           <i class="icon-right"></i>
         </span>
       </a>
-    </transition-group>
+    </div>
   </div>
 </template>
 
@@ -66,6 +51,7 @@ export default {
   name: 'InggoContentWork',
   data () {
     return {
+      animating: false,
       animateDirection: null,
       resetTitle: false,
       companyIndex: 0,
@@ -92,6 +78,9 @@ export default {
     currentTitles () {
       return this.currentCompany.titles;
     },
+    currentTitlesRef () {
+      return this.$refs['titles' + this.companyIndex];
+    },
     lastCompanyIndex () {
       return this.content.length -1;
     },
@@ -107,81 +96,74 @@ export default {
     }
   },
   methods: {
+    animateTranslate (el, to, duration) {
+      var $vm = this;
+      duration = duration ? duration : 400;
+      Velo(
+        el,
+        { translateX: to + '%' },
+        {
+          duration: duration,
+          complete: () => {
+            $vm.animating = false;
+          }
+        }
+      );
+    },
     prev () {
+      if (this.animating) {
+        return;
+      }
+      this.animating = true;
+      var $vm = this;
       if (this.titleIndex == 0) {
         this.companyIndex--;
         this.titleIndex = this.lastTitleIndex;
+
+        $vm = this;
+        this.currentTitlesRef.forEach((el) => {
+          el.style.transform = 'translateX(' + (-100 * ($vm.titleIndex - 1)) + '%)';
+          $vm.animateTranslate(el, -100 * $vm.titleIndex);
+        });
+
+        this.$refs.contents.forEach((el) => {
+          $vm.animateTranslate(el, -100 * $vm.companyIndex);
+        });
       } else {
         this.titleIndex--;
+
+        this.currentTitlesRef.forEach((el) => {
+          $vm.animateTranslate(el, -100 * $vm.titleIndex);
+          Velo(el, { left: $vm.titleIndex }, 1);
+        });
       }
-      this.animateDirection = 'left';
     },
     next () {
+      if (this.animating) {
+        return;
+      }
+      this.animating = true;
+      var $vm = this;
       if (this.titleIndex == this.lastTitleIndex) {
         this.companyIndex++;
-        this.resetTitle = true;
+        this.titleIndex = 0;
+
+        this.$refs.contents.forEach((el) => {
+          $vm.animateTranslate(el, -100 * $vm.companyIndex);
+        });
+
+        $vm = this;
+        this.currentTitlesRef.forEach((el) => {
+          el.style.transform = 'translateX(-100%)';
+          $vm.animateTranslate(el, -100 * $vm.titleIndex);
+        });
       } else {
         this.titleIndex++;
-      }
-      this.animateDirection = 'right';
-    },
-    // Animation
-    animateDelay (el, to, duration, delay, done) {
-      var conf = { duration: duration }
-      if (done) {
-        conf.complete = done;
-      }
 
-      setTimeout(() => {
-        Velo(
-          el,
-          to,
-          conf
-        );
-      }, delay);
-    },
-    beforeEnter (el) {
-      var translate = this.animateDirection == 'left' ? '100%' : '-100%';
-      el.style.transform = 'translateX(' + translate + ')';
-      el.style.translateX = translate;
-      el.style.opacity = 0;
-
-      this.animateDelay(el, { translateX: translate, opacity: 0 }, 1, 0);
-
-      if (this.resetTitle) {
-        this.titleIndex = 0;
-        this.resetTitle = false;
-      }
-    },
-    enter (el, done) {
-      this.animateDelay(
-        el,
-        {
-          translateX: 0,
-          opacity: 1
-        },
-        400,
-        400,
-        done
-      );
-    },
-    leave (el, done) {
-      var translate = this.animateDirection == 'left' ? '-100%' : '100%';
-      this.animateDelay(
-        el,
-        { 
-          translateX: translate,
-          opacity: 0
-        },
-        400,
-        0,
-        done
-      )
-    },
-    afterLeave (el) {
-      if (this.resetTitle) {
-        this.titleIndex = 0;
-        this.resetTitle = false;
+        this.currentTitlesRef.forEach((el) => {
+          $vm.animateTranslate(el, -100 * $vm.titleIndex);
+          Velo(el, { left: $vm.titleIndex }, 1);
+        });
       }
     }
   }
