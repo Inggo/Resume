@@ -11,8 +11,8 @@
           <p class="subtitle">{{ item.location }}</p>
           <span class="line-label">Location</span>
         </div>
-        <ul class="work-titles">
-          <li v-for="(title, j) in item.titles" :key="j" :ref="'titles' + i">
+        <ul class="work-titles" :ref="'titles-' + i">
+          <li v-for="(title, j) in item.titles">
             <div class="line">
               <h4>{{ title.name }}</h4>
               <span class="line-label">Title</span>
@@ -21,12 +21,9 @@
               <span class="subtitle">{{ title.date }}</span>
               <span class="line-label">Date</span> 
             </div>
-            <div class="line">
-              <ul class="work-responsibilities">
-                <li v-for="responsibility in title.responsibilities">{{ responsibility }}</li>
-              </ul>
-              <span class="line-label">Responsibilities &amp; Accomplishments</span>
-            </div>
+            <ul class="work-responsibilities">
+              <li v-for="responsibility in title.responsibilities">{{ responsibility }}</li>
+            </ul>
           </li>
         </ul>
       </li>
@@ -79,7 +76,7 @@ export default {
       return this.currentCompany.titles;
     },
     currentTitlesRef () {
-      return this.$refs['titles' + this.companyIndex];
+      return this.$refs['titles-' + this.companyIndex];
     },
     lastCompanyIndex () {
       return this.content.length -1;
@@ -114,57 +111,57 @@ export default {
       if (this.animating) {
         return;
       }
+
       this.animating = true;
       var $vm = this;
+
       if (this.titleIndex == 0) {
         this.companyIndex--;
         this.titleIndex = this.lastTitleIndex;
 
         $vm = this;
-        this.currentTitlesRef.forEach((el) => {
-          el.style.transform = 'translateX(' + (-100 * ($vm.titleIndex - 1)) + '%)';
-          $vm.animateTranslate(el, -100 * $vm.titleIndex);
-        });
 
         this.$refs.contents.forEach((el) => {
           $vm.animateTranslate(el, -100 * $vm.companyIndex);
         });
       } else {
         this.titleIndex--;
-
-        this.currentTitlesRef.forEach((el) => {
-          $vm.animateTranslate(el, -100 * $vm.titleIndex);
-          Velo(el, { left: $vm.titleIndex }, 1);
-        });
       }
+
+      $vm = this;
+
+      this.currentTitlesRef.forEach((el) => {
+        $vm.animateTranslate(el, -100 * $vm.titleIndex);
+      });
     },
     next () {
       if (this.animating) {
         return;
       }
+
       this.animating = true;
       var $vm = this;
+
       if (this.titleIndex == this.lastTitleIndex) {
         this.companyIndex++;
         this.titleIndex = 0;
+
+        $vm = this;
 
         this.$refs.contents.forEach((el) => {
           $vm.animateTranslate(el, -100 * $vm.companyIndex);
         });
 
         $vm = this;
-        this.currentTitlesRef.forEach((el) => {
-          el.style.transform = 'translateX(-100%)';
-          $vm.animateTranslate(el, -100 * $vm.titleIndex);
-        });
       } else {
         this.titleIndex++;
-
-        this.currentTitlesRef.forEach((el) => {
-          $vm.animateTranslate(el, -100 * $vm.titleIndex);
-          Velo(el, { left: $vm.titleIndex }, 1);
-        });
       }
+
+      $vm = this;
+
+      this.currentTitlesRef.forEach((el) => {
+        $vm.animateTranslate(el, -100 * $vm.titleIndex);
+      });
     }
   }
 }

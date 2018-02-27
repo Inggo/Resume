@@ -1,8 +1,27 @@
-@mixin cube-transform($rotate) {
-  transform: scale(1) translateZ(-$hw + vw) $rotate;
+@mixin respond-to($media) {
+  @if $media == sm-ls {
+    @media only screen and (max-height: $break-sm) and (orientation: landscape) { @content; }
+  }
+  @if $media == sm {
+    @media only screen and (max-width: $break-sm) { @content; }
+  }
+  @else if $media == md {
+    @media only screen and (min-width: $break-sm + 1) and (min-height: $break-sm + 1) { @content; }
+  }
+  @else if $media == lg {
+    @media only screen and (min-width: $break-md) and (min-height: $break-md) { @content; }
+  }
+}
 
-  @media screen and #{$gt-mobile} {
-    transform: scale(1) translateZ(-$hw + vh) $rotate;
+@mixin cube-transform($rotate) {
+  transform: scale(1) translateZ(-$hw-sm) $rotate;
+
+  @include respond-to(md) {
+    transform: scale(1) translateZ(-$hw-md) $rotate;
+  }
+
+  @include respond-to(lg) {
+    transform: scale(1) translateZ(-$hw-lg) $rotate;
   }
 }
 
@@ -20,10 +39,14 @@
 
 @mixin face($face, $rotate) {
   &.#{$face} {
-    transform: $rotate translateZ($hw + vw);
+    transform: $rotate translateZ($hw-sm);
 
-    @media screen and #{$gt-mobile} {
-      transform: $rotate translateZ($hw + vh);
+    @include respond-to(md) {
+      transform: $rotate translateZ($hw-md);
+    }
+
+    @include respond-to(lg) {
+      transform: $rotate translateZ($hw-lg);
     }
   }
 }

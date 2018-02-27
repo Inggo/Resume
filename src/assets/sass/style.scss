@@ -3,19 +3,10 @@
 @import url('https://fonts.googleapis.com/css?family=Muli:400,700');
 @import '../fontello/css/animation';
 @import '../fontello/css/fontello';
+@import 'variables';
 @import 'colors';
 @import 'mixins';
 @import 'cube';
-
-$only-mobile: '(max-width: 375px)';
-$gt-mobile: '(min-width: 376px)';
-$gt-tablet: '(min-width: 769px)';
-
-$serif: Ovo, serif;
-$sserif: Muli, sans-serif;
-
-$cw: 90;
-$hw: $cw/2;
 
 html,
 body,
@@ -101,7 +92,7 @@ html, body {
   font-size: 12px;
   color: $primary;
 
-  @media screen and #{$gt-mobile} {
+  @include respond-to(md) {
     font-size: 16px;
   }
 }
@@ -123,7 +114,7 @@ h6 {
 h1 {
   font-size: 1.75rem;
 
-  @media screen and #{$gt-mobile} {
+  @include respond-to(md) {
     font-size: 3.5rem;
 
     + .subtitle {
@@ -142,7 +133,7 @@ h2 {
   padding-bottom: .5rem;
   position: relative;
 
-  @media screen and #{$gt-mobile} {
+  @include respond-to(md) {
     font-size: 1.5rem;
   }
 }
@@ -150,7 +141,7 @@ h2 {
 h3 {
   font-size: 1.375rem;
 
-  @media screen and #{$gt-mobile} {
+  @include respond-to(md) {
     font-size: 1.675rem;
   }
 }
@@ -158,7 +149,7 @@ h3 {
 h4 {
   font-size: 1.3rem;
 
-  @media screen and #{$gt-mobile} {
+  @include respond-to(md) {
     font-size: 1.4rem;
   }
 }
@@ -194,15 +185,21 @@ footer {
 }
 
 .main-container {
-  width: $cw + vw;
-  height: $cw + vw;
-  perspective: $cw * 5vw;
+  width: $cw-sm;
+  height: $cw-sm;
+  perspective: $cw-sm * 5;
   margin: auto;
 
-  @media screen and #{$gt-mobile} {
-    width: $cw + vh;
-    height: $cw + vh;
-    perspective: $cw * 5vh;
+  @include respond-to(md) {
+    width: $cw-md;
+    height: $cw-md;
+    perspective: $cw-md * 5;
+  }
+
+  @include respond-to(lg) {
+    width: $cw-lg;
+    height: $cw-lg;
+    perspective: $cw-lg * 5;
   }
 
   position: relative;
@@ -230,12 +227,17 @@ footer {
     margin: 0;
     background: $bg-base;
 
-    width: calc(#{$cw + vw} - 4px);
-    height: calc(#{$cw + vw} - 4px);
+    width: calc(#{$cw-sm} - 4px);
+    height: calc(#{$cw-sm} - 4px);
 
-    @media screen and #{$gt-mobile} {
-      width: calc(#{$cw + vh} - 4px);
-      height: calc(#{$cw + vh} - 4px);
+    @include respond-to(md) {
+      width: calc(#{$cw-md} - 4px);
+      height: calc(#{$cw-md} - 4px);
+    }
+
+    @include respond-to(lg) {
+      width: calc(#{$cw-lg} - 4px);
+      height: calc(#{$cw-lg} - 4px);
     }
 
     display: block;
@@ -261,7 +263,7 @@ footer {
   line-height: 3.25rem;
   font-size: 1.5rem;
 
-  @media screen and #{$gt-mobile} {
+  @include respond-to(md) {
     font-size: 1rem;
     width: 1.25rem;
     height: 1.25rem;
@@ -282,17 +284,24 @@ footer {
 .cube-controls {
   display: none;
   position: absolute;
-  bottom: .25rem;
-  right: .25rem;
-  left: .25rem;
+  bottom: 1rem;
+  right: 1rem;
+  left: 1rem;
   justify-content: space-evenly;
   align-items: center;
 
   &.is-mobile {
     display: flex;
+
+    @include respond-to(sm-ls) {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: 33.33vh 33.33vh 33.33vh;
+      grid-column-gap: 320px;
+    }
   }
 
-  @media screen and #{$gt-mobile} {
+  @include respond-to(md) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -347,7 +356,7 @@ footer {
       }
     }
 
-    @media screen and #{$gt-mobile} {
+    @include respond-to(md) {
       text-align: left;
       padding: .2rem;
       padding-left: 1.75rem;
@@ -376,7 +385,7 @@ footer {
   justify-content: center;
   height: 100%;
   padding: 0 1rem;
-  @media screen and #{$gt-mobile} {
+  @include respond-to(md) {
     padding-right: 7rem;
   }
   box-sizing: border-box;
@@ -411,17 +420,18 @@ footer {
 }
 
 .modal-contents {
-  max-width: calc(60rem - 3rem);
+  max-width: 45rem;
   margin: 0 auto;
   padding: 1.5rem 1.5rem 3rem;
 
+  ul,
   li {
     display: block !important;
     transform: none !important;
     left: auto !important;
     opacity: 1 !important;
 
-    @media screen and #{$gt-mobile} {
+    @include respond-to(md) {
       .line {
         padding-top: 0;
         padding-bottom: 0;
@@ -429,13 +439,18 @@ footer {
     }
   }
 
+  .work-contents > li {
+    padding-bottom: 0;
+  }
+
   .dynamic-controls {
     display: none;
   }
+
   .work-titles > li {
     padding-left: .5rem;
 
-    @media screen and #{$gt-mobile} {
+    @include respond-to(md) {
       padding-left: 0;
       > :first-child {
         padding-top: .25rem;
@@ -451,6 +466,13 @@ footer {
           padding-top: .5rem;
         }
       }
+    }
+  }
+
+  @include respond-to(md) {
+    .work-responsibilities {
+      margin-left: 7rem;
+      border-left: 1px solid $tertiary-lightest;
     }
   }
 }
@@ -482,12 +504,12 @@ footer {
     width: 2.25rem;
     height: 2.25rem;
     line-height: 2.25rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 
 .line {
-  @media screen and #{$gt-mobile} {
+  @include respond-to(md) {
     margin-left: 7rem;
     padding-left: .25rem;
     border-left: 1px solid $tertiary-lightest;
@@ -495,7 +517,7 @@ footer {
 
   position: relative;
 
-  @media screen and #{$gt-mobile} {
+  @include respond-to(md) {
     &:not(.dynamic-controls) {
       padding-top: .1rem;
       padding-bottom: .1rem;
@@ -510,39 +532,39 @@ footer {
 .line-label {
   display: none;
 
-  @media screen and #{$gt-mobile} {
+  @include respond-to(md) {
     display: block;
     font-size: .75rem;
     text-align: right;
     width: 6.75rem;
     padding-right: .25rem;
     position: absolute;
-    left: calc(-7rem - 1px);
+    left: -7rem;
     top: 0;
     color: $tertiary;
     font-weight: bold;
-    border-right: 1px solid $tertiary-lightest;
   }
 }
 
 .subtitle {
   font-size: .9rem;
+  display: block;
 }
 
 h3 + .line-label {
-  @media screen and #{$gt-mobile} {
+  @include respond-to(md) {
     line-height: 34px;
   }
 }
 
 h4 + .line-label {
-  @media screen and #{$gt-mobile} {
-    line-height: 25px;
+  @include respond-to(md) {
+    line-height: 31px;
   }
 }
 
 .subtitle + .line-label {
-  @media screen and #{$gt-mobile} {
+  @include respond-to(md) {
     line-height: 24px;
   }
 }
@@ -554,31 +576,16 @@ h4 + .line-label {
   }
 }
 
-.work-titles > li {
-  > .line:last-of-type {
-    border-left: none;
-    @media screen and #{$gt-mobile} {
-      margin-left: calc(7rem + 1px);
-    }
-
-    > .line-label {
-      padding-bottom: .5rem;
-      padding-top: .1rem;
-      border-bottom: 1px solid $tertiary-lightest;
-      border-right: 1px solid $tertiary-lightest;
-      line-height: .9rem;
-    }
-  }
-
-  &:last-of-type .work-responsibilities {
-    border-bottom: none;
-  }
-}
-
 .is-dynamic {
   .work-contents {
     width: calc(100% - 3rem);
     margin: 0 auto;
+    overflow: hidden;
+
+    > li {
+      overflow: hidden;
+      width: 100%;
+    }
   }
 
   .work-titles {
@@ -591,7 +598,6 @@ h4 + .line-label {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    overflow: hidden;
     
     > li {
       flex: 0 0 auto;
@@ -602,7 +608,7 @@ h4 + .line-label {
 }
 
 .is-dynamic .work-responsibilities {
-  border-bottom: none;
+  border-top: 1px solid $tertiary-lightest;
 }
 
 .educ-institutes > li,
@@ -617,15 +623,14 @@ h4 + .line-label {
 }
 
 .work-responsibilities {
-  margin-left: -.25rem;
-  margin-bottom: -1px;
-  border-bottom: 1px solid $tertiary-lightest;
+  padding-bottom: .5rem;
 
   > li {
+    line-height: 1.25rem;
     font-size: .9rem;
     padding-left: 1.5rem;
 
-    @media screen and #{$gt-mobile} {
+    @include respond-to(md) {
       font-size: 1rem;
     }
 
@@ -690,7 +695,7 @@ h4 + .line-label {
 .fade-enter-active, .fade-leave-active {
   transition: opacity .4s;
 
-  @media screen and #{$gt-mobile} {
+  @include respond-to(md) {
     transition: all .4s;
   }
 }
@@ -698,7 +703,7 @@ h4 + .line-label {
 .fade-enter, .fade-leave-to {
   opacity: 0;
 
-  @media screen and #{$gt-mobile} {
+  @include respond-to(md) {
     transform: scale(1.2);
   }
 }
@@ -706,7 +711,7 @@ h4 + .line-label {
 .fade-zoom-enter-active, .fade-zoom-leave-active {
   transition: opacity .4s;
 
-  @media screen and #{$gt-mobile} {
+  @include respond-to(md) {
     transition: all .4s;
   }
 }
@@ -714,7 +719,7 @@ h4 + .line-label {
 .fade-zoom-enter, .fade-zoom-leave-to {
   opacity: 0;
 
-  @media screen and #{$gt-mobile} {
+  @include respond-to(md) {
     transform: scale(.5);
   }
 }
