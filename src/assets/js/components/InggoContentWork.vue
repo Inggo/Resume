@@ -46,10 +46,9 @@
 <script>
 export default {
   name: 'InggoContentWork',
+  mixins: [mixins.animations],
   data () {
     return {
-      animating: false,
-      animateDirection: null,
       resetTitle: false,
       companyIndex: 0,
       titleIndex: 0
@@ -93,20 +92,6 @@ export default {
     }
   },
   methods: {
-    animateTranslate (el, to, duration) {
-      var $vm = this;
-      duration = duration ? duration : 400;
-      Velo(
-        el,
-        { translateX: to + '%' },
-        {
-          duration: duration,
-          complete: () => {
-            $vm.animating = false;
-          }
-        }
-      );
-    },
     prev () {
       if (this.animating) {
         return;
@@ -140,6 +125,7 @@ export default {
       }
 
       this.animating = true;
+
       var $vm = this;
 
       if (this.titleIndex == this.lastTitleIndex) {
@@ -151,8 +137,6 @@ export default {
         this.$refs.contents.forEach((el) => {
           $vm.animateTranslate(el, -100 * $vm.companyIndex);
         });
-
-        $vm = this;
       } else {
         this.titleIndex++;
       }

@@ -577,7 +577,8 @@ h4 + .line-label {
 }
 
 .is-dynamic {
-  .work-contents {
+  .work-contents,
+  .educ-contents {
     width: calc(100% - 3rem);
     margin: 0 auto;
     overflow: hidden;
@@ -593,7 +594,9 @@ h4 + .line-label {
   }
 
   .work-contents,
-  .work-titles {
+  .work-titles,
+  .educ-contents,
+  .educ-institutes {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -602,13 +605,13 @@ h4 + .line-label {
     > li {
       flex: 0 0 auto;
       border-bottom: none;
-      max-width: 100%;  
+      width: 100%;  
     }
   }
-}
 
-.is-dynamic .work-responsibilities {
-  border-top: 1px solid $tertiary-lightest;
+  .work-responsibilities {
+    border-top: 1px solid $tertiary-lightest;
+  }
 }
 
 .educ-institutes > li,

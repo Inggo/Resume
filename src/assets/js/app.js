@@ -1,4 +1,5 @@
 require("./bootstrap");
+require("./mixins");
 
 Vue.use(Vuex);
 
