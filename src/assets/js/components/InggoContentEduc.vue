@@ -43,12 +43,12 @@ export default {
     return {
       fields: [
         {
-          key: 'secondary',
-          label: 'Secondary Education'
+          key: 'tertiary',
+          label: 'Tertiary Education'
         },
         {
-          key: 'primary',
-          label: 'Primary Education'
+          key: 'primary-secondary',
+          label: 'Primary and Secondary Education'
         }
       ],
       fieldIndex: 0,

@@ -96,7 +96,7 @@
     }
   ],
   "education": {
-    "secondary": [
+    "tertiary": [
       {
         "institution": "University of the Philippines Open University",
         "date": "2009 to 2011",
@@ -116,7 +116,7 @@
         "location": "Quezon City, Philippines"
       }
     ],
-    "primary": [
+    "primary-secondary": [
       {
         "institution": "University of the Philippines Integrated School",
         "date": "1994 to 2004",
