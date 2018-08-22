@@ -28,13 +28,13 @@
       "location": "Manila, Philippines",
       "titles": [
         {
-          "name": "E-Learning Portal Coordinator",
+          "name": "DRM E-Learning Coordinator",
           "date": "January 2018 to Present",
           "responsibilities": [
             "Administers, Handles, and Improves E-Learning Portal for the Institution.",
-            "Acts as managing editors for publications for the Institution.",
+            "Acts as managing editor for various School publications.",
             "Assists in the Information and Communication Technology Department of the Institution.",
-            "Coordinates with fellows of the Disaster Risk Management Unit."
+            "Coordinates for the School's Disaster Risk Management Unit."
           ]
         }
       ]
@@ -47,7 +47,7 @@
           "name": "Lead Developer",
           "date": "July 2015 to July 2017",
           "responsibilities": [
-            "Led the development team of inHomePortal.com.",
+            "Led the Company's development team.",
             "Architected features such as advertising and front-end user management.",
             "Developed the base themes and modules.",
             "Assisted in building and improving of the facilities booking system."
@@ -97,6 +97,12 @@
   ],
   "education": {
     "tertiary": [
+      {
+        "institution": "University of the Philippines Open University",
+        "date": "2018 to Present",
+        "degree": "Bachelor of Education Studies, Faculty of Education (Ongoing)",
+        "link": "https://www.upou.edu.ph"
+      },
       {
         "institution": "University of the Philippines Open University",
         "date": "2009 to 2011",
