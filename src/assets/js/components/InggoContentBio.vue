@@ -12,6 +12,14 @@
         </a>
       </li>
       <li>
+        <a :href="content.links.blog" target="_blank">
+          <span class="icon">
+            <i class="icon-feather"></i>
+          </span>
+          <span class="label feather">{{ content.links.blog }}</span>
+        </a>
+      </li>
+      <li>
         <a :href="content.links.github" target="_blank">
           <span class="icon">
             <i class="icon-github"></i>
