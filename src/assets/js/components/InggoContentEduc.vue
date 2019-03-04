@@ -1,10 +1,10 @@
 <template>
   <div v-if="content" :class="{ 'is-dynamic': overflow }">
     <ul class="educ-contents">
-      <li v-for="(field, i) in fields" :key="i" ref="contents">
+      <li v-for="(field, i) in fields" :key="i" ref="contents" :class="{ 'is-active': i == fieldIndex }">
         <h2>{{ field.label }}</h2>
         <ul class="educ-institutes" :ref="'institutes-' + i">
-          <li v-for="item in content[field.key]">
+          <li v-for="(item, j) in content[field.key]" :key="j" :class="{ 'is-active': i == fieldIndex && j == instituteIndex }">
             <h3>{{ item.institution }}</h3>
             <aside class="educ-info">
               <p>

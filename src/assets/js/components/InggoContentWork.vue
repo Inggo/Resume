@@ -2,7 +2,7 @@
   <div v-if="content" :class="{ 'is-dynamic': overflow }">
     <h2>Work Experience</h2>
     <ul class="work-contents">
-      <li v-for="(item, i) in content" :key="i" ref="contents">
+      <li v-for="(item, i) in content" :key="i" ref="contents" :class="{ 'is-active': i == companyIndex }">
         <div class="line">
           <h3>{{ item.company }}</h3>
           <span class="line-label">Company</span>
@@ -12,7 +12,7 @@
           <span class="line-label">Location</span>
         </div>
         <ul class="work-titles" :ref="'titles-' + i">
-          <li v-for="(title, j) in item.titles">
+          <li v-for="(title, j) in item.titles" :key="j" :class="{ 'is-active': i == companyIndex && j == titleIndex }">
             <div class="line">
               <h4>{{ title.name }}</h4>
               <span class="line-label">Title</span>

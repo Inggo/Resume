@@ -162,7 +162,7 @@ const app = new Vue({
         icon: "icon-link",
         content: data.info,
         "content-type": "links",
-        showZoom: true
+        showZoom: false
       });
 
       this.loaded = true;

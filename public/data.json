@@ -152,47 +152,88 @@
           "link": "https://friulitrattoria.ph",
           "features": [
             "Fast generated static website",
-            "Highly responsive with elegant transitions"
+            "Highly responsive with elegant transitions",
+            "Supports multiple branches"
           ],
           "technologies": [
             "Nuxt.js",
             "Vue.js 2",
             "Node.js"
-          ]
+          ],
+          "status": "Launched 2019 March"
         },
         {
-          "name": "Philippine School of Business Administration - Manila",
-          "description": "Official website of PSBA-Manila.",
-          "link": "http://psba.edu",
+          "name": "PSBA-Manila",
+          "description": "Official websites and web-based applications of the Philippine School of Business Administration - Manila (PSBA-Manila).",
+          "links": [
+            {
+              "url": "http://psba.edu",
+              "label": "Website",
+              "status": "Launched 2018 June"
+            },
+            {
+              "url": "http://drm.psba.edu",
+              "label": "DRM Unit",
+              "status": "Ongoing, Launched 2018 June"
+            },
+            {
+              "url": "http://opac.psba.edu",
+              "label": "OPAC",
+              "status": "Ongoing, Launched 2019 March"
+            }
+          ],
           "features": [
             "Customized Open Source theme optimized for Schools",
-            "Includes optional static online public access catalog for libraries"
+            "Includes optional static online public access catalog (OPAC) for libraries",
+            "Nuxt.js static website front-end for Disaster Risk Management (DRM) Unit sub-site utilizing WordPress back-end"
           ],
           "technologies": [
             "Wordpress",
             "Bootstrap 4",
-            "Webpack/Node.js"
-          ]
+            "Webpack/Node.js",
+            "Nuxt.js",
+            "Vue.js"
+          ],
+          "status": "Launched 2018 June"
         },
         {
           "name": "Custom WordPress Themes and Plugins",
-          "description": "WordPress themes and plugins developed for various clients or personal use",
+          "description": "WordPress themes and plugins developed for various clients",
           "samples": [
             {
               "url": "https://github.com/Inggo/PSBA-Manila",
-              "label": "Customized WordPress Theme for PSBA-Manila"
-            },
-            {
-              "url": "https://github.com/Inggo/theme-cura",
-              "label": "Customized WordPress Theme for Cura Property"
-            },
-            {
-              "url": "https://github.com/Inggo/cmo-wordpress-plugin",
-              "label": "Belle Vue Coaches Coach Manager Online (CMO) integration"
+              "label": "Inggo/PSBA-Manila",
+              "icon": "icon-github",
+              "name": "Customized WordPress Theme for PSBA-Manila",
+              "status": "Ongoing, released 2018 June"
             },
             {
               "url": "https://github.com/Inggo/cf1971-contests",
-              "label": "Contests for CrossFit 1971"
+              "label": "Inggo/cf1971-contests",
+              "icon": "icon-github",
+              "name": "Contests for CrossFit 1971",
+              "status": "Completed 2016 August"
+            },
+            {
+              "url": "https://github.com/Inggo/Sela",
+              "label": "Inggo/Sela",
+              "icon": "icon-github",
+              "name": "Sela Child Theme",
+              "status": "Released 2016 January"
+            },
+            {
+              "url": "https://github.com/Inggo/theme-cura",
+              "label": "Inggo/theme-cura",
+              "icon": "icon-github",
+              "name": "Customized WordPress Theme for Cura Property",
+              "status": "Completed 2015 October"
+            },
+            {
+              "url": "https://github.com/Inggo/cmo-wordpress-plugin",
+              "label": "Inggo/cmo-wordpress-plugin",
+              "icon": "icon-github",
+              "name": "Belle Vue Coaches Coach Manager Online (CMO) integration",
+              "status": "Completed 2015 June"
             }
           ]
         }
@@ -203,19 +244,17 @@
       "items": [
         {
           "name": "inHomePortal.com",
-          "info": "Web Portals for Condominiums in Singapore",
+          "description": "Web Portals for Condominiums in Singapore",
           "links": [
             {
               "url": "https://sky11.com.sg",
-              "label": "Sky@eleven"
+              "label": "Sky@eleven",
+              "status": "Launched Q3 2015"
             },
             {
               "url": "https://homethomsonthree.com.sg",
-              "label": "Thomson Three"
-            },
-            {
-              "url": "https://homethetembusu.com.sg",
-              "label": "The Tembusu"
+              "label": "Thomson Three",
+              "status": "Launched Q3 2016"
             }
           ],
           "role": "Lead Developer",
@@ -223,7 +262,6 @@
             "Led a small development team taking on a full-stack role",
             "Architected and developed product modules",
             "Aligned deliverables with product owner and ensured they are met for all sprints",
-            "Produced development processes for the team with agile methodology in mind",
             "Supervised junior team members on day-to-day tasks and growth",
             "Assisted in product quality assurance",
             "Resolved product issues"
@@ -236,7 +274,7 @@
           "technologies": [
             "WordPress Multisite",
             "Bootstrap",
-            "Vue.js",
+            "Vue.js & jQuery",
             "Atlassian Jira Software",
             "Git via Beanstalk"
           ]
@@ -248,15 +286,17 @@
       "items": [
         {
           "name": "Sytian Store",
-          "description": "eCommerce websites with Customized Content Management System used by [harlan+holden](http://harlanholden.com) and [Soak Swimwear](http://www.soakswimwear.com)",
+          "description": "eCommerce websites with Customized Content Management System.",
           "links": [
             {
               "url": "http://harlanholden.com",
-              "label": "harlan+holden"
+              "label": "harlan+holden",
+              "status": "Launched Q4 2014"
             },
             {
               "url": "http://soakswimwear.com",
-              "label": "Soak Swimwear"
+              "label": "Soak Swimwear",
+              "status": "Launched Q2 2015"
             }
           ],
           "role": "Lead Developer",
@@ -279,8 +319,9 @@
         },
         {
           "name": "Sytian Productions",
-          "description": "Official company website of [Sytian IT Solutions](https://www.sytian-productions.com)",
+          "description": "Official company website of Sytian IT Solutions",
           "link": "https://www.sytian-productions.com",
+          "status": "Launched 2014",
           "responsibilities": [
             "Revamped and refactored company website",
             "Ensured fast speed and applied best practices available"
@@ -291,15 +332,11 @@
             "Fully-responsive front-end"
           ],
           "technologies": [
-            "PHP",
+            "PHP 5",
             "HTML",
             "YAML CSS Framework",
             "jQuery"
           ]
-        },
-        {
-          "name": "Others",
-          "description": "Completed at least 50 website projects using different technologies with features such as eCommerce, local payment gateway integrations, hotel booking solutions, scheduling systems, internal systems, and photo or product galleries"
         }
       ]
     },
@@ -319,7 +356,8 @@
             "Laravel 5.7",
             "Vue.js 2",
             "Bulma"
-          ]
+          ],
+          "status": "Launched 2018 March"
         },
         {
           "name": "Inggo Noms...",
@@ -328,24 +366,29 @@
           "features": [
             "Very fast static-generated website",
             "Customized lightweight Hugo theme",
+            "Utilizes Cloudinary Content Delivery Network (CDN) and applies Intersection Observer lazy-loading",
             "Automated scripts for publishing files to webserver and assets to CDN"
           ],
           "technologies": [
             "Hugo",
-            "Bash shell scripts"
-          ]
+            "Bash shell scripts",
+            "Cloudinary CDN"
+          ],
+          "status": "Ongoing; Relaunched Q1 2018"
         },
         {
           "name": "BndoBot",
           "description": "Telegram Bot running in PHP using only filesystem storage.",
           "link": "https://github.com/Inggo/BndoBot",
           "features": [
-            "Call various API's",
-            "Built-in trivia script similar to classic IRC trivia bots"
+            "Call various APIs",
+            "Built-in trivia script similar to classic IRC trivia bots",
+            "Adheres to PSR-4 standards"
           ],
           "technologies": [
             "PHP 7.2"
-          ]
+          ],
+          "status": "Launched Q3 2017"
         }
       ]
     }
