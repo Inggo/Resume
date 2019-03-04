@@ -68,17 +68,17 @@ const store = new Vuex.Store({
   }
 });
 
-Vue.component("loading", require("./components/InggoLoading.vue"));
-Vue.component("cube-controls", require("./components/InggoCubeControls.vue"));
-Vue.component("content-bio", require("./components/InggoContentBio.vue"));
-Vue.component("content-work", require("./components/InggoContentWork.vue"));
-Vue.component("content-education", require("./components/InggoContentEduc.vue"));
-Vue.component("content-portfolio", require("./components/InggoContentFolio.vue"));
-Vue.component("content-skills", require("./components/InggoContentSkills.vue"));
-Vue.component("content-links", require("./components/InggoContentLinks.vue"));
-Vue.component("cube-face", require("./components/InggoCubeFace.vue"));
-Vue.component("cube", require("./components/InggoCube.vue"));
-Vue.component("modal", require("./components/InggoModal.vue"));
+Vue.component("loading", require("./components/InggoLoading.vue").default);
+Vue.component("cube-controls", require("./components/InggoCubeControls.vue").default);
+Vue.component("content-bio", require("./components/InggoContentBio.vue").default);
+Vue.component("content-work", require("./components/InggoContentWork.vue").default);
+Vue.component("content-education", require("./components/InggoContentEduc.vue").default);
+Vue.component("content-portfolio", require("./components/InggoContentFolio.vue").default);
+Vue.component("content-skills", require("./components/InggoContentSkills.vue").default);
+Vue.component("content-links", require("./components/InggoContentLinks.vue").default);
+Vue.component("cube-face", require("./components/InggoCubeFace.vue").default);
+Vue.component("cube", require("./components/InggoCube.vue").default);
+Vue.component("modal", require("./components/InggoModal.vue").default);
 
 const app = new Vue({
   el: "#app",

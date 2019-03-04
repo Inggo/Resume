@@ -1,22 +1,27 @@
 {
-    "private": true,
-    "scripts": {
-        "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
-    },
-    "devDependencies": {
-        "cross-env": "^5.1",
-        "laravel-mix": "^1.0",
-        "reset-css": "*",
-        "fontello-cli": "^0.4.0"
-    },
-    "dependencies": {
-        "axios": "^0.17.1",
-        "lodash": "^4.17.4",
-        "velocity-animate": "^1.5.1",
-        "vue": "^2.5.13",
-        "vuex": "^3.0.1"
-    }
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "cross-env": "^5.2.0",
+    "fontello-cli": "^0.4.0",
+    "laravel-mix": "^4.0.14",
+    "lodash": "^4.17.11",
+    "reset-css": "^4.0.1",
+    "resolve-url-loader": "^2.3.1",
+    "sass": "^1.17.2",
+    "sass-loader": "^7.1.0",
+    "velocity-animate": "^1.5.2",
+    "vue": "^2.6.8",
+    "vue-template-compiler": "^2.6.8",
+    "vuex": "^3.1.0"
+  },
+  "dependencies": {}
 }

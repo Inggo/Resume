@@ -1,0 +1,31 @@
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .4s;
+
+  @include respond-to(md) {
+    transition: all .4s;
+  }
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+
+  @include respond-to(md) {
+    transform: scale(1.2);
+  }
+}
+
+.fade-zoom-enter-active, .fade-zoom-leave-active {
+  transition: opacity .4s;
+
+  @include respond-to(md) {
+    transition: all .4s;
+  }
+}
+
+.fade-zoom-enter, .fade-zoom-leave-to {
+  opacity: 0;
+
+  @include respond-to(md) {
+    transform: scale(.5);
+  }
+}

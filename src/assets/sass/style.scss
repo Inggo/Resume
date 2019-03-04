@@ -170,6 +170,7 @@ li {
 }
 
 footer {
+  margin: 1rem 0;
   text-align: center;
 }
 
@@ -695,34 +696,31 @@ h4 + .line-label {
   }
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .4s;
+.links {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 
-  @include respond-to(md) {
-    transition: all .4s;
+  li {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    > * {
+      margin: 0 .1rem;
+    }
+
+    > :first-child {
+      margin-left: auto;
+      width: 65px;
+      text-align: right;
+    }
+
+    > :last-child {
+      margin-right: auto;
+      width: 210px;
+    }
   }
 }
 
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-
-  @include respond-to(md) {
-    transform: scale(1.2);
-  }
-}
-
-.fade-zoom-enter-active, .fade-zoom-leave-active {
-  transition: opacity .4s;
-
-  @include respond-to(md) {
-    transition: all .4s;
-  }
-}
-
-.fade-zoom-enter, .fade-zoom-leave-to {
-  opacity: 0;
-
-  @include respond-to(md) {
-    transform: scale(.5);
-  }
-}
+@import 'transitions';
