@@ -46,6 +46,15 @@
           <span class="label link">{{ content.links.mobile.label }}</span>
         </a>
       </li>
+      <li v-for="link in content.extraLinks" :key="link.id">
+        <label>{{ link.label }}</label>
+        <span class="icon">
+          <i :class="link.icon"></i>
+        </span>
+        <a :href="link.url" target="_blank">
+          <span class="label link">{{ link.url }}</span>
+        </a>
+      </li>
     </ul>
     <footer class="copyright">{{ content.copyright }}</footer>
   </div>

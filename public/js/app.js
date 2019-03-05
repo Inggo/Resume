@@ -2291,6 +2291,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'InggoContentLinks',
   props: ['content']
@@ -25875,94 +25884,120 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _vm.content
     ? _c("div", [
-        _c("ul", { staticClass: "links" }, [
-          _c("li", [
-            _c("label", [_vm._v("Website")]),
+        _c(
+          "ul",
+          { staticClass: "links" },
+          [
+            _c("li", [
+              _c("label", [_vm._v("Website")]),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  attrs: { href: _vm.content.links.website, target: "_blank" }
+                },
+                [
+                  _c("span", { staticClass: "label link" }, [
+                    _vm._v(_vm._s(_vm.content.links.website))
+                  ])
+                ]
+              )
+            ]),
             _vm._v(" "),
-            _vm._m(0),
+            _c("li", [
+              _c("label", [_vm._v("Blog")]),
+              _vm._v(" "),
+              _vm._m(1),
+              _vm._v(" "),
+              _c(
+                "a",
+                { attrs: { href: _vm.content.links.blog, target: "_blank" } },
+                [
+                  _c("span", { staticClass: "label feather" }, [
+                    _vm._v(_vm._s(_vm.content.links.blog))
+                  ])
+                ]
+              )
+            ]),
             _vm._v(" "),
-            _c(
-              "a",
-              { attrs: { href: _vm.content.links.website, target: "_blank" } },
-              [
-                _c("span", { staticClass: "label link" }, [
-                  _vm._v(_vm._s(_vm.content.links.website))
+            _c("li", [
+              _c("label", [_vm._v("Github")]),
+              _vm._v(" "),
+              _vm._m(2),
+              _vm._v(" "),
+              _c(
+                "a",
+                { attrs: { href: _vm.content.links.github, target: "_blank" } },
+                [
+                  _c("span", { staticClass: "label link" }, [
+                    _vm._v(_vm._s(_vm.content.links.github))
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("label", [_vm._v("Email")]),
+              _vm._v(" "),
+              _vm._m(3),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "mailto:" + _vm.content.links.email,
+                    target: "_blank"
+                  }
+                },
+                [
+                  _c("span", { staticClass: "label link" }, [
+                    _vm._v(_vm._s(_vm.content.links.email))
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("label", [_vm._v("Mobile")]),
+              _vm._v(" "),
+              _vm._m(4),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: _vm.content.links.mobile.link,
+                    target: "_blank"
+                  }
+                },
+                [
+                  _c("span", { staticClass: "label link" }, [
+                    _vm._v(_vm._s(_vm.content.links.mobile.label))
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.content.extraLinks, function(link) {
+              return _c("li", { key: link.id }, [
+                _c("label", [_vm._v(_vm._s(link.label))]),
+                _vm._v(" "),
+                _c("span", { staticClass: "icon" }, [
+                  _c("i", { class: link.icon })
+                ]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: link.url, target: "_blank" } }, [
+                  _c("span", { staticClass: "label link" }, [
+                    _vm._v(_vm._s(link.url))
+                  ])
                 ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("label", [_vm._v("Blog")]),
-            _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "a",
-              { attrs: { href: _vm.content.links.blog, target: "_blank" } },
-              [
-                _c("span", { staticClass: "label feather" }, [
-                  _vm._v(_vm._s(_vm.content.links.blog))
-                ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("label", [_vm._v("Github")]),
-            _vm._v(" "),
-            _vm._m(2),
-            _vm._v(" "),
-            _c(
-              "a",
-              { attrs: { href: _vm.content.links.github, target: "_blank" } },
-              [
-                _c("span", { staticClass: "label link" }, [
-                  _vm._v(_vm._s(_vm.content.links.github))
-                ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("label", [_vm._v("Email")]),
-            _vm._v(" "),
-            _vm._m(3),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                attrs: {
-                  href: "mailto:" + _vm.content.links.email,
-                  target: "_blank"
-                }
-              },
-              [
-                _c("span", { staticClass: "label link" }, [
-                  _vm._v(_vm._s(_vm.content.links.email))
-                ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("label", [_vm._v("Mobile")]),
-            _vm._v(" "),
-            _vm._m(4),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                attrs: { href: _vm.content.links.mobile.link, target: "_blank" }
-              },
-              [
-                _c("span", { staticClass: "label link" }, [
-                  _vm._v(_vm._s(_vm.content.links.mobile.label))
-                ])
-              ]
-            )
-          ])
-        ]),
+              ])
+            })
+          ],
+          2
+        ),
         _vm._v(" "),
         _c("footer", { staticClass: "copyright" }, [
           _vm._v(_vm._s(_vm.content.copyright))

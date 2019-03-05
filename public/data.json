@@ -13,6 +13,14 @@
         "label": "+63 906 5558311"
       }
     },
+    "extraLinks": [
+      {
+        "id": "kofi",
+        "label": "Donate",
+        "icon": "icon-coffee",
+        "url": "https://ko-fi.com/storywriter"
+      }
+    ],
     "address": {
       "line1": "110 Chico St.",
       "line2": "Quirino 2-B",

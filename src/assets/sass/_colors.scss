@@ -37,3 +37,4 @@ $tertiary-darkest: $color-secondary-2-4;
 $bg-base: #fff;
 $bg: linear-gradient(to bottom right, transparentize($secondary-lightest, .9), transparentize($tertiary-darkest, .9));
 $bg-secondary: #333;
+$bg-button: lighten($secondary-lightest, 10%);

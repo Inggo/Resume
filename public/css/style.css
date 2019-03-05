@@ -1116,11 +1116,12 @@ footer {
   border-radius: 1rem;
   position: relative;
   opacity: 1;
+  background: #ffdfdd;
 }
 
 .cube-controls a::before {
   content: "";
-  background: #FFB0AA;
+  background: #69113E;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -1134,7 +1135,7 @@ footer {
 
 .cube-controls a.is-active {
   opacity: 0.8;
-  color: #460024;
+  color: #AA4139;
   font-weight: bold;
 }
 

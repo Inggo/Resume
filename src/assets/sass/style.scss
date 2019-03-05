@@ -329,10 +329,11 @@ footer {
     border-radius: 1rem;
     position: relative;
     opacity: 1;
+    background: $bg-button;
 
     &::before {
       content: '';
-      background: $secondary-lightest;
+      background: $primary-darker;
       width: 100%;
       height: 100%;
       position: absolute;
@@ -346,7 +347,7 @@ footer {
 
     &.is-active {
       opacity: .8;
-      color: $primary-darkest;
+      color: $secondary;
       font-weight: bold;
       &::before {
         opacity: .33;
