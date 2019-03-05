@@ -5,62 +5,69 @@
         <h2>{{ category.category }}</h2>
         <ul class="folio-items" :ref="'category-' + i">
           <li v-for="(item, j) in category.items" :key="j" :class="{ 'is-active': i == categoryIndex && j == itemIndex }">
-            <h3>{{ item.name }}</h3>
-            <aside class="folio-role" v-if="item.role">
-              <label>Role: </label>
-              <strong>{{ item.role }}</strong>
-            </aside>
-            <p class="folio-item-link" v-if="item.link">
-              <a :href="item.link" target="_blank">
-                <i class="icon-link"></i>
-                <span>{{ item.link }}</span>
-              </a>
-              <span class="folio-item-status" v-if="item.status">{{ item.status }}</span>
-            </p>
-            <p class="folio-item-description">{{ item.description }}</p>
-            <ul class="folio-item-links" v-if="item.links">
-              <li v-for="(link, k) in item.links" :key="k">
-                <a :href="link.url" target="_blank">
-                  <label v-if="link.label">{{ link.label }}</label>
-                  <i class="icon-link"></i>
-                  <span>{{ link.url }}</span>
-                </a>
-                <span class="folio-link-status" v-if="link.status">{{ link.status }}</span>
-              </li>
-            </ul>
-            <aside class="folio-responsibilities" v-if="item.responsibilities">
-              <h5>Responsibilities</h5>
-              <ul>
-                <li v-for="(resp, k) in item.responsibilities" :key="k">{{ resp }}</li>
-              </ul>
-            </aside>
-            <ul v-if="item.samples" class="folio-samples">
-              <li v-for="(sample, k) in item.samples" :key="k">
-                <h4>{{ sample.name }}</h4>
-                <p class="folio-item-link" v-if="sample.url">
-                <a :href="sample.url" target="_blank">
-                  <i v-if="sample.icon" class="icon-github"></i>
+            <div class="folio-item" :ref="'folio' + i + '_' + j">
+              <h3>{{ item.name }}</h3>
+              <aside class="folio-role" v-if="item.role">
+                <label>Role: </label>
+                <strong>{{ item.role }}</strong>
+              </aside>
+              <p class="folio-item-link" v-if="item.link">
+                <a v-if="typeof item.link == 'object'" :href="item.link.url">
+                  <i v-if="item.link.icon" :class="item.link.icon"></i>
                   <i v-else class="icon-link"></i>
-                  <span>{{ sample.label }}</span>
+                  <span>{{ item.link.label }}</span>
                 </a>
-                <span class="folio-item-status" v-if="sample.status">{{ sample.status }}</span>
+                <a v-else :href="item.link" target="_blank">
+                  <i class="icon-link"></i>
+                  <span>{{ removeProtocol(item.link) }}</span>
+                </a>
+                <span class="folio-item-status" v-if="item.status">{{ item.status }}</span>
               </p>
-              </li>
-            </ul>
-            <aside class="folio-info">
-              <div v-if="item.features">
-                <h5>Features</h5>
+              <p class="folio-item-description">{{ item.description }}</p>
+              <ul class="folio-item-links" v-if="item.links" ref="itemLinks">
+                <li v-for="(link, k) in item.links" :key="k">
+                  <a :href="link.url" target="_blank" :title="link.url">
+                    <label v-if="link.label">{{ link.label }}</label>
+                    <i class="icon-link"></i>
+                    <span>{{ removeProtocol(link.url) }}</span>
+                  </a>
+                  <span class="folio-link-status" v-if="link.status">{{ link.status }}</span>
+                </li>
+              </ul>
+              <aside class="folio-responsibilities" v-if="item.responsibilities">
+                <h5>Responsibilities</h5>
                 <ul>
-                  <li v-for="(feature, l) in item.features" :key="l">{{ feature }}</li>
+                  <li v-for="(resp, k) in item.responsibilities" :key="k">{{ resp }}</li>
                 </ul>
-              </div>
-              <div v-if="item.technologies">
-                <h5>Technologies</h5>
-                <ul>
-                  <li v-for="(tech, m) in item.technologies" :key="m">{{ tech }}</li>
-                </ul>
-              </div>
-            </aside>
+              </aside>
+              <ul v-if="item.samples" class="folio-samples">
+                <li v-for="(sample, k) in item.samples" :key="k">
+                  <h4>{{ sample.name }}</h4>
+                  <p class="folio-item-link" v-if="sample.url">
+                  <a :href="sample.url" target="_blank">
+                    <i v-if="sample.icon" class="icon-github"></i>
+                    <i v-else class="icon-link"></i>
+                    <span>{{ sample.label }}</span>
+                  </a>
+                  <span class="folio-item-status" v-if="sample.status">{{ sample.status }}</span>
+                </p>
+                </li>
+              </ul>
+              <aside class="folio-info">
+                <div v-if="item.features">
+                  <h5>Features</h5>
+                  <ul>
+                    <li v-for="(feature, l) in item.features" :key="l">{{ feature }}</li>
+                  </ul>
+                </div>
+                <div v-if="item.technologies">
+                  <h5>Technologies</h5>
+                  <ul>
+                    <li v-for="(tech, m) in item.technologies" :key="m">{{ tech }}</li>
+                  </ul>
+                </div>
+              </aside>
+            </div>
           </li>
         </ul>
       </li>
@@ -77,6 +84,9 @@
         </span>
       </a>
     </div>
+    <transition name="fade">
+      <div class="vertical-overflow" v-if="activeVerticalOverflow"></div>
+    </transition>
   </div>
 </template>
 <script>
@@ -86,7 +96,8 @@ export default {
   data () {
     return {
       categoryIndex: 0,
-      itemIndex: 0
+      itemIndex: 0,
+      activeVerticalOverflow: false
     }
   },
   props: {
@@ -97,9 +108,33 @@ export default {
     overflow: {
       type: Boolean,
       default: false
+    },
+    isVisible: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
+    remVal () {
+      if (window.innerWidth > 375 && window.innerHeight > 375) {
+        return 16;
+      }
+
+      return 12;
+    },
+    topHeight () {
+      let top = (window.innerWidth > 375 && window.innerHeight > 375) ? 2 : 1.75;
+
+      return top * this.remVal + // heading height
+        this.remVal + // top padding
+        + 1; // border bottom
+    },
+    activeRef () {
+      return this.$refs[this.activeRefIndex][0];
+    },
+    activeRefIndex () {
+      return 'folio' + this.categoryIndex + '_' + this.itemIndex;
+    },
     currentCategoryRef () {
       return this.$refs['category-' + this.categoryIndex];
     },
@@ -118,9 +153,47 @@ export default {
     },
     lastCategoryIndex () {
       return this.content.length -1;
+    }
+  },
+  watch: {
+    itemIndex (itemIndex) {
+      this.checkVerticalOverflow();
     },
+    isVisible (now, before) {
+      if (now) {
+        window.setTimeout(() => {
+          this.checkVerticalOverflow();
+          // Calculate widths of folio item links
+          let itemLinks = this.$refs.itemLinks;
+
+          itemLinks.forEach((links) => {
+            let labels = links.querySelectorAll('label');
+            let maxWidth = 0;
+            labels.forEach((label) => {
+              label.style.width = null;
+              let width = label.getBoundingClientRect().width;
+              if (width > maxWidth) {
+                maxWidth = width;
+              }
+            });
+            maxWidth = Math.round(maxWidth);
+            labels.forEach((label) => {
+              label.style.width = maxWidth + 'px';  
+            });
+          })
+        }, 1001);
+      }
+    }
   },
   methods: {
+    removeProtocol (url) {
+      return url.replace(/(^\w+:|^)\/\//, '');
+    },
+    checkVerticalOverflow () {
+      let activeHeight = (this.topHeight + this.activeRef.getBoundingClientRect().height);
+      let bounds = document.querySelector('section.is-visible').getBoundingClientRect().height;
+      this.activeVerticalOverflow = activeHeight > bounds;
+    },
     prev () {
       if (this.animating) {
         return;

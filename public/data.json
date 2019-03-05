@@ -204,14 +204,14 @@
               "url": "https://github.com/Inggo/PSBA-Manila",
               "label": "Inggo/PSBA-Manila",
               "icon": "icon-github",
-              "name": "Customized WordPress Theme for PSBA-Manila",
+              "name": "Customized Theme for PSBA-Manila",
               "status": "Ongoing, released 2018 June"
             },
             {
               "url": "https://github.com/Inggo/cf1971-contests",
               "label": "Inggo/cf1971-contests",
               "icon": "icon-github",
-              "name": "Contests for CrossFit 1971",
+              "name": "Contests Plugin for CrossFit 1971",
               "status": "Completed 2016 August"
             },
             {
@@ -225,7 +225,7 @@
               "url": "https://github.com/Inggo/theme-cura",
               "label": "Inggo/theme-cura",
               "icon": "icon-github",
-              "name": "Customized WordPress Theme for Cura Property",
+              "name": "Customized Theme for Cura Property",
               "status": "Completed 2015 October"
             },
             {
@@ -379,7 +379,11 @@
         {
           "name": "BndoBot",
           "description": "Telegram Bot running in PHP using only filesystem storage.",
-          "link": "https://github.com/Inggo/BndoBot",
+          "link": {
+            "url": "https://github.com/Inggo/BndoBot",
+            "label": "Inggo/BndoBot",
+            "icon": "icon-github"
+          },
           "features": [
             "Call various APIs",
             "Built-in trivia script similar to classic IRC trivia bots",

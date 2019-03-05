@@ -7,13 +7,13 @@
           <li v-for="(item, j) in content[field.key]" :key="j" :class="{ 'is-active': i == fieldIndex && j == instituteIndex }">
             <h3>{{ item.institution }}</h3>
             <aside class="educ-info">
-              <p>
+              <p class="educ-info-location">
                 <span v-if="item.location">{{ item.location }}</span>
                 <a v-if="item.link" :href="item.link" target="_blank">
                   {{ item.link }}
                 </a>
               </p>
-              <p>{{ item.date }}</p>
+              <p class="educ-info-date">{{ item.date }}</p>
             </aside>
             <p>{{ item.degree }}</p>
           </li>

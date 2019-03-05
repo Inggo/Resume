@@ -1,3 +1,18 @@
+@mixin dot-before {
+  &::before {
+    content: "";
+    width: .25rem;
+    height: .25rem;
+    background: $primary-darkest;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    left: .675rem;
+    top: .5rem;
+
+  }
+}
+
 @mixin dots-between($height: 1rem, $margin: 0 .2rem) {
   &::before {
     border-bottom: 1px dotted $primary-darker;

@@ -4,7 +4,7 @@
       'cube-controls': true,
       'is-mobile': isMobile
     }" v-if="isActive">
-      <a v-for="face in faces" :class="{ 'is-active': (isMobile || face.face == currentFace) && face.face == visibleFace }" @click="setVisibleFace(face.face)" v-if="face.name" :title="face.name">
+      <a v-for="face in faces" :class="{ 'is-active': (isMobile || face.face == currentFace) && face.face == visibleFace }" @click="setVisibleFace(face.face)" :title="face.name" :key="face.name">
         <span class="icon" v-if="face.icon">
           <i :class="face.icon"></i>
         </span>

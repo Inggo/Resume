@@ -328,6 +328,7 @@ footer {
     border: 2px solid $secondary;
     border-radius: 1rem;
     position: relative;
+    opacity: 1;
 
     &::before {
       content: '';
@@ -642,13 +643,10 @@ h4 + .line-label {
 
 .folio-item-description {
   line-height: 1.2rem;
-  margin: .25rem 0 .5rem 2rem;
-  text-indent: -2rem;
+  margin: .25rem 0 .5rem;
 }
 
 .folio-samples {
-  padding: 0 .5rem;
-
   h4 {
     font-size: 1.2rem;
   }
@@ -682,41 +680,48 @@ h4 + .line-label {
       font-size: 1rem;
     }
 
-    &::before {
-      content: "●";
-      position: absolute;
-      left: .25rem;
-    }
+    @include dot-before;
   }
 }
 
-.educ-info {
-  display: flex;
-  justify-content: space-between;
-  @include dots-between;
+
+
+@include respond-to(md) {
+  .folio-item-link,
+  .educ-info {
+    display: flex;
+    justify-content: space-between;
+    @include dots-between;
+  }
 }
 
-.folio-item-link {
-  display: flex;
-  justify-content: space-between;
-  @include dots-between;
+.folio-item-status,
+.folio-link-status {
+  display: none;
+  
+  @include respond-to(md) {
+    display: block;
+  }
 }
 
 .folio-item-status,
 .folio-link-status,
-.educ-info :last-child {
+.educ-info-date {
   order: 3;
 }
 
 .folio-item-links {
   font-size: .8rem;
+  margin: .25rem 0 .5rem;
 
   > li {
     display: flex;
     justify-content: space-between;
     margin: .25rem 0;
 
-    @include dots-between(.8rem, 0 .1rem);
+    @include respond-to(md) {
+      @include dots-between(.8rem, 0 .1rem);
+    }
 
     a {
       display: flex;
@@ -724,25 +729,37 @@ h4 + .line-label {
       flex-direction: row;
 
       > * {
+        white-space: nowrap;
         margin: 0 .1rem;
       }
 
       > :first-child {
-        width: 100px;
         text-align: right;
       }
 
       > :last-child {
+        max-width: 9rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
         margin-right: auto;
+
+        @include respond-to(lg) {
+          max-width: none;
+        }
       }
     }
   }
 }
 
 .folio-item-status {
-  font-size: .9rem;
+  font-size: .75rem;
   position: relative;
-  top: .2rem;
+  top: .3rem;
+
+  @include respond-to(lg) {
+    font-size: .9rem;
+    top: .2rem;
+  }
 }
 
 .folio-role {
@@ -765,11 +782,7 @@ h4 + .line-label {
 
   li {
     padding-left: 1rem;
-    &::before {
-      content: "●";
-      position: absolute;
-      left: .25rem;
-    }
+    @include dot-before;
   }
 }
 
@@ -813,10 +826,9 @@ h4 + .line-label {
     position: absolute;
     z-index: 111;
 
-    top: 0;
-
-    line-height: 1.75rem;
-    height: 1.75rem;
+    top: -2.25rem;
+    line-height: 6rem;
+    height: 6rem;
     width: 1.75rem;
     text-align: center;
     cursor: pointer;
@@ -856,6 +868,15 @@ h4 + .line-label {
       width: 210px;
     }
   }
+}
+
+.vertical-overflow {
+  box-shadow: 0 -0.25rem 1.5rem 0 rgba(0, 0, 0, 0.667);
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  right: 0;
+  height: 1rem;
 }
 
 @import 'transitions';

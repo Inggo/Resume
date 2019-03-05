@@ -18,6 +18,7 @@
             :is="currentView"
             :content="content"
             :overflow="showZoom"
+            :is-visible="isVisible"
           ></component>
         </transition>
       </div>
