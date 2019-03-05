@@ -92,7 +92,7 @@
 <script>
 export default {
   name: 'InggoContentFolio',
-  mixins: [mixins.animations],
+  mixins: [mixins.animations, mixins.removesProtocol],
   data () {
     return {
       categoryIndex: 0,
@@ -186,9 +186,6 @@ export default {
     }
   },
   methods: {
-    removeProtocol (url) {
-      return url.replace(/(^\w+:|^)\/\//, '');
-    },
     checkVerticalOverflow () {
       let activeHeight = (this.topHeight + this.activeRef.getBoundingClientRect().height);
       let bounds = document.querySelector('section.is-visible').getBoundingClientRect().height;

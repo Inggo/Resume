@@ -2,6 +2,14 @@ if (!window.mixins) {
     window.mixins = [];
 }
 
+window.mixins.removesProtocol = {
+  methods: {
+    removeProtocol (url) {
+      return url.replace(/(^\w+:|^)\/\//, '');
+    }
+  }
+}
+
 window.mixins.animations = {
   data () {
       return {

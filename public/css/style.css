@@ -181,8 +181,8 @@ table {
 
 @font-face {
   font-family: "fontello";
-  src: url(/fonts/fontello.eot?44b381eeef885d2eeba368c7ddc55c5d);
-  src: url(/fonts/fontello.eot?44b381eeef885d2eeba368c7ddc55c5d) format("embedded-opentype"), url(/fonts/fontello.woff2?00196f0a479befc34090543d69d2d75c) format("woff2"), url(/fonts/fontello.woff?88063d85cc65e8d20cc64e4e4c37c85d) format("woff"), url(/fonts/fontello.ttf?58ba5f02e19b7605380f4701dbcb82e3) format("truetype"), url(/fonts/fontello.svg?a9893e62cdb8f75677f5f1e4f7cde98a) format("svg");
+  src: url(/fonts/fontello.eot?74412511860876b0be1b3b5aee234f21);
+  src: url(/fonts/fontello.eot?74412511860876b0be1b3b5aee234f21) format("embedded-opentype"), url(/fonts/fontello.woff2?d5d42cebacc1e78122d574f3c9de1062) format("woff2"), url(/fonts/fontello.woff?8a97d1a04b544ab46e1f5bbda2238376) format("woff"), url(/fonts/fontello.ttf?f51d73f50aad67fec6a42cdfb2fd41e1) format("truetype"), url(/fonts/fontello.svg?52919307ed23ab2a2bcc13a0505fb0d2) format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -195,7 +195,7 @@ table {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?12696936#fontello') format('svg');
+    src: url('../font/fontello.svg?96039524#fontello') format('svg');
   }
 }
 */
@@ -312,6 +312,12 @@ table {
 }
 
 /* '' */
+
+.icon-coffee:before {
+  content: "\F0F4";
+}
+
+/* '' */
 
 .icon-mobile:before {
   content: "\F10B";
@@ -668,11 +674,24 @@ h2 {
   border-bottom: 1px solid #69113E;
   padding-bottom: 0.25rem;
   position: relative;
+  text-align: right;
+  padding-right: 0.5rem;
 }
 
 @media only screen and (min-width: 376px) and (min-height: 376px) {
   h2 {
     font-size: 1.5rem;
+    padding-right: 0.25rem;
+  }
+}
+
+#work h2 {
+  padding-right: 2rem;
+}
+
+@media only screen and (min-width: 376px) and (min-height: 376px) {
+  #work h2 {
+    padding-right: 0.25rem;
   }
 }
 
@@ -1216,7 +1235,7 @@ footer {
 .modal-contents {
   max-width: 45rem;
   margin: 0 auto;
-  padding: 1.5rem 1.5rem 3rem;
+  padding: 1.5rem 1.5rem 3.5rem;
 }
 
 .modal-contents ul,
@@ -1251,6 +1270,7 @@ footer {
   padding-bottom: 0;
 }
 
+.modal-contents .vertical-overflow,
 .modal-contents .dynamic-controls {
   display: none;
 }
@@ -1490,7 +1510,7 @@ footer {
 .work-responsibilities > li {
   line-height: 1.25rem;
   font-size: 0.9rem;
-  padding-left: 1.5rem;
+  padding-left: 1.25rem;
 }
 
 @media only screen and (min-width: 376px) and (min-height: 376px) {
@@ -1632,7 +1652,7 @@ footer {
 
 .folio-responsibilities li,
 .folio-info li {
-  padding-left: 1rem;
+  padding-left: 1.25rem;
 }
 
 .folio-responsibilities li::before,
@@ -1743,6 +1763,28 @@ footer {
   left: 0;
   right: 0;
   height: 1rem;
+}
+
+.modal h2,
+.modal .work h2 {
+  padding-right: 0;
+}
+
+.modal .folio-contents > li {
+  border-bottom: none;
+  padding: 0;
+}
+
+.modal .folio-item-links > li {
+  display: flex !important;
+}
+
+.modal .work-contents > li,
+.modal .educ-institutes > li,
+.modal .folio-item {
+  border: 1px solid #69113E;
+  padding: 0 0.5rem;
+  margin: 0.5rem 0;
 }
 
 .fade-enter-active,

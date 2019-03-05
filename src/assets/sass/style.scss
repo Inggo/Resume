@@ -132,9 +132,20 @@ h2 {
   border-bottom: 1px solid $primary-darker;
   padding-bottom: .25rem;
   position: relative;
+  text-align: right;
+  padding-right: .5rem;
 
   @include respond-to(md) {
     font-size: 1.5rem;
+    padding-right: .25rem;
+  }
+}
+
+#work h2 {
+  padding-right: 2rem;
+
+  @include respond-to(md) {
+    padding-right: .25rem;
   }
 }
 
@@ -426,7 +437,7 @@ footer {
 .modal-contents {
   max-width: 45rem;
   margin: 0 auto;
-  padding: 1.5rem 1.5rem 3rem;
+  padding: 1.5rem 1.5rem 3.5rem;
 
   ul,
   li {
@@ -458,6 +469,7 @@ footer {
     padding-bottom: 0;
   }
 
+  .vertical-overflow,
   .dynamic-controls {
     display: none;
   }
@@ -675,7 +687,7 @@ h4 + .line-label {
   > li {
     line-height: 1.25rem;
     font-size: .9rem;
-    padding-left: 1.5rem;
+    padding-left: 1.25rem;
 
     @include respond-to(md) {
       font-size: 1rem;
@@ -782,7 +794,7 @@ h4 + .line-label {
   }
 
   li {
-    padding-left: 1rem;
+    padding-left: 1.25rem;
     @include dot-before;
   }
 }
@@ -878,6 +890,31 @@ h4 + .line-label {
   left: 0;
   right: 0;
   height: 1rem;
+}
+
+
+.modal {
+  h2,
+  .work h2 {
+    padding-right: 0;
+  }
+
+  .folio-contents > li {
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .folio-item-links > li {
+    display: flex !important;
+  }
+
+  .work-contents > li,
+  .educ-institutes > li,
+  .folio-item {
+    border: 1px solid $primary-darker;
+    padding: 0 .5rem;
+    margin: .5rem 0;
+  }
 }
 
 @import 'transitions';

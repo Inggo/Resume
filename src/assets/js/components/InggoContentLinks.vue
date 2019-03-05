@@ -7,7 +7,7 @@
           <i class="icon-link"></i>
         </span>
         <a :href="content.links.website" target="_blank">
-          <span class="label link">{{ content.links.website }}</span>
+          <span class="label link">{{ removeProtocol(content.links.website) }}</span>
         </a>
       </li>
       <li>
@@ -16,7 +16,7 @@
           <i class="icon-feather"></i>
         </span>
         <a :href="content.links.blog" target="_blank">
-          <span class="label feather">{{ content.links.blog }}</span>
+          <span class="label feather">{{ removeProtocol(content.links.blog) }}</span>
         </a>
       </li>
       <li>
@@ -25,7 +25,7 @@
           <i class="icon-github"></i>
         </span>
         <a :href="content.links.github" target="_blank">
-          <span class="label link">{{ content.links.github }}</span>
+          <span class="label link">{{ removeProtocol(content.links.github) }}</span>
         </a>
       </li>
       <li>
@@ -52,7 +52,7 @@
           <i :class="link.icon"></i>
         </span>
         <a :href="link.url" target="_blank">
-          <span class="label link">{{ link.url }}</span>
+          <span class="label link">{{ removeProtocol(link.url) }}</span>
         </a>
       </li>
     </ul>
@@ -63,6 +63,7 @@
 <script>
 export default {
   name: 'InggoContentLinks',
+  mixins: [mixins.removesProtocol],
   props: ['content']
 }
 </script>

@@ -158,6 +158,13 @@
           "name": "Friuli Trattoria",
           "description": "Official website of Friuli Trattoria Italian Restaurant.",
           "link": "https://friulitrattoria.ph",
+          "role": "Designer, Developer, and Host",
+          "responsibilities": [
+            "Procured and set-up server for web hosting and solution for email",
+            "Designed and developed website from ground-up",
+            "Manages website and social media contents",
+            "Executes necessary auditing and maintennance"
+          ],
           "features": [
             "Fast generated static website",
             "Highly responsive with elegant transitions",
@@ -369,7 +376,13 @@
         },
         {
           "name": "Inggo Noms...",
-          "description": "Personal weblog chronicling food adventures in and out of the Philippines using a customized Hugo theme.",
+          "description": "Personal weblog chronicling food adventures in and out the Philippines.",
+          "role": "Principal Author, Designer, Developer, and Host",
+          "responsibilities": [
+            "Writes reviews for food places",
+            "Designed a mobile-friendly user experience",
+            "Developed theme for Hugo static site generator"
+          ],
           "link": "https://eat.nyo.me",
           "features": [
             "Very fast static-generated website",
@@ -386,7 +399,7 @@
         },
         {
           "name": "BndoBot",
-          "description": "Telegram Bot running in PHP using only filesystem storage.",
+          "description": "Telegram Bot written in PHP.",
           "link": {
             "url": "https://github.com/Inggo/BndoBot",
             "label": "Inggo/BndoBot",

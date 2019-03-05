@@ -2073,7 +2073,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'InggoContentFolio',
-  mixins: [mixins.animations],
+  mixins: [mixins.animations, mixins.removesProtocol],
   data: function data() {
     return {
       categoryIndex: 0,
@@ -2168,9 +2168,6 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    removeProtocol: function removeProtocol(url) {
-      return url.replace(/(^\w+:|^)\/\//, '');
-    },
     checkVerticalOverflow: function checkVerticalOverflow() {
       var activeHeight = this.topHeight + this.activeRef.getBoundingClientRect().height;
       var bounds = document.querySelector('section.is-visible').getBoundingClientRect().height;
@@ -2302,6 +2299,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'InggoContentLinks',
+  mixins: [mixins.removesProtocol],
   props: ['content']
 });
 
@@ -25900,7 +25898,9 @@ var render = function() {
                 },
                 [
                   _c("span", { staticClass: "label link" }, [
-                    _vm._v(_vm._s(_vm.content.links.website))
+                    _vm._v(
+                      _vm._s(_vm.removeProtocol(_vm.content.links.website))
+                    )
                   ])
                 ]
               )
@@ -25916,7 +25916,7 @@ var render = function() {
                 { attrs: { href: _vm.content.links.blog, target: "_blank" } },
                 [
                   _c("span", { staticClass: "label feather" }, [
-                    _vm._v(_vm._s(_vm.content.links.blog))
+                    _vm._v(_vm._s(_vm.removeProtocol(_vm.content.links.blog)))
                   ])
                 ]
               )
@@ -25932,7 +25932,7 @@ var render = function() {
                 { attrs: { href: _vm.content.links.github, target: "_blank" } },
                 [
                   _c("span", { staticClass: "label link" }, [
-                    _vm._v(_vm._s(_vm.content.links.github))
+                    _vm._v(_vm._s(_vm.removeProtocol(_vm.content.links.github)))
                   ])
                 ]
               )
@@ -25990,7 +25990,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("a", { attrs: { href: link.url, target: "_blank" } }, [
                   _c("span", { staticClass: "label link" }, [
-                    _vm._v(_vm._s(link.url))
+                    _vm._v(_vm._s(_vm.removeProtocol(link.url)))
                   ])
                 ])
               ])
@@ -40646,6 +40646,13 @@ if (!window.mixins) {
   window.mixins = [];
 }
 
+window.mixins.removesProtocol = {
+  methods: {
+    removeProtocol: function removeProtocol(url) {
+      return url.replace(/(^\w+:|^)\/\//, '');
+    }
+  }
+};
 window.mixins.animations = {
   data: function data() {
     return {

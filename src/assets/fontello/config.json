@@ -107,6 +107,12 @@
       "css": "feather",
       "code": 59403,
       "src": "entypo"
+    },
+    {
+      "uid": "3a26448b711645ba1abfc86c1a6e2f30",
+      "css": "coffee",
+      "code": 61684,
+      "src": "fontawesome"
     }
   ]
 }
