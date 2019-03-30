@@ -92,12 +92,11 @@
 <script>
 export default {
   name: 'InggoContentFolio',
-  mixins: [mixins.animations, mixins.removesProtocol],
+  mixins: [mixins.animations, mixins.removesProtocol, mixins.verticalOverflow],
   data () {
     return {
       categoryIndex: 0,
-      itemIndex: 0,
-      activeVerticalOverflow: false
+      itemIndex: 0
     }
   },
   props: {
@@ -108,27 +107,9 @@ export default {
     overflow: {
       type: Boolean,
       default: false
-    },
-    isVisible: {
-      type: Boolean,
-      default: false
     }
   },
   computed: {
-    remVal () {
-      if (window.innerWidth > 375 && window.innerHeight > 375) {
-        return 16;
-      }
-
-      return 12;
-    },
-    topHeight () {
-      let top = (window.innerWidth > 375 && window.innerHeight > 375) ? 2 : 1.75;
-
-      return top * this.remVal + // heading height
-        this.remVal + // top padding
-        + 1; // border bottom
-    },
     activeRef () {
       return this.$refs[this.activeRefIndex][0];
     },
@@ -162,7 +143,6 @@ export default {
     isVisible (now, before) {
       if (now) {
         window.setTimeout(() => {
-          this.checkVerticalOverflow();
           // Calculate widths of folio item links
           let itemLinks = this.$refs.itemLinks;
 
@@ -181,16 +161,12 @@ export default {
               label.style.width = maxWidth + 'px';  
             });
           })
+          this.checkVerticalOverflow();
         }, 1001);
       }
     }
   },
   methods: {
-    checkVerticalOverflow () {
-      let activeHeight = (this.topHeight + this.activeRef.getBoundingClientRect().height);
-      let bounds = document.querySelector('section.is-visible').getBoundingClientRect().height;
-      this.activeVerticalOverflow = activeHeight > bounds;
-    },
     prev () {
       if (this.animating) {
         return;

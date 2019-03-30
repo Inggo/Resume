@@ -34,3 +34,52 @@ window.mixins.animations = {
     }
   }
 };
+
+window.mixins.verticalOverflow = {
+  data () {
+    return {
+      activeVerticalOverflow: false
+    }
+  },
+  props: {
+    isVisible: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    remVal () {
+      if (window.innerWidth > 375 && window.innerHeight > 375) {
+        return 16;
+      }
+
+      return 12;
+    },
+    topHeight () {
+      let top = (window.innerWidth > 375 && window.innerHeight > 375) ? 2 : 1.75;
+
+      return top * this.remVal + // heading height
+        this.remVal + // top padding
+        + 1; // border bottom
+    },
+  },
+  methods: {
+    checkVerticalOverflow () {
+      let activeHeight = (this.topHeight + this.activeRef.getBoundingClientRect().height);
+      let bounds = document.querySelector('section.is-visible').getBoundingClientRect().height;
+      this.activeVerticalOverflow = activeHeight > bounds;
+    }
+  },
+  watch: {
+    itemIndex (itemIndex) {
+      this.checkVerticalOverflow();
+    },
+    isVisible (now, before) {
+      if (now) {
+        window.setTimeout(() => {
+          this.checkVerticalOverflow();
+        }, 1001);
+      }
+    }
+  }
+}

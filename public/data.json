@@ -420,15 +420,15 @@
   ],
   "skills": [
     {
-      "category": "Web Development Skills",
+      "category": "Web Development",
       "items": [
         "Has excellent understanding of HTML, CSS, and Javascript.",
         "Highly proficient in the PHP web programming language.",
-        "Familiar with in SQL syntax and can work with various SQL database management systems.",
+        "Familiar with in SQL syntax and can work with various database management systems.",
         "Adept in working with PHP frameworks, especially Laravel.",
         "Develops and maintains websites using static site generators such as Nuxt.js and Hugo; and content management systems such as WordPress.",
-        "Familiar with responsive website design and applies best practices where possible.",
-        "Knowledgeable in using various front-end CSS frameworks.",
+        "Familiar with responsive website design and applies best practices.",
+        "Knowledgeable in using various front-end CSS frameworks such as Semantic UI and Bootstrap.",
         "Able to use version control systems, particularly Git and Subversion.",
         "Capable in utilizing front-end Javascript frameworks such as Vue.js, Angular, and jQuery.",
         "Knows his way with the Unix terminal and can build and maintain web servers using Ubuntu.",
@@ -436,38 +436,48 @@
       ]
     },
     {
-      "category": "Programming Skills",
+      "category": "Programming",
       "items": [
         "Proficient in Python, Java, C#, and C programming languages.",
-        "Knowledgeable in both procedural and SOLID object-oriented programming.",
-        "Able to learn new programming languages in a reasonable amount of time."
+        "Knowledgeable in procedural, functional, and SOLID object-oriented programming.",
+        "Understands and has experience working with assembly language.",
+        "Able to learn new programming languages in a reasonable amount of time.",
+        "Can write bash (Unix) and batch (MS-DOS) scripts to automate terminal or command line tasks.",
+        "Writes scripts for ArcGIS to automate various tasks including spatial analysis and layouting.",
+        "Able to write custom Scripts and Add-ons using Javascript for Google Sheets used in various applications."
       ]
     },
     {
-      "category": "Computer-Related Skills",
+      "category": "Software and Computer-Related",
       "items": [
-        "Adept in using Microsoft Office programs specifically Word, Excel, and PowerPoint; and their Google or LibreOffice counterparts.",
-        "Able to write custom Scripts and Add-ons for Google Sheets used in various applications.",
+        "Adept in using Microsoft Office software specifically Word, Excel, and PowerPoint; and their Google or LibreOffice counterparts.",
+        "Proficient in using image editing software including Adobe Photoshop and Adobe Illustrator",
+        "Has experience in using non-linear editing system or video editing software such as DaVinci Resolve.",
+        "Trained and has working experience in using Geographic Information System (GIS) software, specifically ArcGIS.",
         "Can build desktop computers using custom manufacturer parts.",
-        "Has experience in using non-linear editing system such as DaVinci Resolve",
         "Can touch-type; encodes with excellent speed and accuracy."
       ]
     },
     {
-      "category": "Communication Skills",
+      "category": "Communication, Project Management, and Research",
       "items": [
         "Has good grasp of both English and Filipino Languages.",
-        "Blogs as a hobby; owns and writes a [personal food blog](https://eat.nyo.me)."
+        "Has project management experience and can write project proposals, policies, Gantt charts, and budgets.",
+        "Has experience in using project management tools such as Jira and Trello.",
+        "Co-authored and edited various publications and researches for the PSBA-Manila DRM Unit.",
+        "Has presented and emceed in some conferences and seminars.",
+        "Blogs as a hobby; owns and writes a personal food blog."
       ]
     },
     {
-      "category": "Achievements and Conferences",
+      "category": "Achievements, Publications, and Conferences",
       "items": [
+        "Co-authored and edited 'Enhancing Urban Resilience towards Water Sufficiency during Extreme Weather Disastrous Impact: Sectoral Adaptation Action Plan of Quezon City, Philippines' and 'Supplementary Document for the GAWAD Kalasag CY 2018 Entry' for PSBA-Manila.",
         "Presented in the 2018 International Conference 'Water Science for Impact'.",
         "Participated in the 2018 APRU-IRIDeS Multi-Hazards Summer School.",
-        "Attended various Disaster Risk Reduction and Management conferences and seminars in Manila.",
-        "Attended the DevCon AngularJS Code Camp 2015 and is among the winners of the mini-hackathon.",
-        "Attended multiple DevCon summits, events, and hackatons since 2013.",
+        "Attended various education-related seminars in Manila, such as 'EduTech Philippines 2019'.",
+        "Attended several Disaster Risk Reduction and Management conferences and seminars in Manila.",
+        "Participated in multiple DevCon summits, events, and hackatons since 2013.",
         "Participated in the 2005 ACM Intercollegiate Computer Programming Competition in Ateneo University.",
         "Participated and won a number of Programming Competitions within the Computer Science department in University of the Philippines, Diliman."
       ]

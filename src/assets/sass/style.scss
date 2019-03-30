@@ -605,6 +605,7 @@ h4 + .line-label {
 
 .is-dynamic {
   .work-contents,
+  .skills-contents,
   .educ-contents,
   .folio-contents {
     width: calc(100% - 3rem);
@@ -627,6 +628,7 @@ h4 + .line-label {
 
   .work-contents,
   .work-titles,
+  .skills-contents,
   .educ-contents,
   .educ-institutes,
   .folio-contents,
@@ -681,6 +683,7 @@ h4 + .line-label {
   }
 }
 
+.skills-items,
 .work-responsibilities {
   padding-bottom: .5rem;
 
