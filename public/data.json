@@ -2,7 +2,7 @@
   "info": {
     "name": "Inggo Espinosa",
     "full_name": "Ramon Iñigo M. Espinosa",
-    "title": "Senior Web Developer",
+    "title": "Senior Full-Stack Web Developer",
     "links": {
       "website": "https://inggo.dev",
       "blog": "https://eat.nyo.me",
@@ -10,15 +10,28 @@
       "email": "inggo@pm.me",
       "mobile": {
         "link": "tel:+639065558311",
-        "label": "+63 906 5558311"
+        "label": "+63 906 5558311",
+        "tooltip": "I prefer email; SMS only please!"
       }
     },
     "extraLinks": [
       {
+        "id": "calendly",
+        "bioLabel": "Book time with me",
+        "label": "Book Me",
+        "icon": "icon-calendar",
+        "url": "https://calendly.com/inggo/",
+        "showPath": true,
+        "tooltip": "Book my time for consultations on your online needs",
+        "showInBio": true
+      },
+      {
         "id": "kofi",
         "label": "Donate",
         "icon": "icon-coffee",
-        "url": "https://ko-fi.com/storywriter"
+        "url": "https://ko-fi.com/storywriter",
+        "showPath": true,
+        "tooltip": "Enjoy my work? Buy me a ko-fi!"
       }
     ],
     "address": {
@@ -29,31 +42,48 @@
       "country": "Philippines",
       "zip": "1102"
     },
-    "copyright": "© 2018-2019 Inggo Espinosa · All Rights Reserved"
+    "copyright": "© 2018-2021 Inggo Espinosa · All Rights Reserved"
   },
   "work_experience": [
+    {
+      "company": "La Bella Foods Corporation",
+      "location": "Quezon City, Philippines",
+      "titles": [
+        {
+          "name": "Chief Technology Officer",
+          "date": "2011 to Present",
+          "responsibilities": [
+            "Oversees company's online technologies; particularly internet-based marketing, social media, and websites.",
+            "Advices company President on technology-related decisions; including hardware and software acquisition, technological partnerships, and online marketing direction.",
+            "Recommends technological solutions needed by the company.",
+            "Supervises internet-based marketing for the company.",
+            "Seeks out and acquires grants and subsidies towards company growth."
+          ]
+        }
+      ]
+    },
     {
       "company": "Philippine School of Business Administration",
       "location": "Manila, Philippines",
       "titles": [
         {
-          "name": "Assistant Manager for DRM and ICT",
-          "date": "January 2019 to Present",
+          "name": "Assistant Manager for DRM, ICT, and School Facilities",
+          "date": "January 2019 to January 2021",
           "responsibilities": [
-            "Manages projects and researches of the School's Disaster Risk Management (DRM) Unit and Information and Communication Technology (ICT) Department.",
-            "Assigns tasks for projects and allocates appropriate resources.",
-            "Acts as managing editor for various School publications.",
-            "Occasionally does legwork including Geographic Information Systems (GIS) analysis and map layouting, authoring, research, and data encoding."
+            "Managed projects and researches of the School's Disaster Risk Management (DRM) Unit and Information and Communication Technology (ICT) Department.",
+            "Assigned tasks for projects and allocates appropriate resources.",
+            "Acted as managing editor for various School publications.",
+            "Occasionally did legwork including Geographic Information Systems (GIS) analysis and map layouting, authoring, research, and data encoding."
           ]
         },
         {
           "name": "DRM E-Learning Coordinator",
-          "date": "January 2018 to Present",
+          "date": "January 2018 to January 2021",
           "responsibilities": [
-            "Administers, Handles, and Improves E-Learning Portal for the Institution.",
-            "Acts as managing editor for various School publications.",
-            "Assists in the Information and Communication Technology Department of the Institution.",
-            "Coordinates for the School's Disaster Risk Management (DRM) Unit."
+            "Administered, Handled, and Improved E-Learning Portal for the Institution.",
+            "Acted as managing editor for various School publications.",
+            "Assisted in the Information and Communication Technology Department of the Institution.",
+            "Coordinated for the School's Disaster Risk Management (DRM) Unit."
           ]
         }
       ]
@@ -69,6 +99,7 @@
             "Led the Company's development team.",
             "Architected features such as advertising and front-end user management.",
             "Developed the base themes and modules.",
+            "Set-up domain to tenant mapping.",
             "Assisted in building and improving of the facilities booking system."
           ]
         }
@@ -83,8 +114,10 @@
           "date": "May 2013 to June 2015",
           "responsibilities": [
             "Developed complex websites and web applications for local and international clients.",
+            "Crafted coding standards and style guides utilizing best practices at the time.",
             "Trained interns and development team on latest technologies and best practices.",
             "Built, managed, and maintained internal servers and office network.",
+            "Provided consultation on web-based solutions for various clients.",
             "Ensures high quality of projects handled by developers."
           ]
         },
@@ -117,13 +150,15 @@
   "education": {
     "tertiary": [
       {
-        "institution": "University of the Philippines Open University",
-        "date": "2018 to Present",
-        "degree": "Bachelor of Education Studies, Faculty of Education (Ongoing)",
+        "institution": "University of the Philippines",
+        "campus": "Open University",
+        "date": "2018 to 2020",
+        "degree": "Completed Coursework towards Bachelor of Education Studies",
         "link": "https://www.upou.edu.ph"
       },
       {
-        "institution": "University of the Philippines Open University",
+        "institution": "University of the Philippines",
+        "campus": "Open University",
         "date": "2009 to 2011",
         "degree": "Associate in Arts, Faculty of Education",
         "link": "https://www.upou.edu.ph"
@@ -135,7 +170,8 @@
         "location": "Manila, Philippines"
       },
       {
-        "institution": "University of the Philippines, Diliman",
+        "institution": "University of the Philippines",
+        "campus": "Diliman",
         "date": "2004 to 2007",
         "degree": "Completed Coursework towards B.S. Computer Science",
         "location": "Quezon City, Philippines"
@@ -155,10 +191,39 @@
       "category": "Freelance Works",
       "items": [
         {
+          "name": "Stream & Sip Festival",
+          "subtitle": "Australian Embassy in the Philippines",
+          "description": "Film festival event page and fixes for existing WordPress site.",
+          "link": "https://mateshipandbayanihan.com/events-2/stream-sip-festival/",
+          "role": "Consulting Developer",
+          "responsibilities": [
+            "Developed a WordPress plugin for film showing event",
+            "Produced a fast, clean, responsive front-end for the event page",
+            "Wrote documentation for currently installed plugins and newly developed plugin",
+            "Gave consultancy on issues and other matters for existing WordPress website",
+            "Provided live support and reports during event date"
+          ],
+          "features": [
+            "Clean solution using modern WordPress standards reusable for future events",
+            "Dynamic banner slideshow and external links with two different views",
+            "Easily-managable content in the WordPress administrative dashboard",
+            "Fast loading and fully-responsive front-end catering to all modern browsers and devices"
+          ],
+          "technologies": [
+            "PHP 7",
+            "WordPress",
+            "Vue.js",
+            "SASS",
+            "Node.js",
+            "Git via Github"
+          ],
+          "status": "Est. 2021"
+        },
+        {
           "name": "Friuli Trattoria",
           "description": "Official website of Friuli Trattoria Italian Restaurant.",
           "link": "https://friulitrattoria.ph",
-          "role": "Designer, Developer, and Host",
+          "role": "Designer, Developer, Host, and Social Media Manager",
           "responsibilities": [
             "Procured and set-up server for web hosting and solution for email",
             "Designed and developed website from ground-up",
@@ -166,91 +231,209 @@
             "Executes necessary auditing and maintennance"
           ],
           "features": [
-            "Fast generated static website",
+            "Fast, secure, and elegant fully-responsive static-generated website that caters to all modern browsers and devices",
             "Highly responsive with elegant transitions",
-            "Supports multiple branches"
+            "Support for multiple branches and custom links",
+            "Continuous deployment for new features and content changes"
           ],
           "technologies": [
             "Nuxt.js",
             "Vue.js 2",
-            "Node.js"
+            "Node.js",
+            "Webpack",
+            "SASS",
+            "Bash",
+            "Git via Github"
           ],
-          "status": "Launched 2019 March"
-        },
-        {
-          "name": "PSBA-Manila",
-          "description": "Official websites and web-based applications of the Philippine School of Business Administration - Manila (PSBA-Manila).",
-          "links": [
-            {
-              "url": "http://psba.edu",
-              "label": "Website",
-              "status": "Launched 2018 June"
-            },
-            {
-              "url": "http://drm.psba.edu",
-              "label": "DRM Unit",
-              "status": "Ongoing, Launched 2018 June"
-            },
-            {
-              "url": "http://opac.psba.edu",
-              "label": "OPAC",
-              "status": "Ongoing, Launched 2019 March"
-            }
-          ],
-          "features": [
-            "Customized Open Source theme optimized for Schools",
-            "Includes optional static online public access catalog (OPAC) for libraries",
-            "Nuxt.js static website front-end for Disaster Risk Management (DRM) Unit sub-site utilizing WordPress back-end"
-          ],
-          "technologies": [
-            "Wordpress",
-            "Bootstrap 4",
-            "Webpack/Node.js",
-            "Nuxt.js",
-            "Vue.js"
-          ],
-          "status": "Launched 2018 June"
+          "status": "Est. 2019"
         },
         {
           "name": "Custom WordPress Themes and Plugins",
-          "description": "WordPress themes and plugins developed for various clients",
+          "description": "WordPress themes and plugins developed for various clients.",
           "samples": [
             {
-              "url": "https://github.com/Inggo/PSBA-Manila",
-              "label": "Inggo/PSBA-Manila",
+              "url": "https://github.com/Inggo/wp-mbfilmfest",
+              "label": "Inggo/wp-mbfilmfest",
               "icon": "icon-github",
-              "name": "Customized Theme for PSBA-Manila",
-              "status": "Ongoing, released 2018 June"
+              "name": "Film Festival Event Shortcode for the Australian Embassy in the Philippines",
+              "status": "Est. 2021"
             },
             {
               "url": "https://github.com/Inggo/cf1971-contests",
               "label": "Inggo/cf1971-contests",
               "icon": "icon-github",
               "name": "Contests Plugin for CrossFit 1971",
-              "status": "Completed 2016 August"
+              "status": "Est. 2016"
             },
             {
               "url": "https://github.com/Inggo/Sela",
               "label": "Inggo/Sela",
               "icon": "icon-github",
               "name": "Sela Child Theme",
-              "status": "Released 2016 January"
+              "status": "Est. 2016"
             },
             {
               "url": "https://github.com/Inggo/theme-cura",
               "label": "Inggo/theme-cura",
               "icon": "icon-github",
               "name": "Customized Theme for Cura Property",
-              "status": "Completed 2015 October"
+              "status": "Est. 2015"
             },
             {
               "url": "https://github.com/Inggo/cmo-wordpress-plugin",
               "label": "Inggo/cmo-wordpress-plugin",
               "icon": "icon-github",
-              "name": "Belle Vue Coaches Coach Manager Online (CMO) integration",
-              "status": "Completed 2015 June"
+              "name": "Belle Vue Coaches Coach Manager Online integration",
+              "status": "Est. 2015"
             }
           ]
+        }
+      ]
+    },
+    {
+      "category": "Under PSBA-Manila",
+      "items": [
+        {
+          "name": "Official Website",
+          "role": "Designer, Developer, and Content Manager",
+          "description": "Revamp of official school website from obsolete website builder to WordPress.",
+          "link": "http://psba.edu",
+          "responsibilities": [
+            "Overhauled old website into new WordPress website",
+            "Configured webserver to properly accomodate new technologies",
+            "Designed website from ground-up",
+            "Coded theme for WordPress that the webfsite uses",
+            "Managed website contents",
+            "Assured product quality and timely delivery"
+          ],
+          "features": [
+            "Overhaul from non-responsive, tacky, and antiquated site to a fully-responsive, fast, and modern one",
+            "Bespoke mobile-first and responsive WordPress theme to match School colors",
+            "Easily-editable custom post types for various dynamic content"
+          ],
+          "technologies": [
+            "WordPress",
+            "Bootstrap",
+            "jQuery",
+            "HTML",
+            "Git via Github"
+          ],
+          "status": "Est. 2018"
+        },
+        {
+          "name": "DRM Unit Website",
+          "role": "Designer, Developer, and Content Manager",
+          "description": "Staticly-generated informational website for the school's Disaster Risk Management (DRM) Unit.",
+          "link": "http://drm.psba.edu",
+          "responsibilities": [
+            "Designed and developed website from ground-up",
+            "Managed website contents",
+            "Authored some website contents",
+            "Assured product quality and timely delivery"
+          ],
+          "features": [
+            "Fast, secure, and simple fully-responsive website that caters to all modern browsers and devices",
+            "Front-end to match official school website",
+            "Support for dynamic content including papers, banners, events, products, services, and personnel",
+            "Automated build deployment"
+          ],
+          "technologies": [
+            "Nuxt.js",
+            "Bootstrap",
+            "Vue.js",
+            "jQuery",
+            "Node.js",
+            "Webpack",
+            "SASS",
+            "HTML",
+            "Git via Github"
+          ],
+          "status": "Est. 2018"
+        },
+        {
+          "name": "Online Public Access Catalog",
+          "role": "Designer and Developer",
+          "description": "Library database browser-based application.",
+          "link": "http://psba.edu/opac",
+          "responsibilities": [
+            "Designed and developed application from ground-up",
+            "Coordinated with school library for database contents",
+            "Researched and architected search engine that application uses",
+            "Assured product quality and timely delivery"
+          ],
+          "features": [
+            "Fast, secure, and simple fully-responsive website that caters to all modern browsers and devices",
+            "Offline searching via Lunr",
+            "Design to match school colors"
+          ],
+          "technologies": [
+            "Vue.js",
+            "Node.js",
+            "Webpack",
+            "Lunr",
+            "SASS",
+            "HTML",
+            "Git via Github"
+          ],
+          "status": "Est. 2019",
+          "showPath": true
+        },
+        {
+          "name": "E-learning System",
+          "role": "Manager and Developer",
+          "description": "Online learning system powered by Moodle.",
+          "link": "http://psbaelearning.psba.edu",
+          "responsibilities": [
+            "Trained faculty on E-learning sytem usage",
+            "Enrolled faculty and students into the system",
+            "Set up online courses for every school term",
+            "Uploaded and managed contents of courses upon faculty request",
+            "Managed announcements and other system-related communications",
+            "Improved, secured, and updated system with available best technology and practices"
+          ],
+          "features": [
+            "Moodle-powered online learning platform",
+            "Semi-automated course setup and user enrollment using Excel and Python scripts",
+            "Improved Moodle theme applying school colors and mobile-first responsive design"
+          ],
+          "technologies": [
+            "Moodle",
+            "PHP 5-7",
+            "MySQL",
+            "Javascript",
+            "Python",
+            "HTML",
+            "CSS"
+          ],
+          "status": "Est. 2018"
+        },
+        {
+          "name": "Imperial Dunes",
+          "description": "Official website of Imperial Dunes.",
+          "link": "https://imperialdunes.org",
+          "role": "Designer, Developer, and Host",
+          "responsibilities": [
+            "Designed company logo",
+            "Procured and set-up domain and web hosting",
+            "Designed and developed website from ground-up"
+          ],
+          "features": [
+            "Fast, clean, and simple static-generated website that caters to all modern browsers and devices",
+            "Support for dynamic contents; including services, projects, and people",
+            "Smooth scrolling ",
+            "Automated Bash scripts for deployment"
+          ],
+          "technologies": [
+            "Bootstrap",
+            "Nuxt.js",
+            "Vue.js 2",
+            "Node.js",
+            "Webpack",
+            "SASS",
+            "Bash",
+            "Git via Github"
+          ],
+          "status": "Est. 2019"
         }
       ]
     },
@@ -259,17 +442,60 @@
       "items": [
         {
           "name": "inHomePortal.com",
-          "description": "Web Portals for Condominiums in Singapore",
+          "description": "Official company website.",
+          "link": "https://inhomeportal.com",
+          "role": "Lead Developer",
+          "responsibilities": [
+            "Led a small development team taking on a lead development role",
+            "Supervised junior team members on implementation",
+            "Performed quality assurance",
+            "Resolved website issues"
+          ],
+          "features": [
+            "Rapid implementation using elegant Flora theme",
+            "Fast, sleek, fully-responsive mobile-first design"
+          ],
+          "technologies": [
+            "WordPress",
+            "Bootstrap",
+            "jQuery",
+            "Jira",
+            "Git via Beanstalk"
+          ],
+          "status": "Est. 2016"
+        },
+        {
+          "name": "inHomePortal.com",
+          "description": "Web Portal software-as-a-service for Condominiums.",
           "links": [
             {
               "url": "https://sky11.com.sg",
               "label": "Sky@eleven",
-              "status": "Launched Q3 2015"
+              "status": "Est. 2015"
+            },
+            {
+              "url": "https://signaturepark.com.sg",
+              "label": "Signature Park",
+              "status": "Est. 2015",
+              "active": false
             },
             {
               "url": "https://homethomsonthree.com.sg",
               "label": "Thomson Three",
-              "status": "Launched Q3 2016"
+              "status": "Est. 2016",
+              "active": false
+            },
+            {
+              "url": "https://homethetembusu.com.sg",
+              "label": "The Tembusu",
+              "status": "Est. 2017",
+              "active": false
+            },
+            {
+              "url": "https://flamingovalley.sg",
+              "label": "Flamingo Valley",
+              "status": "Est. 2017",
+              "active": false
             }
           ],
           "role": "Lead Developer",
@@ -282,16 +508,24 @@
             "Resolved product issues"
           ],
           "features": [
-            "Fast and semi-automated creation of new tenant sites via Linux terminal",
-            "Robust faciltiies booking system for residents that can cater to complex condominium house rules",
-            "Front-end user management for condominium managers"
+            "Fast, secure, simple, and sleek web portals for condominiums in Singapore",
+            "Rapid semi-automated creation of new tenant sites via Linux terminal",
+            "Robust faciltiies booking system for residents that caters to complex condominium house rules",
+            "Easy-to-use front-end user management system for condominium managers",
+            "Directory for nearby businesses for promotions exclusive to condominium residents",
+            "Mobile-first and fully-responsive design",
+            "Guaranteed 99.99% uptime and automated backups using managed WordPress multisite hosting",
+            "Fast code and content delivery via Singapore-based CDN"
           ],
           "technologies": [
             "WordPress Multisite",
             "Bootstrap",
-            "Vue.js & jQuery",
-            "Atlassian Jira Software",
-            "Git via Beanstalk"
+            "Vue.js",
+            "jQuery",
+            "MySQL",
+            "Atlassian Jira",
+            "Git via Beanstalk",
+            "Subversion"
           ]
         }
       ]
@@ -306,51 +540,194 @@
             {
               "url": "http://harlanholden.com",
               "label": "harlan+holden",
-              "status": "Launched Q4 2014"
+              "status": "Est. 2014",
+              "active": false
             },
             {
               "url": "http://soakswimwear.com",
               "label": "Soak Swimwear",
-              "status": "Launched Q2 2015"
+              "status": "Est. 2015",
+              "active": false
             }
           ],
           "role": "Lead Developer",
           "responsibilities": [
             "Architected and developed product back-end",
-            "Developed front-end management interface for client staff",
-            "Developed most of the front-end for website visitors"
+            "Developed front-end management interface for store staff",
+            "Developed most of the front-end for website visitors",
+            "Ensured timely delivery and adherence to company QA checklist",
+            "Resolved all product issues"
           ],
           "features": [
-            "Customized widget-based CMS",
-            "Customized eCommerce system integrated with PayPal and local payment gateways",
-            "Fully responsive front-end with customizable design"
+            "Elegant, fully-responsive front-end with customizable design that supports latest browsers and devices of the time",
+            "Custom widget-based CMS written in Laravel; easily managable by the store owner/staff using responsive adminstrative interface",
+            "eCommerce system integrated with PayPal and local payment gateways",
+            "Unlimited pages, banners, articles, products, and categories",
+            "Apply categories, tags, variations, multiple images, inventory, discount codes for products",
+            "Support for upselling/cross-selling, product spotlights, and sales",
+            "Built-in customer management system with user account creation support",
+            "Social media integration for marketing and promotions"
           ],
           "technologies": [
-            "Laravel 4.2",
-            "Twitter Bootstrap",
+            "Laravel 4-5",
+            "PHP 5",
+            "Bootstrap",
             "jQuery",
-            "Git via Atlassian Bitbucket"
+            "Modernizr",
+            "Git via Bitbucket"
           ]
         },
         {
           "name": "Sytian Productions",
-          "description": "Official company website of Sytian IT Solutions",
+          "description": "Official company website of Sytian IT Solutions.",
+          "role": "Senior Developer",
           "link": "https://www.sytian-productions.com",
-          "status": "Launched 2014",
+          "status": "Est. 2014",
           "responsibilities": [
             "Revamped and refactored company website",
-            "Ensured fast speed and applied best practices available"
+            "Ensured fast page speed, optimized images, and application of current best practices"
           ],
           "features": [
+            "Fast, modern, fully-responsive front-end that supports even latest and legacy browsers",
+            "Minimal HTTP requests using minified code and optimized spritemap",
             "Smart and secure contact forms",
             "Dynamic portfolio loading",
-            "Fully-responsive front-end"
+            "Optimized loading times and excellent Google PageSpeed Insights scores"
           ],
           "technologies": [
             "PHP 5",
             "HTML",
-            "YAML CSS Framework",
-            "jQuery"
+            "YAML CSS",
+            "jQuery",
+            "Javascript",
+            "Modernizr"
+          ]
+        },
+        {
+          "name": "WordPress Websites",
+          "description": "WordPress custom themes ad plguins for international and local clients.",
+          "links": [
+            {
+              "url": "https://www.dermstrata.com.ph",
+              "label": "Dermstrata Philippines",
+              "status": "Est. 2015",
+              "active": false
+            },
+            {
+              "url": "http://www.celticforest.co.uk",
+              "label": "Celtic Forest",
+              "status": "Est. 2015",
+              "active": false
+            },
+            {
+              "url": "https://jakinspections.com",
+              "label": "JAK Inspections",
+              "status": "Est. 2014"
+            },
+            {
+              "url": "https://tampopo.ph",
+              "label": "Tampopo Philippines",
+              "status": "Est. 2014",
+              "active": false
+            },
+            {
+              "url": "https://cog.ph",
+              "label": "Center of Gravity",
+              "status": "Est. 2014",
+              "active": false
+            },
+            {
+              "url": "http://wolfdorkapparel.com",
+              "label": "Wolfdork Apparel",
+              "status": "Est. 2013",
+              "active": false
+            }
+          ],
+          "role": "Developer",
+          "responsibilities": [
+            "Converted design from PSD or PDF files to fully-functional WordPress themes",
+            "Developed both back- and front-ends of entire websites",
+            "Implemented WordPress plugins as needed; such as eCommerce (WooCommerce), slideshow, portfolio, or booking plugins",
+            "Developed customized WordPress plugins as needed, including booking systems for hotels and schools",
+            "Applied product initial contents",
+            "Ensured timely delivery and adherence to company QA checklist",
+            "Resolved all product issues"
+          ],
+          "features": [
+            "Fully-responsive front-end with wide browser and device support",
+            "Complete customization and editing functionality based on product requirements",
+            "Optimized loading times and excellent Google PageSpeed Insights scores"
+          ],
+          "technologies": [
+            "PHP 5",
+            "WordPress",
+            "Bootstrap",
+            "jQuery",
+            "Javascript"
+          ]
+        },
+        {
+          "name": "Customizable Websites",
+          "description": "Customizable websites for clients of various industries.",
+          "links": [
+            {
+              "url": "https://executive.com.ph",
+              "label": "Executive Plaza Hotel",
+              "status": "Est. 2014",
+              "active": true
+            },
+            {
+              "url": "http://veritasrealty.com.au",
+              "label": "Veritas Realty",
+              "status": "Est. 2013",
+              "active": true
+            },
+            {
+              "url": "http://lotusgardenhotelmanila.com",
+              "label": "Lotus Garden Hotel",
+              "status": "Est. 2013",
+              "active": false
+            },
+            {
+              "url": "http://techdiveit.com",
+              "label": "TechDive IT",
+              "status": "Est. 2013",
+              "active": false
+            },
+            {
+              "url": "https://northstar-travel.com.ph",
+              "label": "North Star Travel",
+              "status": "Est. 2013",
+              "active": false
+            },
+            {
+              "url": "http://cosmeticsurgeonphilippines.com",
+              "label": "Enrico C. Valera, M.D.",
+              "status": "Est. 2013"
+            }
+          ],
+          "role": "Developer",
+          "responsibilities": [
+            "Converted design from Photoshop Documents to fully-functional responsive websites",
+            "Developed both back- and front-ends of entire websites",
+            "Implemented content management system for pages and news/blog",
+            "Implemented other systems as needed; including booking, eCommerce, portfolio, and galleries",
+            "Applied content given by the client",
+            "Ensured timely delivery and adherence to company QA checklist",
+            "Resolved product issues"
+          ],
+          "features": [
+            "Complete customization and editing functionality for the client",
+            "Optimized loading times and excellent Google PageSpeed Insights scores",
+            "Responsive, mobile-first web design targetting all devices for all products"
+          ],
+          "technologies": [
+            "PHP 5",
+            "HTML",
+            "jQuery",
+            "Javascript",
+            "YAML CSS",
+            "Modernizr"
           ]
         }
       ]
@@ -359,25 +736,9 @@
       "category": "Personal Works",
       "items": [
         {
-          "name": "Philotto",
-          "description": "Website for unofficial Philippine Charity Sweepstakes Office lottery results",
-          "link": "https://philotto.inggo.xyz",
-          "features": [
-            "Automatic scraping of lottery results from official source",
-            "Filtering of games and results based on user tickets",
-            "Able to apply to other lotteries by creating applicable scrapers"
-          ],
-          "technologies": [
-            "Laravel 5.7",
-            "Vue.js 2",
-            "Bulma"
-          ],
-          "status": "Launched 2018 March"
-        },
-        {
           "name": "Inggo Noms...",
           "description": "Personal weblog chronicling food adventures in and out the Philippines.",
-          "role": "Principal Author, Designer, Developer, and Host",
+          "role": "Author, Designer, Developer, and Host",
           "responsibilities": [
             "Writes reviews for food places",
             "Designed a mobile-friendly user experience",
@@ -385,21 +746,73 @@
           ],
           "link": "https://eat.nyo.me",
           "features": [
-            "Very fast static-generated website",
-            "Customized lightweight Hugo theme",
-            "Utilizes Cloudinary Content Delivery Network (CDN) and applies Intersection Observer lazy-loading",
-            "Automated scripts for publishing files to webserver and assets to CDN"
+            "Very fast and secure static-generated website",
+            "Customized lightweight, simple but elegant Hugo theme",
+            "Utilizes Cloudinary CDN applying Intersection Observer lazy-loading",
+            "Bash scripts for automated publishing of files to webserver and assets to CDN",
+            "Automated insights and problem reporting"
           ],
           "technologies": [
             "Hugo",
-            "Bash shell scripts",
-            "Cloudinary CDN"
+            "Node.js",
+            "Webpack",
+            "SASS",
+            "Bash",
+            "Cloudinary CDN",
+            "Git via Bitbucket",
+            "HTML"
           ],
-          "status": "Ongoing; Relaunched Q1 2018"
+          "status": "Est. 2009"
+        },
+        {
+          "name": "Ordertaker",
+          "role": "Developer",
+          "description": "Order-taking Facebook Messenger chatbot for small businesses.",
+          "link": "https://order.nyo.me/",
+          "features": [
+            "Friendly chatbot capable of taking orders from within Facebook Messenger in a pointer-based or chat interface",
+            "Unlimited sellable items with photos organized into categories",
+            "Takes user's address and contact details",
+            "Support for adding user notes per item and for the entire order",
+            "Orders sent to email and/or handed over to Facebook page managers/administrators",
+            "Fashioned for any small business; including restaurants, aparrel, and general goods",
+            "Separate management interface for setting items, categories, prices, and other"
+          ],
+          "technologies": [
+            "Laravel",
+            "PHP 7",
+            "Vue.js",
+            "Bootstrap",
+            "SASS",
+            "Git via Github"
+          ],
+          "status": "Est. 2020"
+        },
+        {
+          "name": "Philotto",
+          "description": "Website for unofficial PCSO lottery results",
+          "role": "Designer and Developer",
+          "link": "https://philotto.inggo.xyz",
+          "features": [
+            "Automatic scraping of lottery results from official source",
+            "Fast, secure, and simple front-end",
+            "Filtering of games and results based on user tickets",
+            "Applicable for other lotteries by creating respective scrapers",
+            "Automated deployment of latest build"
+          ],
+          "technologies": [
+            "Laravel",
+            "PHP 7",
+            "Vue.js",
+            "Bulma",
+            "Git via Github"
+          ],
+          "status": "Est. 2018"
         },
         {
           "name": "BndoBot",
           "description": "Telegram Bot written in PHP.",
+          "role": "Developer",
           "link": {
             "url": "https://github.com/Inggo/BndoBot",
             "label": "Inggo/BndoBot",
@@ -411,9 +824,55 @@
             "Adheres to PSR-4 standards"
           ],
           "technologies": [
-            "PHP 7.2"
+            "PHP 7",
+            "Git via Github"
           ],
-          "status": "Launched Q3 2017"
+          "status": "Est. 2017"
+        },
+        {
+          "name": "Game Mods",
+          "samples": [
+            {
+              "url": "https://github.com/Inggo/RimWorld.ElectricBraziers",
+              "label": "Inggo/RimWorld.ElectricBraziers",
+              "icon": "icon-github",
+              "name": "Electric Braziers for RimWorld",
+              "status": "Est. 2020"
+            },
+            {
+              "url": "https://github.com/Inggo/RimWorld.AdvancedPolyBeds",
+              "label": "Inggo/RimWorld.AdvancedPolyBeds",
+              "icon": "icon-github",
+              "name": "Advanced Poly Beds for RimWorld",
+              "status": "Est. 2020"
+            },
+            {
+              "url": "https://github.com/Inggo/CoC-Cults-MoreDeities",
+              "label": "Inggo/CoC-Cults-MoreDeities",
+              "icon": "icon-github",
+              "name": "More Deities for RimWorld - Call of Cthulhu - Cults",
+              "status": "Est. 2020"
+            }
+          ]
+        },
+        {
+          "name": "Python Scripts",
+          "samples": [
+            {
+              "url": "https://github.com/Inggo/ImgboxDL",
+              "label": "Inggo/ImgboxDL",
+              "icon": "icon-github",
+              "name": "Imgbox Downloader",
+              "status": "Est. 2020"
+            },
+            {
+              "url": "https://github.com/Inggo/psba-gis-arcpy",
+              "label": "Inggo/psba-gis-arcpy",
+              "icon": "icon-github",
+              "name": "ArcGIS ArcPy Scripts",
+              "status": "Est. 2018"
+            }
+          ]
         }
       ]
     }
@@ -423,28 +882,30 @@
       "category": "Web Development",
       "items": [
         "Has excellent understanding of HTML, CSS, and Javascript.",
-        "Highly proficient in the PHP web programming language.",
+        "Highly proficient in PHP web programming language and Node.js back-end Javascript runtime environment.",
         "Familiar with in SQL syntax and can work with various database management systems.",
         "Adept in working with PHP frameworks, especially Laravel.",
         "Develops and maintains websites using static site generators such as Nuxt.js and Hugo; and content management systems such as WordPress.",
         "Familiar with responsive website design and applies best practices.",
+        "Has working experience with eCommerce software such as Shopify, Magento, and WooCommerce for WordPress",
         "Knowledgeable in using various front-end CSS frameworks such as Semantic UI and Bootstrap.",
-        "Able to use version control systems, particularly Git and Subversion.",
+        "Able to use version control systems, particularly Git and Apache Subversion.",
         "Capable in utilizing front-end Javascript frameworks such as Vue.js, Angular, and jQuery.",
-        "Knows his way with the Unix terminal and can build and maintain web servers using Ubuntu.",
+        "Knows his way around the Unix terminal and can build and maintain web servers on Ubuntu, FreeBSD, and CentOS.",
         "Can learn and use any front-end or back-end framework given a reasonable time frame."
       ]
     },
     {
       "category": "Programming",
       "items": [
-        "Proficient in Python, Java, C#, and C programming languages.",
+        "Proficient in Python, Java, C#, C++, C, and Ruby programming languages.",
         "Knowledgeable in procedural, functional, and SOLID object-oriented programming.",
-        "Understands and has experience working with assembly language.",
+        "Understands and has experience coding in assembly language.",
         "Able to learn new programming languages in a reasonable amount of time.",
-        "Can write bash (Unix) and batch (MS-DOS) scripts to automate terminal or command line tasks.",
+        "Can write Bash (Unix), batch (MS-DOS), and PowerShell scripts to automate tasks.",
         "Writes scripts for ArcGIS to automate various tasks including spatial analysis and layouting.",
-        "Able to write custom Scripts and Add-ons using Javascript for Google Sheets used in various applications."
+        "Able to write custom Scripts and Add-ons using Javascript for Google Sheets used in various applications.",
+        "Develops code modifications (mods) for Unity-based games."
       ]
     },
     {
@@ -452,7 +913,7 @@
       "items": [
         "Adept in using Microsoft Office software specifically Word, Excel, and PowerPoint; and their Google or LibreOffice counterparts.",
         "Proficient in using image editing software including Adobe Photoshop and Adobe Illustrator",
-        "Has experience in using non-linear editing system or video editing software such as DaVinci Resolve.",
+        "Has experience in using non-linear editing systems or video editing software such as DaVinci Resolve.",
         "Trained and has working experience in using Geographic Information System (GIS) software, specifically ArcGIS.",
         "Can build desktop computers using custom manufacturer parts.",
         "Can touch-type; encodes with excellent speed and accuracy."
@@ -461,25 +922,141 @@
     {
       "category": "Communication, Project Management, and Research",
       "items": [
-        "Has good grasp of both English and Filipino Languages.",
-        "Has project management experience and can write project proposals, policies, Gantt charts, and budgets.",
-        "Has experience in using project management tools such as Jira and Trello.",
-        "Co-authored and edited various publications and researches for the PSBA-Manila DRM Unit.",
-        "Has presented and emceed in some conferences and seminars.",
+        "Has outstanding grasp of both English and Filipino Languages.",
+        "Possesses project and personnel management experience and can write project proposals, policies, Gantt charts, and budgets.",
+        "Experienced in using project management tools such as Jira and Trello.",
+        "Has authored, co-authored, proofread, and edited publications and researches.",
+        "Has organized, presented in, and emceed at events, conferences, and seminars.",
         "Blogs as a hobby; owns and writes a personal food blog."
       ]
     },
     {
-      "category": "Achievements, Publications, and Conferences",
+      "category": "Conferences and Events",
       "items": [
-        "Co-authored and edited 'Enhancing Urban Resilience towards Water Sufficiency during Extreme Weather Disastrous Impact: Sectoral Adaptation Action Plan of Quezon City, Philippines' and 'Supplementary Document for the GAWAD Kalasag CY 2018 Entry' for PSBA-Manila.",
-        "Presented in the 2018 International Conference 'Water Science for Impact'.",
-        "Participated in the 2018 APRU-IRIDeS Multi-Hazards Summer School.",
-        "Attended various education-related seminars in Manila, such as 'EduTech Philippines 2019'.",
-        "Attended several Disaster Risk Reduction and Management conferences and seminars in Manila.",
-        "Participated in multiple DevCon summits, events, and hackatons since 2013.",
-        "Participated in the 2005 ACM Intercollegiate Computer Programming Competition in Ateneo University.",
-        "Participated and won a number of Programming Competitions within the Computer Science department in University of the Philippines, Diliman."
+        {
+          "description": "Organized, presented in, and attended multiple local and international conferences, symposia, colloquia, workshops, and other events, including:",
+          "subitems": [
+            {
+              "description": "4th International Research Colloquium towards Disaster Risk Transfer (4IRC-DRT)",
+              "date": "November 9-10, 2019",
+              "venue": "Quezon City Experience (QCX) Theater, Quezon City Circle",
+              "role": "Organizer"
+            },
+            {
+              "description": "Forum for Local Disaster Risk Reduction and Management Officers of Metro Manila 2019",
+              "date": "July 29, 2019",
+              "venue": "Philippine Information Agency (PIA) conference room, Quezon City",
+              "role": "Attendee"
+            },
+            {
+              "description": "Special Graduation Rites for Pioneer MBA-DRM Program Graduates from Quezon City Local Government Scholars",
+              "date": "July 19, 2019",
+              "venue": "President Manuel L. Quezon Ceremonial Hall, 15th Floor, Main Building, Quezon City Hall",
+              "role": "Emcee and Organizer"
+            },
+            {
+              "description": "2nd International Training Program (2ITP-2019)",
+              "date": "June 20-22, 2019",
+              "venue": "City Planning and Development Office (CPDO) Conference Room, 4th Floor, Civic Center D, City Hall Compound, Quezon City",
+              "role": "Organizer"
+            },
+            {
+              "description": "International Symposium on Disaster Resilience and Sustainable Development",
+              "date": "March 7-8, 2019",
+              "venue": "Asian Institute of Technology (AIT) Conference Center, Thailand",
+              "role": "Attendee"
+            },
+            {
+              "description": "5th Philippine Esri Education GIS Conference",
+              "date": "May 28 to 29, 2019",
+              "venue": "EDSA Shangri-La Hotel, Mandaluyong City",
+              "role": "Resource Speaker",
+              "link": "https://www.facebook.com/media/set/?vanity=GeodataSys&set=a.2794705360556262"
+            },
+            {
+              "description": "3rd International Research Symposium (3IRS)",
+              "date": "March 23, 2019",
+              "venue": "Grand Auditorium, Philippine Heart Center, Quezon City",
+              "role": "Organizer"
+            },
+            {
+              "description": "EduTECH Philippines 2019",
+              "date": "February 20-21, 2019",
+              "venue": "SMX Convention Center, Manila",
+              "role": "Attendee"
+            },
+            {
+              "description": "International Conference Water Science for Impact",
+              "date": "October 16-18, 2018",
+              "venue": "Wageningen University & Research (WUR) in Wageningen, The Netherlands",
+              "role": "Presenter"
+            },
+            {
+              "description": "3rd International Research Colloquium (3IRC)",
+              "date": "October 13, 2018",
+              "venue": "QCX Conference Theatre, Quezon City Circle",
+              "role": "Presenter and Organizer",
+              "link": "https://psba.edu/proceedings/3rd-international-research-colloquium-october-13/"
+            },
+            {
+              "description": "APRU-IRIDeS Multi-Hazards Summer School",
+              "date": "July 24 to 27, 2018",
+              "venue": "Tohoku University, Sendai, Japan",
+              "role": "Attendee",
+              "link": "https://apru.org/event/apru-x-irdes-multi-hazards-summer-school-2018/"
+            },
+            {
+              "description": "International Symposium 2018 – Public-Private Trends in Business Management: Understanding Disaster Risk towards Business Continuity",
+              "date": "January 27-28, 2018",
+              "venue": "QCX Theater, Quezon City Circle",
+              "role": "Organizer"
+            }
+          ]
+        },
+        "Attended the DevCon AngularJS Code Camp 2015 and is among the winners of the mini hackathon.",
+        "Attended multiple DevCon Summits since 2013.",
+        "Participated in the 2005 ACM Intercollegiate Computer Programming Competition at Ateneo University.",
+        "Participated and won several Programming Competitions within the Computer Science department at the University of the Philippines Diliman."
+      ]
+    },
+    {
+      "category": "Publications",
+      "items": [
+        {
+          "description": "Did content improvement, editing, and visualization for “Extreme weather disasters challenges for sustainable development: Innovating a science and policy framework for disaster-resilient and sustainable Quezon City, Philippines” published in",
+          "publication": "Progress in Disaster Science, Volume 5, January 2020",
+          "doi": "10.1016/j.pdisas.2020.100066",
+          "date": "January 2020"
+        },
+        {
+          "description": "Authored “Role of GIS in PSBA-Manila DRM Unit” presented during the",
+          "publication": "5th Philippine Esri Education GIS Conference",
+          "date": "May 2019"
+        },
+        {
+          "description": "Co-authored and edited “Supplementary Document for the GAWAD Kalasag CY 2019 Entry” for PSBA-Manila, which won the",
+          "publication": "NCR Regional Gawad KALASAG Award 2019",
+          "publicationExtra": "for the Higher Education Institutions category",
+          "link": "https://psba.edu/2019/07/30/philippine-school-of-business-administration-manila-wins-regional-gawad-kalasag-award-2019/",
+          "date": "March 2019"
+        },
+        {
+          "description": "Co-authored and edited “Enhancing Urban Resilience towards Water Sufficiency during Extreme Weather Disastrous Impact: Sectoral Adaptation Action Plan of Quezon City, Philippines” published as a poster for the",
+          "publication": "International Conference 'Water Science for Impact’",
+          "date": "October 2018"
+        },
+        {
+          "description": "Authored “Personnel Capacity Enhancement of DRM Unit: Lesson Learned from the APRU-IRIDeS Multi-Hazards Summer School” presented during the",
+          "publication": "3rd International Research Colloquium",
+          "date": "October 2018"
+        },
+        {
+          "description": "Co-authored and edited “Supplementary Document for the GAWAD Kalasag CY 2018 Entry” for PSBA-Manila, which won the",
+          "publication": "NCR Regional Gawad KALASAG Award 2018",
+          "publicationExtra": "for the Higher Education Institutions category",
+          "link": "https://psba.edu/2018/08/01/philippine-school-of-business-administration-manila-wins-first-place-in-gawad-kalasag-awards-2018/",
+          "date": "March 2018"
+        }
       ]
     }
   ]

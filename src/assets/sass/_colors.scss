@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $color-primary-0: #8C2F5E;
 $color-primary-1: #D28CAF;
 $color-primary-2: #AF5784;
@@ -35,6 +37,17 @@ $tertiary-darker: $color-secondary-2-3;
 $tertiary-darkest: $color-secondary-2-4;
 
 $bg-base: #fff;
-$bg: linear-gradient(to bottom right, transparentize($secondary-lightest, .9), transparentize($tertiary-darkest, .9));
+
+@function bg-gradient($direction, $transparency: .9) {
+  @return linear-gradient($direction, transparentize($secondary-lightest, $transparency), transparentize($tertiary-darkest, $transparency))
+}
+
+
+
+$bg: bg-gradient(to bottom right, .85);
+$bg-reverse: bg-gradient(to top left, .75);
 $bg-secondary: #333;
 $bg-button: lighten($secondary-lightest, 10%);
+
+$tooltip-bg: transparentize($tertiary-darkest, .1);
+$tooltip-color: #fff;

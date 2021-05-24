@@ -1,13 +1,15 @@
-$serif: Ovo, serif;
-$sserif: Muli, sans-serif;
+@use "sass:math";
 
-$break-sm: 375px;
+$serif: Ovo, serif;
+$sserif: Open Sans, sans-serif;
+
+$break-sm: 600px;
 $break-md: 900px;
 
 $cw-sm: 290px;
 $cw-md: 590px;
 $cw-lg: 720px;
 
-$hw-sm: $cw-sm/2;
-$hw-md: $cw-md/2;
-$hw-lg: $cw-lg/2;
+$hw-sm: math.div($cw-sm, 2);
+$hw-md: math.div($cw-md, 2);
+$hw-lg: math.div($cw-lg, 2);

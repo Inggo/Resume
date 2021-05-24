@@ -25,7 +25,7 @@
           <i class="icon-github"></i>
         </span>
         <a :href="content.links.github" target="_blank">
-          <span class="label link">{{ removeProtocol(content.links.github) }}</span>
+          <span class="label link">{{ removeProtocol(content.links.github, true) }}</span>
         </a>
       </li>
       <li>
@@ -43,7 +43,10 @@
           <i class="icon-mobile"></i>
         </span>
         <a :href="content.links.mobile.link" target="_blank">
-          <span class="label link">{{ content.links.mobile.label }}</span>
+          <span class="label link">
+            {{ content.links.mobile.label }}
+            <span v-if="content.links.mobile.tooltip" class="tooltip">{{ content.links.mobile.tooltip }}</span>
+          </span>
         </a>
       </li>
       <li v-for="link in content.extraLinks" :key="link.id">
@@ -52,7 +55,9 @@
           <i :class="link.icon"></i>
         </span>
         <a :href="link.url" target="_blank">
-          <span class="label link">{{ removeProtocol(link.url) }}</span>
+          <span class="label link">{{ removeProtocol(link.url, link.showPath) }}
+            <span v-if="link.tooltip" class="tooltip">{{ link.tooltip }}</span>
+          </span>
         </a>
       </li>
     </ul>
@@ -61,6 +66,8 @@
 </template>
 
 <script>
+import mixins from '../mixins';
+
 export default {
   name: 'InggoContentLinks',
   mixins: [mixins.removesProtocol],

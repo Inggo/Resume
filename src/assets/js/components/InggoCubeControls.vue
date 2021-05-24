@@ -43,6 +43,7 @@
     methods: {
       setVisibleFace (face) {
         this.$store.commit('setVisibleFace', face);
+        this.$emit('set-face', face);
       }
     }
   }

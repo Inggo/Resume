@@ -1,9 +1,13 @@
 <template>
   <section :class="faceClass" :id="faceID">
-    <cube-controls :current-face="face.faceClass"></cube-controls>
+    <cube-controls
+      :current-face="face.faceClass"
+      @set-face="faceChanged"
+    ></cube-controls>
     <div :class="{
       'face-content-container': true,
-      'is-overflowed': showZoom
+      'is-overflowed': showZoom,
+      'is-currently-shown': isVisible
     }" ref="container">
       <div class="face-contents">
         <a v-if="showZoom" class="show-zoom" @click="toggleZoom">
@@ -19,10 +23,24 @@
             :content="content"
             :overflow="showZoom"
             :is-visible="isVisible"
+            @toggle-zoom="toggleZoom"
+            @content-displayed="contentDisplayed"
           ></component>
         </transition>
       </div>
     </div>
+    <transition name="cover">
+      <div class="face-cover" v-if="faceContents.cover" v-show="!isVisible">
+        <div class="face-cover-bg">
+          <h2>
+            <span class="icon" v-if="faceContents.icon">
+              <i :class="faceContents.icon"></i>
+            </span>
+            {{ faceContents.name }}
+          </h2>
+        </div>
+      </div>
+    </transition>
   </section>
 </template>
 
@@ -34,7 +52,8 @@ export default {
       timeout: null,
       type: Object,
       default: {
-        faceClass: 'front'
+        faceClass: 'front',
+        showCover: false
       }
     }
   },
@@ -50,7 +69,7 @@ export default {
       return classes;
     },
     faceID () {
-      return this.$store.state.faceContents[this.face.faceClass]['content-type'];
+      return this.faceContents['content-type'];
     },
     isVisible () {
       return this.face.faceClass == this.$store.state.visibleFace;
@@ -58,8 +77,11 @@ export default {
     isMobile () {
       return window.innerWidth < 768;
     },
+    faceContents () {
+      return this.$store.state.faceContents[this.face.faceClass];
+    },
     content () {
-      return this.$store.state.faceContents[this.face.faceClass].content;
+      return this.faceContents.content;
     },
     modalActive () {
       return this.$store.state.modalContents;
@@ -69,8 +91,14 @@ export default {
     }
   },
   methods: {
+    contentDisplayed (payload) {
+      this.$emit('face-loaded', payload);
+    },
     toggleZoom () {
       this.$store.commit('setModal', this.$refs.contents.$el.innerHTML);
+    },
+    faceChanged (payload) {
+      this.$emit('set-face', payload);
     }
   }
 }

@@ -11,9 +11,11 @@
 .icon-left:before { content: '\e809'; } /* '' */
 .icon-right:before { content: '\e80a'; } /* '' */
 .icon-feather:before { content: '\e80b'; } /* '' */
+.icon-calendar:before { content: '\e80c'; } /* '' */
 .icon-spin:before { content: '\e834'; } /* '' */
 .icon-github:before { content: '\f09b'; } /* '' */
 .icon-coffee:before { content: '\f0f4'; } /* '' */
 .icon-mobile:before { content: '\f10b'; } /* '' */
+.icon-unlink:before { content: '\f127'; } /* '' */
 .icon-education:before { content: '\f19d'; } /* '' */
 .icon-bio:before { content: '\f2bb'; } /* '' */

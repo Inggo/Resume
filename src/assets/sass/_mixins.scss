@@ -7,7 +7,7 @@
     border-radius: 50%;
     display: block;
     position: absolute;
-    left: .675rem;
+    left: .25rem;
     top: .5rem;
 
   }
@@ -74,5 +74,27 @@
     @include respond-to(lg) {
       transform: $rotate translateZ($hw-lg);
     }
+  }
+}
+
+@mixin heartbeating($duration: 2s) {
+  transition: opacity .4s;
+
+  &:not(:hover) {
+    animation: heartbeat $duration ease-in-out infinite;
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    opacity: .5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .5;
   }
 }

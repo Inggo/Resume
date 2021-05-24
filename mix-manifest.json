@@ -1,4 +1,9 @@
 {
     "/public/js/app.js": "/public/js/app.js",
-    "/public/css/style.css": "/public/css/style.css"
+    "/public/css/style.css": "/public/css/style.css",
+    "/public/fonts/fontello.eot": "/public/fonts/fontello.eot",
+    "/public/fonts/fontello.svg": "/public/fonts/fontello.svg",
+    "/public/fonts/fontello.ttf": "/public/fonts/fontello.ttf",
+    "/public/fonts/fontello.woff": "/public/fonts/fontello.woff",
+    "/public/fonts/fontello.woff2": "/public/fonts/fontello.woff2"
 }

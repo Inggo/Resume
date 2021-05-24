@@ -43,6 +43,16 @@
           <span class="label link">{{ content.links.mobile.label }}</span>
         </a>
       </li>
+      <li v-for="(link, i) in content.extraLinks.filter(link => link.showInBio)" :key="'extra-' + i">
+        <a :href="link.url" target="_blank">
+          <span class="icon" v-if="link.icon">
+            <i :class="link.icon"></i>
+          </span>
+          <span class="label link">{{ link.bioLabel ? link.bioLabel : link.label }}
+            <span v-if="link.tooltip" class="tooltip">{{ link.tooltip }}</span>
+          </span>
+        </a>
+      </li>
     </ul>
   </div>
 </template>

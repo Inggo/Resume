@@ -1,12 +1,16 @@
+@use "sass:math";
+
 @import '~reset-css/reset';
+
 @import url('https://fonts.googleapis.com/css?family=Ovo');
-@import url('https://fonts.googleapis.com/css?family=Muli:400,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+
 @import '../fontello/css/animation';
 @import '../fontello/css/fontello';
 @import 'variables';
 @import 'colors';
 @import 'mixins';
-@import 'cube';
+@import 'bg';
 
 html,
 body,
@@ -113,6 +117,7 @@ h6 {
 
 h1 {
   font-size: 1.75rem;
+  padding-bottom: 0;
 
   @include respond-to(md) {
     font-size: 3.5rem;
@@ -124,6 +129,7 @@ h1 {
 
   + .subtitle {
     font-size: 1.5rem;
+    line-height: 1.625rem;
   }
 }
 
@@ -141,11 +147,24 @@ h2 {
   }
 }
 
-#work h2 {
-  padding-right: 2rem;
+#work,
+#skills,
+#portfolio
+{
+  h2 {
+    padding-right: 2rem;
 
-  @include respond-to(md) {
-    padding-right: .25rem;
+    @include respond-to(md) {
+      padding-right: .25rem;
+    }
+  }
+  
+  .face-cover {
+    h2 {
+      @include respond-to(md) {
+        padding-right: 2rem;
+      }
+    }
   }
 }
 
@@ -154,6 +173,10 @@ h3 {
 
   @include respond-to(md) {
     font-size: 1.675rem;
+  }
+
+  + h4 {
+    padding-top: 0;
   }
 }
 
@@ -173,6 +196,23 @@ a {
 
   &:hover {
     opacity: 1;
+
+    &[href] {
+      cursor: pointer;
+
+      > * {
+        cursor: pointer;
+      }
+    }
+
+    &:not[href] {
+      color: $secondary;
+      cursor: default;
+  
+      > * {
+        cursor: default;
+      }
+    }
   }
 }
 
@@ -285,12 +325,6 @@ footer {
 
 .icon {
   color: $primary;
-  display: inline-block;
-  text-align: center;
-  position: relative;
-  width: 1.25rem;
-  height: 1.25rem;
-  line-height: 1.25rem;
 }
 
 .cube-controls {
@@ -310,7 +344,13 @@ footer {
       display: grid;
       grid-template-columns: auto auto;
       grid-template-rows: 33.33vh 33.33vh 33.33vh;
-      grid-column-gap: 320px;
+      column-gap: calc(#{$cw-sm}/2);
+      pointer-events: none;
+      bottom: 0;
+
+      a {
+        pointer-events: all;
+      }
     }
   }
 
@@ -320,7 +360,7 @@ footer {
     align-items: center;
     justify-content: center;
     top: .25rem;
-    right: .75rem;
+    right: .25rem;
     left: auto;
 
     &.is-mobile {
@@ -375,7 +415,7 @@ footer {
       text-align: left;
       padding: .2rem;
       padding-left: 1.75rem;
-      width: 3.5rem;
+      width: 3.75rem;
       height: 1.6rem;
       line-height: 1.6rem;
       margin: .1rem;
@@ -415,6 +455,37 @@ footer {
   padding: 1rem 0;
   width: 100%;
   position: relative;
+
+  .is-dynamic {
+    position: relative;
+    height: 100%;
+    
+    .folio-contents,
+    .skills-contents {
+      height: 100%;
+      align-items: center;
+    }
+  }
+}
+
+.has-overflow {
+  .folio-contents,
+  .skills-contents {
+    > .is-active {
+      align-self: flex-start;
+    }
+  }
+}
+
+.is-overflowing {
+  align-self: flex-start;
+}
+
+.folio-contents,
+.skills-contents {
+  > :not(.is-overflowing) {
+    align-self: center;
+  }
 }
 
 .modal {
@@ -469,8 +540,16 @@ footer {
     padding-bottom: 0;
   }
 
+  .skills-contents {
+    h2 {
+      br {
+        display: none;
+      }
+    }
+  }
+
   .vertical-overflow,
-  .dynamic-controls {
+  .page-controls {
     display: none;
   }
 
@@ -525,13 +604,12 @@ footer {
   background: $bg-base;
   border-radius: .5rem;
   z-index: 11;
+  background: $bg;
 
   .icon {
-    background: $bg;
-    width: 2.25rem;
-    height: 2.25rem;
-    line-height: 2.25rem;
-    font-size: 1.25rem;
+    position: relative;
+    font-size: 1.5rem;
+    top: -.125rem;
   }
 }
 
@@ -545,10 +623,8 @@ footer {
   position: relative;
 
   @include respond-to(md) {
-    &:not(.dynamic-controls) {
-      padding-top: .1rem;
-      padding-bottom: .1rem;
-    }
+    padding-top: .1rem;
+    padding-bottom: .1rem;
   }
 
   h3 {
@@ -608,7 +684,7 @@ h4 + .line-label {
   .skills-contents,
   .educ-contents,
   .folio-contents {
-    width: calc(100% - 3rem);
+    width: 100%;
     margin: 0 auto;
 
     > li {
@@ -697,9 +773,47 @@ h4 + .line-label {
     }
 
     @include dot-before;
+
+    li {
+      @include dot-before;
+      padding-left: 1rem;
+      line-height: 1rem;
+      font-size: .9rem;
+    }
   }
 }
 
+.skills-items {
+  .item-title {
+    font-weight: 600;
+  }
+
+  .item-publication {
+    font-weight: 600;
+    font-style: italic;
+  }
+}
+
+.category-conferences-and-events,
+.category-publications {
+  .skills-items > li {
+    font-size: .9rem;
+
+    li {
+      font-size: .8rem;
+    }
+  }
+}
+
+.category-conferences-and-events {
+  .subitem-description {
+    font-weight: 600;
+  }
+
+  .subitem-role {
+    font-style: italic;
+  }
+}
 
 
 @include respond-to(md) {
@@ -782,7 +896,7 @@ h4 + .line-label {
   display: flex;
 
   strong {
-    font-weight: bold;
+    font-weight: 600;
     margin-left: .5rem;
   }
 }
@@ -806,12 +920,16 @@ h4 + .line-label {
   display: flex;
   justify-content: space-between;
 
-  > * {
-    width: 45%;
+  .folio-features {
+    width: 60%;
 
-    &:first-child {
-      padding-left: 0;
-    }
+    padding-left: 0;
+  }
+
+  .folio-techs {
+    width: 35%;
+
+    padding-left: 0;
   }
 }
 
@@ -830,31 +948,66 @@ h4 + .line-label {
   font-weight: bold;
 }
 
-.dynamic-controls {
+.page-controls {
   padding: 0;
   position: absolute;
   top: 50%;
-  margin-top: -.875rem;
   left: 0;
   right: 0;
   
-  a {
+  button {
     position: absolute;
     z-index: 111;
 
-    top: -2.25rem;
-    line-height: 6rem;
-    height: 6rem;
-    width: 1.75rem;
-    text-align: center;
+    top: math.div($cw-sm * -1, 2);
+    height: $cw-sm;
+    width: calc((100vw - #{$cw-sm})/2);
     cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+
+    @include respond-to(sm-ls) {
+      font-size: 2.5rem;
+      width: calc((100vw - #{$cw-sm})/2 - 4.75rem);
+    }
+  
+    @include respond-to(md) {  
+      top: math.div($cw-md * -1, 2);
+      height: $cw-md;
+      width: calc((100vw - #{$cw-md})/2);
+    
+      > .icon {
+        font-size: 1.5rem;
+      }
+    }
+
+    @include respond-to(lg) {  
+      top: math.div($cw-lg * -1, 2);
+      height: $cw-lg;
+      width: calc((100vw - #{$cw-lg})/2);
+    
+      > .icon {
+        font-size: 2rem;
+      }
+    }
 
     &:first-child {
-      left: -.5rem;
+      left: 0;
     }
 
     &:last-child {
-      right: -.5rem;
+      right: 0;
+    }
+
+    > .icon {
+      display: block;
+      width: auto;
+      height: auto;
+      margin: 0 auto;
     }
   }
 }
@@ -875,7 +1028,7 @@ h4 + .line-label {
 
     > :first-child {
       margin-left: auto;
-      width: 65px;
+      width: 75px;
       text-align: right;
     }
 
@@ -886,13 +1039,72 @@ h4 + .line-label {
   }
 }
 
+.bio-links,
+.links {
+  a {
+    position: relative;
+  }
+
+  .tooltip {
+    position: absolute;
+    bottom: calc(100% + 6px);
+    transition: transform .4s, opacity 1s;
+    opacity: 0;
+    transform: translateY(12px);
+    background: $tooltip-bg;
+    display: block;
+    padding: 4px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    width: auto;
+    color: $tooltip-color;
+    z-index: 3;
+    text-align: center;
+    pointer-events: none;
+
+    &::before {
+      content: '';
+      width: 0; 
+      height: 0; 
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid $tooltip-bg;
+      position: absolute;
+      left: 0;
+      right: 0;
+      display: block;
+      margin: 0 auto;
+      bottom: -6px;
+    }
+  }
+
+  a:hover {
+    .tooltip {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
 .vertical-overflow {
-  box-shadow: 0 -0.25rem 1.5rem 0 rgba(0, 0, 0, 0.667);
   position: absolute;
   bottom: -1rem;
   left: 0;
   right: 0;
-  height: 1rem;
+  height: 2rem;
+  cursor: pointer;
+
+  @include heartbeating;
+
+  &::after {
+    content: '';
+    position: absolute;
+    box-shadow: 0 -0.25rem 1.5rem 0 rgba(0, 0, 0, 0.667);    
+    bottom: -1rem;
+    left: 0;
+    right: 0;
+    height: 1rem;
+  }
 }
 
 
@@ -917,6 +1129,54 @@ h4 + .line-label {
     border: 1px solid $primary-darker;
     padding: 0 .5rem;
     margin: .5rem 0;
+  }
+  
+  .category-publications {
+    .skills-items > li {
+      font-size: 1rem;
+    }
+  }
+}
+
+.face-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 11;
+
+  @include respond-to(md) {
+    width: calc(100% - 7rem);
+    left: 0;
+  }
+
+  .face-cover-bg {
+    background: $bg;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    align-items: center;
+
+    h2 {
+      width: 100%;
+      padding: 1rem 2rem 3.5rem;
+      font-size: 3.5rem;
+      line-height: 3rem;
+      text-align: center;
+      border-bottom: none;
+
+      .icon {
+        position: absolute;
+        bottom: -2rem;
+        left: 0;
+        right: 0;
+      }
+    }
   }
 }
 

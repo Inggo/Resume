@@ -1,11 +1,24 @@
 <template>
   <div v-if="content" :class="{ 'is-dynamic': overflow }">
     <ul class="educ-contents">
-      <li v-for="(field, i) in fields" :key="i" ref="contents" :class="{ 'is-active': i == fieldIndex }">
+      <li
+        v-for="(field, i) in fields"
+        :key="i"
+        ref="contents"
+        :class="{
+          'is-active': i == fieldIndex,
+          'is-overflowing': contentOverflows && contentOverflows[i],
+        }"
+      >
         <h2>{{ field.label }}</h2>
         <ul class="educ-institutes" :ref="'institutes-' + i">
-          <li v-for="(item, j) in content[field.key]" :key="j" :class="{ 'is-active': i == fieldIndex && j == instituteIndex }">
+          <li
+            v-for="(item, j) in content[field.key]"
+            :key="j"
+            :class="{ 'is-active': i == fieldIndex && j == instituteIndex }"
+          >
             <h3>{{ item.institution }}</h3>
+            <h4 v-if="item.campus">{{ item.campus }}</h4>
             <aside class="educ-info">
               <p class="educ-info-location">
                 <span v-if="item.location">{{ item.location }}</span>
@@ -20,80 +33,83 @@
         </ul>
       </li>
     </ul>
-    <div class="dynamic-controls" v-if="fields.length > 1">
-      <a @click="prev" v-show="hasPrev" key="prev">
-        <span class="icon">
-          <i class="icon-left"></i>
-        </span>
-      </a>
-      <a @click="next" v-show="hasNext" key="next">
-        <span class="icon">
-          <i class="icon-right"></i>
-        </span>
-      </a>
-    </div>
   </div>
 </template>
 
 <script>
+import mixins from "../mixins";
+
 export default {
-  name: 'InggoContentEduc',
-  mixins: [mixins.animations],
-  data () {
+  name: "InggoContentEduc",
+  mixins: [
+    mixins.animations,
+    mixins.keyboardBindings,
+    mixins.displaysContent,
+    mixins.verticalOverflow,
+  ],
+  data() {
     return {
       fields: [
         {
-          key: 'tertiary',
-          label: 'Tertiary Education'
+          key: "tertiary",
+          label: "Tertiary Education",
         },
         {
-          key: 'primary-secondary',
-          label: 'Primary and Secondary Education'
-        }
+          key: "primary-secondary",
+          label: "Primary and Secondary Education",
+        },
       ],
       fieldIndex: 0,
-      instituteIndex: 0
-    }
+      instituteIndex: 0,
+    };
   },
   props: {
     content: {
       type: Object,
-      default: {}
+      default: {},
     },
     overflow: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
-    currentField () {
+    activeRef() {
+      return this.$refs[this.activeRefIndex][0];
+    },
+    activeRefIndex() {
+      return "institutes-" + this.instituteIndex;
+    },
+    currentField() {
       return this.fields[this.fieldIndex];
     },
-    currentFieldInstitutes () {
+    currentFieldInstitutes() {
       return this.content[this.currentField.key];
     },
-    currentInstitute () {
+    currentInstitute() {
       return this.content[this.currentField.key][this.instituteIndex];
     },
-    currentInstitutesRef () {
-      return this.$refs['institutes-' + this.fieldIndex];
+    currentInstitutesRef() {
+      return this.$refs["institutes-" + this.fieldIndex];
     },
-    lastFieldIndex () {
+    lastFieldIndex() {
       return this.fields.length - 1;
     },
-    lastInstituteIndex () {
-      return this.currentFieldInstitutes.length -1;
+    lastInstituteIndex() {
+      return this.currentFieldInstitutes.length - 1;
     },
-    hasPrev () {
+    hasPrev() {
       return this.fieldIndex > 0 || this.instituteIndex > 0;
     },
-    hasNext () {
-      return this.fieldIndex < this.lastFieldIndex ||
-        this.instituteIndex < this.lastInstituteIndex;
-    }
+    hasNext() {
+      return (
+        this.fieldIndex < this.lastFieldIndex ||
+        this.instituteIndex < this.lastInstituteIndex
+      );
+    },
   },
   methods: {
-    prev () {
+    prev() {
       if (this.animating) {
         return;
       }
@@ -120,8 +136,10 @@ export default {
       this.currentInstitutesRef.forEach((el) => {
         $vm.animateTranslate(el, -100 * $vm.instituteIndex);
       });
+
+      this.contentDisplayed();
     },
-    next () {
+    next() {
       if (this.animating) {
         return;
       }
@@ -148,7 +166,9 @@ export default {
       this.currentInstitutesRef.forEach((el) => {
         $vm.animateTranslate(el, -100 * $vm.instituteIndex);
       });
-    }
-  }
-}
+
+      this.contentDisplayed();
+    },
+  },
+};
 </script>
