@@ -1,6 +1,20 @@
+@media screen {
+  .app-print {
+    display: none;
+  }
+}
+
 @media print {
-    .header {
-        position: fixed;
-        top: 0;
-    }
+  html, body {
+    width: 210mm;
+    height: 297mm;
+  }
+
+  .app-container > :not(.app-print) {
+    display: none;
+  }
+
+  .app-print {
+    display: block;
+  }
 }

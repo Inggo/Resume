@@ -31,6 +31,7 @@
     <transition name="fade-zoom">
       <modal v-show="modalContents" :contents="modalContents"></modal>
     </transition>
+    <div class="app-print"></div>
   </div>
 </template>
 
