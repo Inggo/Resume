@@ -11,11 +11,11 @@
           'is-overflowing': contentOverflows && contentOverflows[i],
         }"
       >
-        <div class="line">
-          <h3>{{ item.company }}</h3>
-          <span class="line-label">Company</span>
+        <div class="line" v-if="item.company || item.organization">
+          <h3>{{ item.company || item.organization }}</h3>
+          <span class="line-label">{{ item.company ? 'Company' : 'Organization' }}</span>
         </div>
-        <div class="line">
+        <div class="line" v-if="item.location">
           <p class="subtitle">{{ item.location }}</p>
           <span class="line-label">Location</span>
         </div>
