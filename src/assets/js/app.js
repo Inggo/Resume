@@ -143,20 +143,20 @@ const app = new Vue({
         "content-type": "bio"
       });
 
-      // Commit education
+      // Commit portfolio
       store.commit("setFace", {
-        face: "left",
-        name: "Education",
-        icon: "icon-education",
-        content: data.education,
-        "content-type": "education",
+        face: "right",
+        name: "Portfolio",
+        icon: "icon-folder",
+        content: data.portfolio,
+        "content-type": "portfolio",
         showZoom: true,
         cover: true
       });
 
       // Commit work
       store.commit("setFace", {
-        face: "right",
+        face: "left",
         name: "Work Experience",
         icon: "icon-briefcase",
         content: data.work_experience,
@@ -165,13 +165,13 @@ const app = new Vue({
         cover: true
       });
 
-      // Commit portfolio
+      // Commit education
       store.commit("setFace", {
         face: "top",
-        name: "Portfolio",
-        icon: "icon-folder",
-        content: data.portfolio,
-        "content-type": "portfolio",
+        name: "Education",
+        icon: "icon-education",
+        content: data.education,
+        "content-type": "education",
         showZoom: true,
         cover: true
       });
