@@ -206,6 +206,55 @@
       "category": "Freelance Works",
       "items": [
         {
+          "name": "Mateship and Bayanihan 2022",
+          "subtitle": "Australian Embassy in the Philippines",
+          "description": "Front-end development for new design.",
+          "link": "https://mateshipandbayanihan.com/",
+          "role": "Front-End Developer",
+          "responsibilities": [
+            "Rewrote existing theme to fit new design using limitations of available front-end framework",
+          ],
+          "features": [
+            "Dynamic video player module and grid-based navigation",
+            "Produced a clean, responsive front-end that caters to all devices"
+          ],
+          "technologies": [
+            "WordPress with Elementor",
+            "Vue.js and Javascript",
+            "Git via github"
+          ],
+          "status": "Est. 2022"
+        },
+        {
+          "name": "Taste of Australia",
+          "subtitle": "Australian Trade and Investment Commission",
+          "description": "Promotion Microsite for Australian Products in the Philippines.",
+          "link": "https://tasteofaustralia.ph/",
+          "role": "Full-Stack Developer",
+          "responsibilities": [
+            "Developed a full-functional WordPress Theme with all requested features",
+            "Wrote complete documentation for the management of the Website",
+            "Provided analytics",
+            "Provides managed hosting services"
+          ],
+          "features": [
+            "Auto-playing video player module using YouTube's Embed API and Intersection Observer API",
+            "User registration system for access to suppliers' directory",
+            "Uses modern WordPress standards",
+            "Easily-managable content in the WordPress administrative dashboard",
+            "Fast loading and fully-responsive front-end catering to all modern browsers and devices"
+          ],
+          "technologies": [
+            "PHP 7",
+            "WordPress",
+            "Bootstrap 5",
+            "Vue.js and vanilla Javascript",
+            "SASS",
+            "Git via github"
+          ],
+          "status": "Est. 2021"
+        },
+        {
           "name": "Stream & Sip Festival",
           "subtitle": "Australian Embassy in the Philippines",
           "description": "Film festival event page and fixes for existing WordPress site.",
