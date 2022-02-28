@@ -212,7 +212,8 @@
           "link": "https://mateshipandbayanihan.com/",
           "role": "Front-End Developer",
           "responsibilities": [
-            "Rewrote existing theme to fit new design using limitations of available front-end framework"
+            "Rewrote existing theme to fit new design using limitations of available front-end framework",
+            "Provided full static backup of previous layout and will be providing full static backup of the final version"
           ],
           "features": [
             "Dynamic video player module and grid-based navigation",
@@ -220,7 +221,7 @@
           ],
           "technologies": [
             "WordPress with Elementor",
-            "Vue.js and Javascript",
+            "Vue.js, Javascript, CSS, HTML",
             "Git via github"
           ],
           "status": "Est. 2022"
