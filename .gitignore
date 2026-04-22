@@ -1,4 +1,6 @@
 node_modules
+dist
+.astro
 deploy.sh
 src/assets/fontello/demo.html
 fontello-*.zip
