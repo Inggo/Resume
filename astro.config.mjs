@@ -7,13 +7,4 @@ export default defineConfig({
   build: {
     assets: 'assets',
   },
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern-compiler',
-        },
-      },
-    },
-  },
 });

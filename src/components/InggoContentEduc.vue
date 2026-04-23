@@ -1,5 +1,5 @@
 <template>
-  <div v-if="content" :class="{ 'is-dynamic': overflow }">
+  <div v-if="content">
     <ul class="educ-contents">
       <li
         v-for="(field, i) in fields"
@@ -70,11 +70,8 @@ export default {
     currentInstitutesRef() { return this.dynRefs['institutes-' + this.fieldIndex]; },
     lastFieldIndex() { return this.fields.length - 1; },
     lastInstituteIndex() { return this.currentFieldInstitutes.length - 1; },
-    hasPrev() { return this.fieldIndex > 0 || this.instituteIndex > 0; },
-    hasNext() {
-      return this.fieldIndex < this.lastFieldIndex
-        || this.instituteIndex < this.lastInstituteIndex;
-    },
+    hasPrev() { return false; },
+    hasNext() { return false; },
   },
   methods: {
     setDyn(name, el) { if (el) this.dynRefs[name] = el; },

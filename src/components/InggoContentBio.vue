@@ -1,6 +1,6 @@
 <template>
   <div v-if="content">
-    <h1>{{ content.full_name }}</h1>
+    <h1 :title="content.full_name">{{ content.name }}</h1>
     <p class="subtitle">{{ content.title }}</p>
     <ul class="bio-links">
       <li>
@@ -10,15 +10,15 @@
         </a>
       </li>
       <li>
-        <a :href="content.links.blog" target="_blank">
-          <span class="icon"><i class="icon-feather"></i></span>
-          <span class="label feather">{{ content.links.blog }}</span>
-        </a>
-      </li>
-      <li>
         <a :href="content.links.github" target="_blank">
           <span class="icon"><i class="icon-github"></i></span>
           <span class="label link">{{ content.links.github }}</span>
+        </a>
+      </li>
+      <li>
+        <a :href="content.links.blog" target="_blank">
+          <span class="icon"><i class="icon-feather"></i></span>
+          <span class="label feather">{{ content.links.blog }}</span>
         </a>
       </li>
       <li>
