@@ -42,6 +42,7 @@ export default {
   emits: ['content-displayed', 'toggle-zoom', 'face-loaded'],
   mixins: [
     mixins.animations,
+    mixins.backgroundImage,
     mixins.keyboardBindings,
     mixins.displaysContent,
     mixins.verticalOverflow,
@@ -64,6 +65,7 @@ export default {
   computed: {
     activeRef() { return this.dynRefs[this.activeRefIndex]; },
     activeRefIndex() { return 'institutes-' + this.instituteIndex; },
+    activeImages() { return this.currentInstitute?.images || []; },
     currentField() { return this.fields[this.fieldIndex]; },
     currentFieldInstitutes() { return this.content[this.currentField.key]; },
     currentInstitute() { return this.content[this.currentField.key][this.instituteIndex]; },

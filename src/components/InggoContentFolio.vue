@@ -33,11 +33,11 @@
                 <strong>{{ item.role }}</strong>
               </aside>
               <p class="folio-item-link" v-if="item.link">
-                <a v-if="typeof item.link == 'object'" :href="item.link.url">
+                <a v-if="typeof item.link == 'object'" :href="item.link.active === false ? null : item.link.url" target="_blank">
                   <i v-if="item.link.icon" :class="item.link.icon"></i>
-                  <i v-else-if="item.active === false" class="icon-unlink"></i>
+                  <i v-else-if="item.link.active === false" class="icon-unlink"></i>
                   <i v-else class="icon-link"></i>
-                  <span>{{ item.link.label }}</span>
+                  <span>{{ item.link.label || removeProtocol(item.link.url, item.link.showPath) }}</span>
                 </a>
                 <a v-else :href="item.active === false ? null : item.link" target="_blank">
                   <i v-if="item.active === false" class="icon-unlink"></i>
@@ -110,6 +110,7 @@ export default {
   emits: ['content-displayed', 'toggle-zoom', 'face-loaded'],
   mixins: [
     mixins.animations,
+    mixins.backgroundImage,
     mixins.removesProtocol,
     mixins.verticalOverflow,
     mixins.keyboardBindings,
@@ -130,6 +131,8 @@ export default {
     activeRef() { return this.dynRefs[this.activeRefIndex]; },
     activeRefIndex() { return 'folio' + this.categoryIndex + '_' + this.itemIndex; },
     currentCategoryRef() { return this.dynRefs['category-' + this.categoryIndex]; },
+    activeItem() { return this.content[this.categoryIndex]?.items[this.itemIndex]; },
+    activeImages() { return this.activeItem?.images || []; },
     hasPrev() { return this.categoryIndex > 0 || this.itemIndex > 0; },
     hasNext() {
       return this.categoryIndex < this.lastCategoryIndex

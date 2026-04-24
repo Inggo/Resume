@@ -23,7 +23,8 @@
         "url": "/a4.pdf",
         "showPath": false,
         "tooltip": "Open the A4 PDF version of this resume",
-        "showInBio": true
+        "showInBio": true,
+        "showInLinks": false
       },
       {
         "id": "calendly",
@@ -299,7 +300,9 @@
           "features": [
             "Facebook integration, links to informational materials, using responsive theme."
           ],
-          "technologies": ["WordPress"],
+          "technologies": [
+            "WordPress"
+          ],
           "status": "Est. 2025"
         }
       ]
@@ -308,7 +311,7 @@
       "category": "Freelance Works",
       "items": [
         {
-          "name": "Mateship and Bayanihan 2022",
+          "name": "Mateship & Bayanihan",
           "subtitle": "Australian Embassy in the Philippines",
           "description": "Front-end development for new design.",
           "link": {
@@ -821,6 +824,12 @@
               "active": false
             },
             {
+              "url": "https://depedbataan.com",
+              "label": "DepEd Bataan",
+              "status": "Est. 2015",
+              "active": false
+            },
+            {
               "url": "http://veritasrealty.com.au",
               "label": "Veritas Realty",
               "status": "Est. 2013",
@@ -958,7 +967,10 @@
           "features": [
             "Call various APIs with built-in trivia script similar to classic IRC trivia bots adhering to PSR-4 standards."
           ],
-          "technologies": ["PHP 7", "Git via Github"],
+          "technologies": [
+            "PHP 7",
+            "Git via Github"
+          ],
           "status": "Est. 2017"
         },
         {

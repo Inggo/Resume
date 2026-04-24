@@ -1,16 +1,23 @@
 <template>
   <div id="app">
+    <div class="app-bg" aria-hidden="true">
+      <transition name="app-bg">
+        <img :key="bgImage" :src="bgImage" v-if="bgImage" />
+      </transition>
+    </div>
     <Cube v-if="loaded" />
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { useStore } from 'vuex';
 import Cube from './InggoCube.vue';
+import { imageUrl, applyImageConfig, collectAllImages } from '../utils/images.js';
 
 const loaded = ref(false);
 const store = useStore();
+const bgImage = computed(() => store.state.bgImage);
 
 onMounted(() => {
   fetch('/data.json')
@@ -20,6 +27,7 @@ onMounted(() => {
 });
 
 function populateContents(data) {
+  applyImageConfig(data);
   store.commit('setFace', {
     face: 'front', name: 'Bio', icon: 'icon-bio',
     content: data.info, 'content-type': 'bio',
@@ -50,5 +58,40 @@ function populateContents(data) {
     showZoom: false,
   });
   loaded.value = true;
+  collectAllImages().forEach((id) => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.type = 'image/avif';
+    link.href = imageUrl(id);
+    document.head.appendChild(link);
+  });
 }
 </script>
+
+<style scoped>
+.app-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0.2;
+  pointer-events: none;
+}
+.app-bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.app-bg-enter-active,
+.app-bg-leave-active {
+  transition: opacity 1.2s ease;
+}
+.app-bg-enter-from,
+.app-bg-leave-to {
+  opacity: 0;
+}
+</style>

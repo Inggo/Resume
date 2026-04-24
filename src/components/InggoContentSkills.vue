@@ -70,6 +70,7 @@ export default {
   emits: ['content-displayed', 'toggle-zoom', 'face-loaded'],
   mixins: [
     mixins.animations,
+    mixins.backgroundImage,
     mixins.verticalOverflow,
     mixins.keyboardBindings,
     mixins.displaysContent,
@@ -85,6 +86,7 @@ export default {
     overflow: { type: Boolean, default: false },
   },
   computed: {
+    activeImages() { return this.currentCategory?.images || []; },
     activeRef() { return this.dynRefs[this.activeRefIndex]; },
     activeRefIndex() { return 'category-' + this.categoryIndex; },
     itemIndex() { return this.categoryIndex; },

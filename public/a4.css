@@ -331,7 +331,7 @@ ul {
   font-weight: bold;
   font-style: italic;
   font-size: 11pt;
-  background-color: var(--primary);
+  background-color: color-mix(in srgb, var(--primary), white 33%);
   color: #fff;
   text-align: right;
   padding: 1mm 4mm;
@@ -508,44 +508,41 @@ ul {
   }
 }
 
-/* ── Manual overrides (Firefox print only) ────────────────── */
-@supports (-moz-appearance: none) {
-  @media print {
-    #we-row-5-0,
-    #skill-web-development-systems-architecture,
-    #skill-publications {
-      margin-bottom: 10mm;
-    }
+@media print {
+  #we-row-5-0,
+  #skill-web-development-systems-architecture,
+  #skill-publications {
+    margin-bottom: 10mm;
+  }
 
-    #rsh-work-experience-5-1,
-    #rsh-skills-1,
-    #rsh-skills-5,
-    #rsh-for-rch-freelance-works-2,
-    #rsh-for-rch-psba-manila-2,
-    #rsh-for-rch-hampton-peak-1,
-    #rsh-for-rch-sytian-it-solutions-2,
-    #rsh-for-rch-personal-works-1 {
-      padding-top: var(--mt-page);
-      display: block;
-    }
+  #rsh-work-experience-5-1,
+  #rsh-skills-1,
+  #rsh-skills-5,
+  #rsh-for-rch-freelance-works-2,
+  #rsh-for-rch-psba-manila-2,
+  #rsh-for-rch-hampton-peak-1,
+  #rsh-for-rch-sytian-it-solutions-2,
+  #rsh-for-rch-personal-works-1 {
+    padding-top: var(--mt-page);
+    display: block;
+  }
 
-    #rch-freelance-works-2,
-    #rch-psba-manila-2,
-    #rch-hampton-peak-1,
-    #rch-sytian-it-solutions-2,
-    #rch-personal-works-1 {
-      display: block;
-    }
+  #rch-freelance-works-2,
+  #rch-psba-manila-2,
+  #rch-hampton-peak-1,
+  #rch-sytian-it-solutions-2,
+  #rch-personal-works-1 {
+    display: block;
+  }
 
-    #we-row-5-1 {
-      > .col-label {
-        visibility: visible;
-      }
+  #we-row-5-1 {
+    > .col-label {
+      visibility: visible;
     }
+  }
 
-    #portfolio-section {
-      padding-top: var(--mt-page);
-    }
+  #portfolio-section {
+    padding-top: var(--mt-page);
   }
 }
 

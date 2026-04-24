@@ -30,7 +30,9 @@
       <li>
         <a :href="content.links.mobile.link" target="_blank">
           <span class="icon"><i class="icon-mobile"></i></span>
-          <span class="label link">{{ content.links.mobile.label }}</span>
+          <span class="label link">{{ content.links.mobile.label }}
+            <span v-if="content.links.mobile.tooltip" class="tooltip">{{ content.links.mobile.tooltip }}</span>
+          </span>
         </a>
       </li>
       <li v-for="(link, i) in content.extraLinks.filter(link => link.showInBio)" :key="'extra-' + i">
@@ -46,8 +48,14 @@
 </template>
 
 <script>
+import mixins from '../mixins/index.js';
+
 export default {
   name: 'InggoContentBio',
+  mixins: [mixins.backgroundImage],
   props: { content: { type: Object, default: null } },
+  computed: {
+    activeImages() { return this.content?.images || []; },
+  },
 };
 </script>

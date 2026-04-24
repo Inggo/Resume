@@ -56,6 +56,7 @@ export default {
   emits: ['content-displayed', 'toggle-zoom', 'face-loaded'],
   mixins: [
     mixins.animations,
+    mixins.backgroundImage,
     mixins.keyboardBindings,
     mixins.displaysContent,
     mixins.verticalOverflow,
@@ -76,6 +77,7 @@ export default {
     activeRef() { return this.dynRefs[this.activeRefIndex]; },
     activeRefIndex() { return 'titles-' + this.titleIndex; },
     modalOpened() { return this.$store.state.modalContents; },
+    activeImages() { return this.content[this.companyIndex]?.images || []; },
     currentCompany() { return this.content[this.companyIndex]; },
     currentTitles() { return this.currentCompany.titles; },
     currentTitlesRef() { return this.dynRefs['titles-' + this.companyIndex]; },

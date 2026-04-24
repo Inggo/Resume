@@ -8,6 +8,7 @@ const emptyFace = (face, id, next, prev) => ({
 export const store = createStore({
   state: () => ({
     modalContents: null,
+    bgImage: null,
     visibleFace: 'front',
     faceContents: {
       front:  emptyFace('front',  0, 'right',  'back'),
@@ -32,6 +33,9 @@ export const store = createStore({
     },
     closeModal(state) {
       state.modalContents = null;
+    },
+    setBgImage(state, url) {
+      state.bgImage = url;
     },
   },
 });

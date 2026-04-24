@@ -39,7 +39,7 @@
           </span>
         </a>
       </li>
-      <li v-for="link in content.extraLinks" :key="link.id">
+      <li v-for="link in content.extraLinks.filter(l => l.showInLinks !== false)" :key="link.id">
         <label>{{ link.label }}</label>
         <span class="icon"><i :class="link.icon"></i></span>
         <a :href="link.url" target="_blank">
@@ -58,7 +58,10 @@ import mixins from '../mixins/index.js';
 
 export default {
   name: 'InggoContentLinks',
-  mixins: [mixins.removesProtocol],
+  mixins: [mixins.backgroundImage, mixins.removesProtocol],
   props: { content: { type: Object, default: null } },
+  computed: {
+    activeImages() { return this.content?.linksImages || []; },
+  },
 };
 </script>
