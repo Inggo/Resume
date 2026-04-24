@@ -15,7 +15,7 @@
     "vuex": "^4.1.0"
   },
   "devDependencies": {
-    "@astrojs/vue": "^5.0.2",
-    "astro": "^5.1.1"
+    "@astrojs/vue": "^6.0.1",
+    "astro": "^6.1.9"
   }
 }
