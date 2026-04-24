@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "npm run generate:pdf && astro build",
-    "generate:pdf": "node scripts/generate-pdf.js",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -17,7 +16,6 @@
   },
   "devDependencies": {
     "@astrojs/vue": "^5.0.2",
-    "astro": "^5.1.1",
-    "pdfkit": "^0.15.2"
+    "astro": "^5.1.1"
   }
 }

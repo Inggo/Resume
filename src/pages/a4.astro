@@ -1,0 +1,391 @@
+---
+import data from '../../public/data.json';
+
+const { info, work_experience, education, skills, portfolio, references } = data;
+
+// Group consecutive education entries by institution+campus
+function groupEdu(list) {
+  const groups = [];
+  for (const e of list) {
+    const key = `${e.institution}||${e.campus || ''}`;
+    const last = groups[groups.length - 1];
+    if (last && last.key === key) last.entries.push(e);
+    else groups.push({ key, institution: e.institution, campus: e.campus, entries: [e] });
+  }
+  return groups;
+}
+
+function stripDot(s) { return s ? String(s).replace(/\.\s*$/, '') : s; }
+
+function linkHref(link) {
+  if (!link) return null;
+  if (typeof link === 'string') return link;
+  return link.url || null;
+}
+function linkActive(link) {
+  if (!link) return true;
+  if (typeof link === 'string') return true;
+  return link.active !== false;
+}
+
+// Categories where subitems use the structured (description/date/venue/role) format
+const structuredCategories = new Set(['Conferences and Events', 'Business and Analog Skills']);
+
+function slug(s) {
+  return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+function displayUrl(raw, stripProto = false) {
+  if (!raw) return '';
+  let s = String(raw);
+  if (!s.startsWith('http')) s = 'https://' + s;
+  try {
+    const u = new URL(s);
+    const parts = u.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+    const path = parts.length > 1 ? '' : u.pathname.replace(/\/$/, '');
+    const full = u.host.replace(/^www\./, '') + path;
+    return stripProto ? full : u.protocol + '//' + full;
+  } catch {
+    const r = raw.replace(/\/$/, '');
+    return stripProto ? r.replace(/^https?:\/\//, '') : r;
+  }
+}
+
+function isGithub(url) {
+  return !!url && url.includes('github.com');
+}
+
+const SVG_GITHUB = `<svg class="lr-icon" viewBox="0 0 16 16" width="10" height="10" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>`;
+
+const SVG_LINK = `<svg class="lr-icon" viewBox="0 0 16 16" width="10" height="10" fill="currentColor" aria-hidden="true"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg>`;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{info.full_name} — Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/a4.css" />
+</head>
+<body>
+
+<!-- Running header (position:fixed → margin area on every printed page) -->
+<header class="running-header" aria-hidden="true">
+  <div class="rh-name">{info.full_name}</div>
+  <hr class="rh-rule" />
+  <div class="rh-sub">{info.title} <br /> {info.links.website} · {info.links.email} · {info.links.mobile.label}</div>
+</header>
+
+<div class="screen-page">
+
+<!-- Page 1 hero -->
+<section class="hero">
+  <div class="hero-text">
+    <h1 class="hero-name">{info.full_name}</h1>
+    <p class="hero-title">{info.title}</p>
+    <p class="hero-links">
+      {info.links.website} · {info.links.github} · {info.links.email} · {info.links.mobile.label}
+    </p>
+    <p class="hero-address">
+      {info.address.line1}, {info.address.line2}, {info.address.city}, {info.address.province}, {info.address.country} {info.address.zip}
+    </p>
+  </div>
+  {info.photo && (
+    <div class="hero-photo-wrap">
+      <img src={info.photo} alt={info.full_name} />
+    </div>
+  )}
+</section>
+
+<!-- ═══════════════════════════════════════════ WORK EXPERIENCE -->
+<section class="resume-section" id="work-experience-section">
+  <h2 class="section-heading">Work Experience</h2>
+  {work_experience.map((job, ji) => (
+    job.titles.map((t, ti) => (
+      <>
+      <h2 class="repeat-section-heading" id={`rsh-work-experience-${ji}-${ti}`}>Work Experience</h2>
+      <div id={`we-row-${ji}-${ti}`} class={ti === 0 ? 'two-col-row initial' : 'two-col-row repeat'}>
+        <div class="col-label">
+          <strong>{job.company || job.organization}</strong>
+          {job.location && <small>{job.location}</small>}
+        </div>
+
+        <div class="col-content">
+          <div class="job-title">
+            <div class="title-header">
+              <span class="job-name">{t.name}</span>
+              <span class="job-date">{t.date}</span>
+            </div>
+            <ul class="bullet-list">
+              {t.responsibilities.map(r => <li>{r}</li>)}
+            </ul>
+          </div>
+        </div>
+      </div>
+      </>
+    ))))}
+</section>
+
+<!-- ═══════════════════════════════════════════ EDUCATION -->
+<section class="resume-section" id="education-section">
+  <h2 class="section-heading">Education</h2>
+
+  {groupEdu(education.tertiary).map((g, gi) => {
+    const sharedDetail = g.entries.every(e => (e.link || e.location || '') === (g.entries[0].link || g.entries[0].location || ''))
+      ? (g.entries[0].link || g.entries[0].location || '') : '';
+    return (
+      <>
+        <h2 class="repeat-section-heading" id={`rsh-education-tertiary-${gi}`}>Education</h2>
+        <div class="two-col-row">
+          <div class="col-label">{gi === 0 && <strong>Tertiary Education</strong>}</div>
+          <div class="col-content">
+            <div class="edu-institution-row">
+              <strong class="edu-institution">
+                {g.institution}{g.campus ? `, ${g.campus}` : ''}
+              </strong>
+              {sharedDetail && <span class="edu-detail muted">{sharedDetail}</span>}
+            </div>
+          </div>
+        </div>
+        {g.entries.map(e => (
+          <div class="two-col-row edu-date-row">
+            <div class="col-label edu-date-label muted">{e.date}</div>
+            <div class="col-content">
+              <span class="edu-degree">{e.degree}</span>
+            </div>
+          </div>
+        ))}
+      </>
+    );
+  })}
+
+  {groupEdu(education['primary-secondary']).map((g, gi) => {
+    const sharedDetail = g.entries.every(e => (e.link || e.location || '') === (g.entries[0].link || g.entries[0].location || ''))
+      ? (g.entries[0].link || g.entries[0].location || '') : '';
+    return (
+      <>
+        <h2 class="repeat-section-heading" id={`rsh-education-primary-secondary-${gi}`}>Education</h2>
+        <div class="two-col-row">
+          <div class="col-label">{gi === 0 && <strong>Primary &amp; Secondary</strong>}</div>
+          <div class="col-content">
+            <div class="edu-institution-row">
+              <strong class="edu-institution">
+                {g.institution}{g.campus ? `, ${g.campus}` : ''}
+              </strong>
+              {sharedDetail && <span class="edu-detail muted">{sharedDetail}</span>}
+            </div>
+          </div>
+        </div>
+        {g.entries.map(e => (
+          <div class="two-col-row edu-date-row">
+            <div class="col-label edu-date-label muted">{e.date}</div>
+            <div class="col-content">
+              <span class="edu-degree">{e.degree}</span>
+            </div>
+          </div>
+        ))}
+      </>
+    );
+  })}
+</section>
+
+<!-- ═══════════════════════════════════════════ SKILLS -->
+<section class="resume-section" id="skills-section">
+  <h2 class="section-heading">Skills and Achievements</h2>
+  {skills.map((group, si) => (
+    <>
+    <h2 class="repeat-section-heading" id={`rsh-skills-${si}`}>Skills and Achievements</h2>
+    <div id={`skill-${slug(group.category)}`} class="two-col-row">
+      <div class="col-label"><strong set:html={group.category.replace(/,/g, ',<br/>')} /></div>
+      <div class="col-content">
+        <ul class="bullet-list">
+          {group.items.map(item => {
+            if (typeof item === 'string') return <li>{item}</li>;
+            if (!item || typeof item !== 'object') return null;
+
+            const parts = [];
+            if (item.description) parts.push(item.description.trim());
+            if (item.publication) parts.push(item.publication.trim());
+            if (item.publicationExtra) parts.push(item.publicationExtra.trim());
+            if (item.date) parts.push(`(${item.date.trim()})`);
+            if (item.doi) parts.push(`DOI: ${item.doi.trim()}`);
+            const text = parts.filter(Boolean).join(' ');
+
+            return (
+              <li>
+                {text && <span>{text}</span>}
+                {item.subitems && item.subitems.length > 0 && (
+                  <ul class="subitem-list">
+                    {item.subitems.map(s => {
+                      if (typeof s === 'string') {
+                        return <li class="subitem"><span class="subitem-bullet">–</span><span>{s}</span></li>;
+                      }
+                      return (
+                        <li class="subitem structured-subitem">
+                          <span class="subitem-bullet">–</span>
+                          <span>
+                            <strong class="si-desc">{s.description}</strong>{' '}
+                            {s.date && <span class="muted si-trail"> · {s.date}</span>}
+                            {s.venue && <em class="muted si-trail"> · {s.venue}</em>}
+                            {s.role && <span class="muted si-trail"> · [{s.role}]</span>}
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+    </>
+  ))}
+</section>
+
+<!-- ═══════════════════════════════════════════ PORTFOLIO -->
+<section class="resume-section portfolio-section" id="portfolio-section">
+  <h2 class="section-heading">Featured Project Portfolio</h2>
+  {portfolio.map((cat, ci) => (
+    <>
+    <h2 class="repeat-section-heading" id={`rsh-portfolio-${ci}`}>Featured Project Portfolio</h2>
+    <div class="portfolio-category-block" id={`cat-${slug(cat.category)}`}>
+      <h3 class="cat-heading">{cat.category}</h3>
+      {cat.items.filter(item => item.name).map((item, ii) => {
+        const url = linkHref(item.link);
+        const active = linkActive(item.link);
+        const linkIsGithub = url && isGithub(url);
+        const linkIcon = linkIsGithub ? SVG_GITHUB : SVG_LINK;
+        const linkLabel = item.link?.label;
+        const urlDisplay = linkLabel
+          ? <Fragment set:html={`${linkIcon}${linkLabel}`} />
+          : displayUrl(url);
+        return (
+          <>
+          <h2 class="repeat-section-heading" id={`rsh-for-rch-${slug(cat.category)}-${ii}`}>Featured Project Portfolio</h2>
+          <h3 class="repeat-cat-heading" id={`rch-${slug(cat.category)}-${ii}`}>{cat.category}</h3>
+          <div class="portfolio-item" id={`item-${slug(item.name)}`}>
+            <div class="portfolio-item-header">
+              <span class="pi-name">{item.name}</span>
+              {url
+                ? (active
+                    ? <a href={url} class="pi-url" target="_blank">{urlDisplay}</a>
+                    : <span class="pi-url muted">{urlDisplay}</span>)
+                : stripDot(item.description) && <span class="pi-desc">{stripDot(item.description)}</span>
+              }
+            </div>
+            {(stripDot(item.subtitle) || (url && stripDot(item.description))) && (
+              <div class="portfolio-item-meta-row">
+                <span class="pi-subtitle muted">{stripDot(item.subtitle) || ''}</span>
+                {url && stripDot(item.description) && (
+                  <span class="pi-desc">{stripDot(item.description)}</span>
+                )}
+              </div>
+            )}
+
+            {item.role && (
+              <div class="pf-row">
+                <span class="pf-label">Role</span>
+                <span class="pf-content"><strong>{item.role}</strong></span>
+              </div>
+            )}
+            {item.responsibilities && (
+              <div class="pf-row">
+                <span class="pf-label">Responsibilities</span>
+                <ul class="pf-content bullet-list">
+                  {item.responsibilities.map(r => <li>{r}</li>)}
+                </ul>
+              </div>
+            )}
+            {item.features && (
+              <div class="pf-row">
+                <span class="pf-label">Main Features</span>
+                <ul class="pf-content bullet-list">
+                  {item.features.map(f => <li>{f}</li>)}
+                </ul>
+              </div>
+            )}
+            {item.technologies && (
+              <div class="pf-row">
+                <span class="pf-label">Technologies</span>
+                <span class="pf-content">{item.technologies.join(', ')}</span>
+              </div>
+            )}
+            {item.links && item.links.length > 0 && (
+              <div class="pf-row">
+                <span class="pf-label">Links</span>
+                <div class="pf-content leader-section">
+                  {item.links.map(l => {
+                    const la = l.active !== false;
+                    const gh = isGithub(l.url);
+                    const urlText = gh ? l.label.replace(/^[^/]+\//, '') : displayUrl(l.url, true);
+                    const icon = gh ? SVG_GITHUB : SVG_LINK;
+                    return (
+                      <div class="leader-row">
+                        {l.url && (la
+                          ? <a href={l.url} class="lr-url" target="_blank">{urlText} <Fragment set:html={icon} /></a>
+                          : <span class="lr-url muted">{urlText} <Fragment set:html={icon} /></span>
+                        )}
+                        <span class="lr-title">{l.label}{l.status && <span class="lr-status"> ({l.status})</span>}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+            {item.samples && item.samples.length > 0 && (
+              <div class="pf-row">
+                <span class="pf-label">Samples</span>
+                <div class="pf-content leader-section">
+                  {item.samples.map(s => {
+                    const sa = s.active !== false;
+                    const gh = s.icon === 'icon-github' || isGithub(s.url);
+                    const urlText = gh ? s.label.replace(/^[^/]+\//, '') : displayUrl(s.url, true);
+                    const icon = gh ? SVG_GITHUB : SVG_LINK;
+                    return (
+                      <div class="leader-row">
+                        {s.url && (sa
+                          ? <a href={s.url} class="lr-url" target="_blank">{urlText} <Fragment set:html={icon} /></a>
+                          : <span class="lr-url muted">{urlText} <Fragment set:html={icon} /></span>
+                        )}
+                        <span class="lr-title">{s.name}{s.status && <span class="lr-status"> ({s.status})</span>}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+          </>
+        );
+      })}
+    </div>
+    </>
+  ))}
+</section>
+
+<!-- ═══════════════════════════════════════════ REFERENCES -->
+{references && references.length > 0 && (
+  <section class="resume-section" id="references-section">
+    <h2 class="section-heading">References</h2>
+    <div class="references-grid">
+      {references.map((ref, ri) => (
+        <>
+        <h2 class="repeat-section-heading" id={`rsh-references-${ri}`}>References</h2>
+        <div class="reference-card">
+          <div class="ref-name">{ref.name}</div>
+          <div class="ref-title">{ref.title}</div>
+          <div class="ref-org">{ref.organization}</div>
+          <div class="ref-contact muted">{ref.phone}</div>
+          <a href={`mailto:${ref.email}`} class="ref-contact">{ref.email}</a>
+        </div>
+        </>
+      ))}
+    </div>
+  </section>
+)}
+
+</div><!-- /.screen-page -->
+</body>
+</html>

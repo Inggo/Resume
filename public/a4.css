@@ -1,0 +1,568 @@
+/* ── Fonts ────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("/fonts/AtkinsonHyperlegible-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("/fonts/AtkinsonHyperlegible-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("/fonts/AtkinsonHyperlegible-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("/fonts/AtkinsonHyperlegible-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* ── Variables ────────────────────────────────────────────── */
+:root {
+  --primary: #6a1b3d;
+  --text: #222;
+  --muted: #666;
+  --rule: #e2d4da;
+  --font-body: "Atkinson Hyperlegible", sans-serif;
+  --font-heading: "Times New Roman", "Times", serif;
+  --margin-h: 16mm;
+  --mt-page: 22mm;
+}
+
+/* ── Reset & base ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: var(--font-body);
+  font-size: 9.5pt;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.35;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.muted {
+  color: var(--muted);
+}
+
+/* ── Page setup ───────────────────────────────────────────── */
+@page {
+  size: A4;
+  margin: 12mm 15mm;
+
+  @bottom-left {
+    content: "R.I.M.ESPINOSA.2026";
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-size: 8pt;
+    color: #666;
+  }
+  @bottom-right {
+    content: "Page " counter(page) " of " counter(pages);
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-size: 8pt;
+    color: #666;
+  }
+}
+@page :first {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* ── Running header (position:fixed → every printed page) ─── */
+.running-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  padding: 5mm var(--margin-h) 0;
+  z-index: 100;
+}
+.rh-name {
+  font-weight: bold;
+  font-family: var(--font-heading);
+  font-size: 13pt;
+  color: var(--primary);
+  text-align: center;
+  line-height: 1.2;
+}
+.rh-rule {
+  border: none;
+  border-top: 0.5px solid var(--rule);
+  margin: 2px 0;
+}
+.rh-sub {
+  font-size: 8pt;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* ── Hero (page 1) ────────────────────────────────────────── */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 10mm;
+  gap: 12px;
+}
+.hero-text {
+  flex: 1;
+  text-align: center;
+}
+.hero-name {
+  font-family: var(--font-heading);
+  font-size: 22pt;
+  color: var(--primary);
+  line-height: 1.1;
+}
+.hero-title {
+  font-style: italic;
+  font-size: 13pt;
+  color: #444;
+  margin-top: 2px;
+}
+.hero-links {
+  font-size: 9.5pt;
+  color: var(--primary);
+  margin-top: 4px;
+}
+.hero-address {
+  font-size: 9pt;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.hero-photo-wrap {
+  width: 78px;
+  height: 98px;
+  overflow: hidden;
+  border: 1.2px solid var(--primary);
+  flex-shrink: 0;
+}
+.hero-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ── Section ──────────────────────────────────────────────── */
+.resume-section {
+  margin-top: 6mm;
+}
+
+.section-heading,
+.repeat-section-heading {
+  font-family: var(--font-heading);
+  font-size: 15pt;
+  font-weight: bold;
+  color: var(--primary);
+  border-bottom: 1.2px solid var(--primary);
+  padding-bottom: 2px;
+  margin-bottom: 0;
+}
+
+/* ── Two-column row ───────────────────────────────────────── */
+.two-col-row {
+  display: grid;
+  grid-template-columns: 22% 1fr;
+  column-gap: 10px;
+  margin-top: 0;
+}
+.col-label {
+  font-size: 9.5pt;
+  color: var(--muted);
+  padding-top: 1px;
+  padding-right: 8px;
+  text-align: left;
+}
+.col-label strong {
+  color: var(--text);
+  font-size: 10.5pt;
+  display: block;
+  margin-bottom: 1px;
+}
+.col-label small {
+  display: block;
+  font-size: 9pt;
+}
+
+/* ── Bullet list ──────────────────────────────────────────── */
+.bullet-list > li {
+  padding-left: 12px;
+  position: relative;
+  margin-bottom: 1px;
+  &:not(:only-child)::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+  }
+  &:only-child {
+    padding-left: 0;
+  }
+}
+
+/* ── Work ─────────────────────────────────────────────────── */
+.mt-sm {
+  margin-top: 5px;
+}
+
+.two-col-row {
+  padding-bottom: 5px;
+
+  &:not(.repeat):not(.edu-date-row) {
+    padding-top: 5px;
+    border-top: 0.75px solid var(--rule);
+  }
+
+  &.repeat {
+    .col-label {
+      visibility: hidden;
+    }
+  }
+}
+
+.title-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2px;
+}
+.job-name {
+  font-weight: bold;
+  font-size: 10.5pt;
+}
+.job-date {
+  font-size: 9.5pt;
+  color: var(--muted);
+  white-space: nowrap;
+  margin-left: 8px;
+}
+
+/* ── Education ────────────────────────────────────────────── */
+.edu-institution-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.edu-institution {
+  font-size: 10.5pt;
+}
+.edu-detail {
+  font-size: 9pt;
+  white-space: nowrap;
+  margin-left: 8px;
+}
+.edu-date-row {
+  border-top: none;
+  padding-top: 1px;
+  margin-top: 0;
+}
+.edu-date-label {
+  font-size: 9pt;
+  text-align: right;
+}
+.edu-degree {
+  font-size: 9.5pt;
+}
+
+/* ── Subitems ─────────────────────────────────────────────── */
+.subitem-list {
+  margin-top: 2px;
+  margin-left: 4px;
+}
+.subitem {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 2px;
+  font-size: 9pt;
+  line-height: 1.4;
+}
+.subitem-bullet {
+  flex-shrink: 0;
+  color: var(--muted);
+}
+.si-desc {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 9pt;
+}
+.si-trail {
+  font-size: 8.5pt;
+}
+
+/* ── Repeat headings (print-only, hidden on screen) ──────────── */
+.repeat-section-heading,
+.repeat-cat-heading {
+  display: none;
+}
+.references-grid .repeat-section-heading {
+  grid-column: 1 / -1;
+}
+
+/* ── Portfolio ────────────────────────────────────────────── */
+.cat-rule {
+  border: none;
+  border-top: 1px solid var(--primary);
+  margin: 8px 0 0;
+}
+.cat-heading,
+.repeat-cat-heading {
+  font-family: var(--font-body);
+  font-weight: bold;
+  font-style: italic;
+  font-size: 11pt;
+  background-color: var(--primary);
+  color: #fff;
+  text-align: right;
+  padding: 1mm 4mm;
+}
+.portfolio-item {
+  border-top: 0.75px solid var(--rule);
+  padding-top: 4px;
+}
+.portfolio-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+.pi-name {
+  font-weight: bold;
+  font-size: 10.5pt;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.pi-url {
+  font-size: 9pt;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.portfolio-item-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 1px;
+}
+.pi-subtitle {
+  font-style: italic;
+  font-size: 8.5pt;
+  flex-shrink: 0;
+}
+.pi-desc {
+  font-style: italic;
+  font-size: 8.5pt;
+  text-align: right;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Portfolio sub-rows ───────────────────────────────────── */
+.pf-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  column-gap: 8px;
+  margin-top: 2px;
+}
+.pf-label {
+  font-style: italic;
+  font-size: 9pt;
+  color: var(--primary);
+  text-align: right;
+  padding-top: 1px;
+}
+
+/* ── Leader rows (Links / Samples) ──────────────────────────── */
+.leader-row {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin-bottom: 2px;
+}
+.lr-title {
+  font-size: 9.5pt;
+  flex-shrink: 0;
+}
+.lr-status {
+  font-size: 8pt;
+  font-style: italic;
+  color: var(--muted);
+}
+.lr-dots {
+  flex: 1;
+  min-width: 8px;
+  border-bottom: 1px dotted var(--rule);
+  position: relative;
+  bottom: 3px;
+}
+.lr-url {
+  font-size: 8.5pt;
+  color: var(--primary);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3px;
+  width: 170px;
+}
+.lr-icon {
+  flex-shrink: 0;
+  vertical-align: -1px;
+  margin-right: 2px;
+}
+
+/* ── References ───────────────────────────────────────────── */
+.references-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+}
+.reference-card {
+  border-left: 3px solid var(--primary);
+  padding-left: 10px;
+  padding-top: 2px;
+  break-inside: avoid;
+}
+.ref-name {
+  font-weight: bold;
+  font-size: 12pt;
+  color: var(--primary);
+  line-height: 1.25;
+}
+.ref-title {
+  font-size: 10pt;
+  margin-top: 1px;
+}
+.ref-org {
+  font-size: 10pt;
+}
+.ref-contact {
+  display: block;
+  font-size: 9.5pt;
+  margin-top: 2px;
+}
+
+/* ── Break hints ──────────────────────────────────────────── */
+.portfolio-item {
+  break-inside: avoid;
+}
+.portfolio-category-block {
+  break-before: auto;
+}
+
+/* ── Screen preview ───────────────────────────────────────── */
+@media screen {
+  body {
+    background: #888;
+  }
+  .running-header {
+    display: none;
+  }
+  .screen-page {
+    position: relative;
+    background: #fff;
+    width: 210mm;
+    margin: 0 auto;
+    padding: 5mm 15mm 20mm;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media print {
+  .screen-page {
+    display: contents;
+  }
+
+  .hero {
+    position: relative;
+    z-index: 200;
+    background: #fff;
+    padding-top: 14mm;
+  }
+  .hero-photo-wrap {
+    position: relative;
+    z-index: 201;
+    background: #fff;
+  }
+}
+
+/* ── Manual overrides (Firefox print only) ────────────────── */
+@supports (-moz-appearance: none) {
+  @media print {
+    #we-row-5-0,
+    #skill-web-development-systems-architecture,
+    #skill-publications {
+      margin-bottom: 10mm;
+    }
+
+    #rsh-work-experience-5-1,
+    #rsh-skills-1,
+    #rsh-skills-5,
+    #rsh-for-rch-freelance-works-2,
+    #rsh-for-rch-psba-manila-2,
+    #rsh-for-rch-hampton-peak-1,
+    #rsh-for-rch-sytian-it-solutions-2,
+    #rsh-for-rch-personal-works-1 {
+      padding-top: var(--mt-page);
+      display: block;
+    }
+
+    #rch-freelance-works-2,
+    #rch-psba-manila-2,
+    #rch-hampton-peak-1,
+    #rch-sytian-it-solutions-2,
+    #rch-personal-works-1 {
+      display: block;
+    }
+
+    #we-row-5-1 {
+      > .col-label {
+        visibility: visible;
+      }
+    }
+
+    #portfolio-section {
+      padding-top: var(--mt-page);
+    }
+  }
+}
+
+#education-section {
+  .two-col-row {
+    padding-bottom: 0;
+  }
+
+  .edu-date-row + .two-col-row {
+    margin-top: 5px;
+  }
+
+  .edu-date-row + .edu-date-row {
+    margin-top: 0;
+  }
+}
+
+#portfolio-section .portfolio-item {
+  padding-bottom: 5px;
+}
