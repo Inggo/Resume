@@ -96,8 +96,8 @@
           "responsibilities": [
             "Revamped the Dorm Application and Dorm Database systems and office website.",
             "Provides technical support, hands-on training, and administrative assistance during critical events, such as during dormitory applications.",
-            "Collects and organizes data from past and current dormers and dorm applicants.",
-            "Maintains and ensures accessibilities of online systems and websites."
+            "Collects and organizes data from past and current dorm residents and dorm applicants.",
+            "Maintains and ensures accessibility of online systems and websites."
           ]
         }
       ]
@@ -111,7 +111,7 @@
           "date": "2011 to Present",
           "responsibilities": [
             "Oversees online technologies; particularly websites, social media, and eCommerce.",
-            "Advices company President on technology-related decisions; including hardware and software acquisition, technological partnerships, and online marketing direction.",
+            "Advises company President on technology-related decisions; including hardware and software acquisition, technological partnerships, and online marketing direction.",
             "Recommends needed technological solutions afforded by the company.",
             "Supervises internet-based marketing for the company.",
             "Seeks out and acquires grants and subsidies towards company growth."
@@ -126,7 +126,7 @@
           "name": "Senior Consultant",
           "date": "May 2020 to Present",
           "responsibilities": [
-            "Provides consultancy and occasional legwork work on web projects.",
+            "Provides consultancy and occasional legwork on web projects.",
             "Trains and supervises junior developers and interns.",
             "Acts as a scrum master for development teams."
           ]
@@ -141,17 +141,17 @@
           "name": "Assistant Manager",
           "date": "January 2019 to January 2021",
           "responsibilities": [
-            "Managed projects and researches of the School's Disaster Risk Management (DRM) Unit and Information and Communication Technology (ICT) Department.",
-            "Assigned tasks for projects and allocates appropriate resources.",
+            "Managed projects and research of the School's Disaster Risk Management (DRM) Unit and Information and Communication Technology (ICT) Department.",
+            "Assigned tasks for projects and allocated appropriate resources.",
             "Acted as managing editor for various School publications.",
-            "Occasionally did legwork including Geographic Information Systems (GIS) analysis and map layouting, authoring, research, and data encoding."
+            "Occasionally did legwork including Geographic Information Systems (GIS) analysis and map creation, authoring, research, and data encoding."
           ]
         },
         {
           "name": "DRM E-Learning Coordinator",
           "date": "January 2018 to January 2021",
           "responsibilities": [
-            "Administered, Handled, and Improved E-Learning Portal for the Institution.",
+            "Administered and improved the E-Learning Portal for the Institution.",
             "Acted as managing editor for various School publications.",
             "Provided assistance for the ICT Department.",
             "Coordinated for the School's Disaster Risk Management (DRM) Unit."
@@ -212,7 +212,7 @@
           "date": "January to June 2012",
           "responsibilities": [
             "Handled customer concerns via chat and email for Star Wars: The Old Republic™.",
-            "Trained on proper communication protocols for email, chat, and voice"
+            "Trained on proper communication protocols for email, chat, and voice."
           ]
         }
       ]
@@ -272,7 +272,7 @@
             "Produced a clean, performant, and responsive front-end that caters to all devices.",
             "Provided end-user manuals for different end-user roles of the application.",
             "Provides active support during dorm applications, slot assignment, and dormer check-in/out.",
-            "Did set-up, ensures uptime, and provides maintenance to live servers.",
+            "Set up, ensured uptime, and provided maintenance to live servers.",
             "Ensured security of system and passed University's security verification for public use."
           ],
           "features": [
@@ -299,7 +299,9 @@
           "features": [
             "Facebook integration, links to informational materials, using responsive theme."
           ],
-          "technologies": ["WordPress"],
+          "technologies": [
+            "WordPress"
+          ],
           "status": "Est. 2025"
         }
       ]
@@ -341,14 +343,14 @@
           },
           "role": "Full-Stack Developer",
           "responsibilities": [
-            "Developed a full-functional WordPress Theme with all requested features",
+            "Developed a fully functional WordPress Theme with all requested features",
             "Wrote complete documentation for the management of the Website",
             "Provided analytics and managed hosting services"
           ],
           "features": [
             "Auto-playing video player module using YouTube's Embed API and Intersection Observer API",
             "User registration system for access to suppliers' directory",
-            "Uses modern WordPress standards with easily-managable content via the administrative dashboard",
+            "Uses modern WordPress standards with easily manageable content via the administrative dashboard",
             "Fast loading and fully-responsive front-end catering to all modern browsers and devices"
           ],
           "technologies": [
@@ -396,7 +398,7 @@
           "role": "Designer, Developer, and Host",
           "responsibilities": [
             "Procured and set-up server for web hosting and solution for email.",
-            "Designed and developed website from ground-up.",
+            "Designed and developed website from the ground up.",
             "Manages website and social media contents and executes necessary auditing and maintenance."
           ],
           "features": [
@@ -460,7 +462,7 @@
           "responsibilities": [
             "Overhauled old website into new WordPress website",
             "Configured webserver to properly accomodate new technologies",
-            "Designed website from ground-up and coded theme for WordPress that the website uses"
+            "Designed website from the ground up and coded theme for WordPress that the website uses"
           ],
           "features": [
             "Overhaul from slow, tacky, antiquated site to a fully-responsive, fast, and modern one",
@@ -481,7 +483,7 @@
           "role": "Designer, Developer, and Content Manager",
           "link": "http://drm.psba.edu",
           "responsibilities": [
-            "Designed and developed website from ground-up.",
+            "Designed and developed website from the ground up.",
             "Managed and authored website contents and assured product quality and timely delivery."
           ],
           "features": [
@@ -508,7 +510,7 @@
           "role": "Designer and Developer",
           "link": "http://psba.edu/opac",
           "responsibilities": [
-            "Designed and developed application from ground-up",
+            "Designed and developed application from the ground up",
             "Coordinated with school library for database contents",
             "Researched and architected search engine that application uses",
             "Assured product quality and timely delivery"
@@ -538,7 +540,7 @@
             "active": false
           },
           "responsibilities": [
-            "Trained faculty on E-learning sytem usage",
+            "Trained faculty on E-learning system usage",
             "Enrolled faculty and students into the system",
             "Set up online courses for every school term",
             "Uploaded and managed contents of courses upon faculty request",
@@ -571,7 +573,7 @@
           "responsibilities": [
             "Designed company logo",
             "Procured and set-up domain and web hosting",
-            "Designed and developed website from ground-up"
+            "Designed and developed website from the ground up"
           ],
           "features": [
             "Fast, clean, and simple static-generated website that caters to all browsers and devices",
@@ -662,7 +664,7 @@
           ],
           "features": [
             "Fast, secure, simple, and sleek condominium web portals with rapid creation of new tenants",
-            "Robust facilties booking system that caters to complex condominium house rules",
+            "Robust facilities booking system that caters to complex condominium house rules",
             "Easy-to-use front-end user management system for condominium managers",
             "Directory for nearby businesses for promotions exclusive to condominium residents",
             "Mobile-first and fully-responsive design",
@@ -708,12 +710,12 @@
             "Ensured timely delivery and adherence to company QA checklist and resolved all product issues"
           ],
           "features": [
-            "Elegant responsive front-end with customizable design supporting most devices via custom widget-based CMS written in Laravel; easily managable by the store owner/staff via responsive admin UI.",
+            "Elegant responsive front-end with customizable design supporting most devices via custom widget-based CMS written in Laravel; easily manageable by the store owner/staff via responsive admin UI.",
             "eCommerce system integrated with PayPal and local payment gateways.",
             "Unlimited pages, banners, articles, products, categories, tags, variations, and images.",
             "Support for upselling/cross-selling, product spotlights, inventory system, and discounts.",
-            "Built-in customer management system with user account creation support",
-            "Social media integration for marketing and promotions"
+            "Built-in customer management system with user account creation support.",
+            "Social media integration for marketing and promotions."
           ],
           "technologies": [
             "Laravel 4-5",
@@ -751,7 +753,7 @@
         },
         {
           "name": "WordPress Websites",
-          "description": "WordPress custom themes ad plguins for international and local clients.",
+          "description": "WordPress custom themes and plugins for international and local clients.",
           "links": [
             {
               "url": "https://www.dermstrata.com.ph",
@@ -794,8 +796,8 @@
             "Converted design from PSD or PDF files to fully-functional WordPress themes.",
             "Developed both back- and front-ends of entire websites.",
             "Implemented eCommerce, slideshow, portfolio, or booking plugins, among others.",
-            "Applied initial contents and product catalogues",
-            "Ensured timely delivery and adherence to company QA checklist and resolved product issues"
+            "Applied initial contents and product catalogues.",
+            "Ensured timely delivery and adherence to company QA checklist and resolved product issues."
           ],
           "features": [
             "Fully-responsive front-end with wide browser and device support",
@@ -856,7 +858,7 @@
             "Developed both back- and front-ends of entire websites",
             "Implemented content management system for pages and news/blog",
             "Coded other systems; including booking, eCommerce, portfolio, and galleries",
-            "Ensured timely delivery and adherence to company QA checklist and resolved product issues"
+            "Ensured timely delivery and adherence to company QA checklist and resolved product issues."
           ],
           "features": [
             "Complete customization and editing functionality for the client",
@@ -886,7 +888,7 @@
             "On-demand scraping and storing of lotto results and automated matching of results."
           ],
           "technologies": [
-            "Koltin",
+            "Kotlin",
             "Android Studio",
             "Material UI",
             "Git via Github"
@@ -932,7 +934,7 @@
             "Unlimited sellable items with photos organized into categories.",
             "Takes user's address and contact details with support for adding notes per item or order.",
             "Orders sent to email and/or handed over to Facebook page managers/administrators.",
-            "Fashioned for any small business; including restaurants, aparrel, and general goods."
+            "Fashioned for any small business; including restaurants, apparel, and general goods."
           ],
           "technologies": [
             "Llama 3",
@@ -958,7 +960,10 @@
           "features": [
             "Call various APIs with built-in trivia script similar to classic IRC trivia bots adhering to PSR-4 standards."
           ],
-          "technologies": ["PHP 7", "Git via Github"],
+          "technologies": [
+            "PHP 7",
+            "Git via Github"
+          ],
           "status": "Est. 2017"
         },
         {
@@ -1030,7 +1035,7 @@
         "Can learn any front-end or back-end framework in a short time frame.",
         "Familiar with various software architecture concepts and patterns, such as Domain-driven Design (DDD), Model-View-Controller (MVC), Model-View-ViewModel (MVVM), etc. and applies the most appropriate after careful study of product requirements.",
         "Has led and managed dev teams and is familiar with Agile methodology.",
-        "Uses AI agents such as Claude to speed up development while ensuring generated code is up to standards and compliance."
+        "Uses AI agents such as Claude to speed up development while ensuring generated code is up to standard and compliant."
       ]
     },
     {
@@ -1038,7 +1043,7 @@
       "items": [
         "Proficient in Python, Java, C#, C++, C, and Ruby programming languages.",
         "Knowledgeable in procedural, functional, and SOLID object-oriented programming.",
-        "Develops native Android applications using Koltin and Android Studio.",
+        "Develops native Android applications using Kotlin and Android Studio.",
         "Understands and has experience coding in assembly language.",
         "Able to learn new programming languages in a reasonable amount of time.",
         "Can write Bash (Unix), batch (MS-DOS), and PowerShell scripts for task automation, deployment, data synchronization, and continuous integration.",
@@ -1052,7 +1057,7 @@
       "items": [
         "Adept in using Microsoft Office software specifically Word, Excel, and PowerPoint; and their Google or LibreOffice counterparts.",
         "Proficient in using image editing including Adobe Photoshop, GIMP, and Krita.",
-        "Knows how to edit videos and has experience using Non-Linear Editors such as Adobe Premier and Da Vinci Resolve.",
+        "Knows how to edit videos and has experience using Non-Linear Editors such as Adobe Premiere and DaVinci Resolve.",
         "Has certification in Geographic Information Systems (GIS) fundamentals and can operate GIS software, namely ArcGIS.",
         "Uses 3D Modelling Software, specifically Blender, to create and edit meshes, apply materials or textures, do basic skeleton rigging, and basic texture editing.",
         "",
@@ -1200,7 +1205,7 @@
       ]
     },
     {
-      "category": "Business and Analog Skills",
+      "category": "Entrepreneurial and Creative Skills",
       "items": [
         "Self-taught how to crochet and creates original fashionwear and stuffed toys.",
         {
