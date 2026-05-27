@@ -310,6 +310,30 @@
     {
       "category": "Freelance Works",
       "items": [
+      {
+          "name": "Friuli Trattoria",
+          "link": "https://friulitrattoria.ph",
+          "role": "Designer, Developer, and Host",
+          "responsibilities": [
+            "Revamped static website making use of latest technologies.",
+            "Focus on speed, security, and ease of updates."
+          ],
+          "features": [
+            "Fast and secure static-generated website that caters to all modern browsers and devices.",
+            "Custom reservation form solution.",
+            "Easy menu gallery view."
+          ],
+          "technologies": [
+            "Astro",
+            "PHP",
+            "Vue.js 3",
+            "Node.js",
+            "Bash",
+            "Jiujitsu",
+            "Claude"
+          ],
+          "status": "Est. 2026"
+        },
         {
           "name": "Mateship & Bayanihan",
           "subtitle": "Australian Embassy in the Philippines",
@@ -394,7 +418,7 @@
           "status": "Est. 2021"
         },
         {
-          "name": "Friuli Trattoria",
+          "name": "Friuli Trattoria (2019)",
           "link": "https://friulitrattoria.ph",
           "role": "Designer, Developer, and Host",
           "responsibilities": [
