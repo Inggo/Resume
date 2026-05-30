@@ -1,3 +1,3 @@
 <template>
-  <i class="animate-spin icon-spin"></i>
+  <AppIcon name="loader" spin />
 </template>

@@ -2,7 +2,7 @@
   <div class="modal" ref="modal">
     <div class="modal-backdrop" ref="backdrop">
       <a class="hide-zoom" @click="close">
-        <span class="icon"><i class="icon-zoom-out"></i></span>
+        <span class="icon"><AppIcon name="zoom-out" /></span>
       </a>
       <div class="modal-contents" v-html="htmlContent" ref="contents"></div>
     </div>

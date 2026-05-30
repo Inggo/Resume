@@ -14,7 +14,15 @@
     >
       <div class="face-contents">
         <a v-if="showZoom" class="show-zoom" @click="toggleZoom">
-          <span class="icon"><i class="icon-zoom-in"></i></span>
+          <span class="icon"><AppIcon name="zoom-in" /></span>
+        </a>
+        <a
+          v-if="isVisible && hasGalleryImages"
+          class="show-gallery"
+          title="View images"
+          @click="openGallery"
+        >
+          <span class="icon"><AppIcon name="photo" /></span>
         </a>
         <transition name="fade">
           <component
@@ -35,7 +43,7 @@
         <div class="face-cover-bg">
           <h2>
             <span class="icon" v-if="faceContents.icon">
-              <i :class="faceContents.icon"></i>
+              <AppIcon :name="faceContents.icon" />
             </span>
             {{ faceContents.name }}
           </h2>
@@ -85,10 +93,12 @@ export default {
     content() { return this.faceContents.content; },
     modalActive() { return this.$store.state.modalContents; },
     showZoom() { return this.$store.state.faceContents[this.face.faceClass].showZoom; },
+    hasGalleryImages() { return this.$store.state.galleryImages.length > 0; },
   },
   methods: {
     contentDisplayed(payload) { this.$emit('face-loaded', payload); },
     toggleZoom() { this.$store.commit('setModal', this.$refs.contents.$el.innerHTML); },
+    openGallery() { this.$store.commit('openGallery'); },
     faceChanged(payload) { this.$emit('set-face', payload); },
   },
 };

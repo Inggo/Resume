@@ -340,7 +340,7 @@ const SVG_LINK = `<svg class="lr-icon" viewBox="0 0 16 16" width="10" height="10
                 <div class="pf-content leader-section">
                   {item.samples.map(s => {
                     const sa = s.active !== false;
-                    const gh = s.icon === 'icon-github' || isGithub(s.url);
+                    const gh = s.icon === 'github' || isGithub(s.url);
                     const urlText = gh ? s.label.replace(/^[^/]+\//, '') : displayUrl(s.url, true);
                     const icon = gh ? SVG_GITHUB : SVG_LINK;
                     return (

@@ -19,7 +19,7 @@
         "id": "pdf",
         "bioLabel": "Print / Download PDF",
         "label": "PDF",
-        "icon": "icon-print",
+        "icon": "print",
         "url": "/a4.pdf",
         "showPath": false,
         "tooltip": "Open the A4 PDF version of this resume",
@@ -30,7 +30,7 @@
         "id": "calendly",
         "bioLabel": "Book time with me",
         "label": "Book Me",
-        "icon": "icon-calendar",
+        "icon": "calendar",
         "url": "https://calendly.com/inggo/",
         "showPath": true,
         "tooltip": "Book my time for consultations on your online needs",
@@ -39,7 +39,7 @@
       {
         "id": "kofi",
         "label": "Donate",
-        "icon": "icon-coffee",
+        "icon": "coffee",
         "url": "https://ko-fi.com/storywriter",
         "showPath": true,
         "tooltip": "Enjoy my work? Buy me a ko-fi!"
@@ -448,28 +448,28 @@
             {
               "url": "https://github.com/Inggo/wp-mbfilmfest",
               "label": "Inggo/wp-mbfilmfest",
-              "icon": "icon-github",
+              "icon": "github",
               "name": "Film Festival Event Shortcode",
               "status": "Est. 2021"
             },
             {
               "url": "https://github.com/Inggo/cf1971-contests",
               "label": "Inggo/cf1971-contests",
-              "icon": "icon-github",
+              "icon": "github",
               "name": "Contests Plugin for CrossFit 1971",
               "status": "Est. 2016"
             },
             {
               "url": "https://github.com/Inggo/theme-cura",
               "label": "Inggo/theme-cura",
-              "icon": "icon-github",
+              "icon": "github",
               "name": "Customized Theme for Cura Property",
               "status": "Est. 2015"
             },
             {
               "url": "https://github.com/Inggo/cmo-wordpress-plugin",
               "label": "Inggo/cmo-wordpress-plugin",
-              "icon": "icon-github",
+              "icon": "github",
               "name": "Belle Vue Coaches Online integration",
               "status": "Est. 2015"
             }
@@ -986,7 +986,7 @@
           "link": {
             "url": "https://github.com/Inggo/BndoBot",
             "label": "Inggo/BndoBot",
-            "icon": "icon-github"
+            "icon": "github"
           },
           "features": [
             "Call various APIs with built-in trivia script similar to classic IRC trivia bots adhering to PSR-4 standards."
@@ -1003,42 +1003,42 @@
             {
               "url": "https://github.com/Inggo/RimWorld.ElectricBraziers",
               "label": "Inggo/RimWorld.ElectricBraziers",
-              "icon": "icon-github",
+              "icon": "github",
               "name": "Electric Braziers for RimWorld",
               "status": "Est. 2020"
             },
             {
               "url": "https://github.com/Inggo/RimWorld.AdvancedPolyBeds",
               "label": "Inggo/RimWorld.AdvancedPolyBeds",
-              "icon": "icon-github",
+              "icon": "github",
               "name": "Advanced Poly Beds for RimWorld",
               "status": "Est. 2020"
             },
             {
               "url": "https://github.com/Inggo/CoC-Cults-MoreDeities",
               "label": "Inggo/CoC-Cults-MoreDeities",
-              "icon": "icon-github",
+              "icon": "github",
               "name": "More Deities for RimWorld",
               "status": "Est. 2020"
             },
             {
               "url": "https://github.com/Inggo/ImgboxDL",
               "label": "Inggo/ImgboxDL",
-              "icon": "icon-github",
+              "icon": "github",
               "name": "Imgbox Downloader",
               "status": "Est. 2020"
             },
             {
               "url": "https://github.com/Inggo/psba-gis-arcpy",
               "label": "Inggo/psba-gis-arcpy",
-              "icon": "icon-github",
+              "icon": "github",
               "name": "ArcGIS ArcPy Scripts",
               "status": "Est. 2018"
             },
             {
               "url": "https://gist.github.com/Inggo/176e13aad29c5ad9205f9a2a2bd3eca6",
               "label": "Inggo/favicon.py",
-              "icon": "icon-github",
+              "icon": "github",
               "name": "Favicon Generator",
               "status": "Est. 2026"
             }

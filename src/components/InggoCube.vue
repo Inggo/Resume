@@ -31,6 +31,9 @@
     <transition name="fade-zoom">
       <Modal v-show="modalContents" :contents="modalContents" />
     </transition>
+    <transition name="fade-zoom">
+      <Gallery v-if="galleryActive" />
+    </transition>
     <div class="app-print"></div>
   </div>
 </template>
@@ -40,10 +43,11 @@ import CubeControls from './InggoCubeControls.vue';
 import CubeFace from './InggoCubeFace.vue';
 import PageControls from './InggoPageControls.vue';
 import Modal from './InggoModal.vue';
+import Gallery from './InggoGallery.vue';
 
 export default {
   name: 'InggoCube',
-  components: { CubeControls, CubeFace, PageControls, Modal },
+  components: { CubeControls, CubeFace, PageControls, Modal, Gallery },
   data() {
     return {
       hasNext: false,
@@ -76,6 +80,7 @@ export default {
       };
     },
     modalContents() { return this.$store.state.modalContents; },
+    galleryActive() { return this.$store.state.galleryActive; },
     visibleFace() { return this.$store.state.visibleFace; },
     currentContents() {
       const face = this.faces.find((f) => f.faceClass == this.visibleFace);
@@ -84,7 +89,8 @@ export default {
       return faceCmp ? faceCmp.$refs.contents : null;
     },
     showPagination() {
-      return this.loaded && (this.hasPrev || this.hasNext);
+      // Hide the content prev/next arrows while the gallery owns left/right.
+      return this.loaded && !this.galleryActive && (this.hasPrev || this.hasNext);
     },
   },
   mounted() {
@@ -128,6 +134,8 @@ export default {
       }
 
       this._keyHandler = (e) => {
+        // Don't rotate the cube while the gallery overlay owns the screen.
+        if (this.$store.state.galleryActive) return;
         switch (e.key) {
           case 'Up':
           case 'ArrowUp':

@@ -5,7 +5,9 @@ export default {
     },
     mounted() {
       this._keyHandler = (e) => {
-        if (!this.isVisible || this.animating || this.$store.state.modalContents) return;
+        if (!this.isVisible || this.animating
+            || this.$store.state.modalContents
+            || this.$store.state.galleryActive) return;
         switch (e.key) {
           case 'Right':
           case 'ArrowRight':

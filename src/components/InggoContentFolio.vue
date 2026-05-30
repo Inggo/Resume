@@ -34,14 +34,14 @@
               </aside>
               <p class="folio-item-link" v-if="item.link">
                 <a v-if="typeof item.link == 'object'" :href="item.link.active === false ? null : item.link.url" target="_blank">
-                  <i v-if="item.link.icon" :class="item.link.icon"></i>
-                  <i v-else-if="item.link.active === false" class="icon-unlink"></i>
-                  <i v-else class="icon-link"></i>
+                  <AppIcon v-if="item.link.icon" :name="item.link.icon" />
+                  <AppIcon v-else-if="item.link.active === false" name="unlink" />
+                  <AppIcon v-else name="link" />
                   <span>{{ item.link.label || removeProtocol(item.link.url, item.link.showPath) }}</span>
                 </a>
                 <a v-else :href="item.active === false ? null : item.link" target="_blank">
-                  <i v-if="item.active === false" class="icon-unlink"></i>
-                  <i v-else class="icon-link"></i>
+                  <AppIcon v-if="item.active === false" name="unlink" />
+                  <AppIcon v-else name="link" />
                   <span>{{ removeProtocol(item.link, item.showPath) }}</span>
                 </a>
                 <span class="folio-item-status" v-if="item.status">{{ item.status }}</span>
@@ -51,8 +51,8 @@
                 <li v-for="(link, k) in item.links" :key="k">
                   <a :href="link.active === false ? null : link.url" target="_blank" :title="link.url">
                     <label v-if="link.label">{{ link.label }}</label>
-                    <i v-if="link.active === false" class="icon-unlink"></i>
-                    <i v-else class="icon-link"></i>
+                    <AppIcon v-if="link.active === false" name="unlink" />
+                    <AppIcon v-else name="link" />
                     <span>{{ removeProtocol(link.url, link.showPath) }}</span>
                   </a>
                   <span class="folio-link-status" v-if="link.status">{{ link.status }}</span>
@@ -69,8 +69,8 @@
                   <h4>{{ sample.name }}</h4>
                   <p class="folio-item-link" v-if="sample.url">
                     <a :href="sample.url" target="_blank">
-                      <i v-if="sample.icon" class="icon-github"></i>
-                      <i v-else class="icon-link"></i>
+                      <AppIcon v-if="sample.icon" name="github" />
+                      <AppIcon v-else name="link" />
                       <span>{{ sample.label }}</span>
                     </a>
                     <span class="folio-item-status" v-if="sample.status">{{ sample.status }}</span>

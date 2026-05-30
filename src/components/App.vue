@@ -29,31 +29,31 @@ onMounted(() => {
 function populateContents(data) {
   applyImageConfig(data);
   store.commit('setFace', {
-    face: 'front', name: 'Bio', icon: 'icon-bio',
+    face: 'front', name: 'Bio', icon: 'bio',
     content: data.info, 'content-type': 'bio',
   });
   store.commit('setFace', {
-    face: 'right', name: 'Portfolio', icon: 'icon-folder',
+    face: 'right', name: 'Portfolio', icon: 'folder',
     content: data.portfolio, 'content-type': 'portfolio',
     showZoom: true, cover: true,
   });
   store.commit('setFace', {
-    face: 'left', name: 'Work Experience', icon: 'icon-briefcase',
+    face: 'left', name: 'Work Experience', icon: 'briefcase',
     content: data.work_experience, 'content-type': 'work',
     showZoom: true, cover: true,
   });
   store.commit('setFace', {
-    face: 'top', name: 'Education', icon: 'icon-education',
+    face: 'top', name: 'Education', icon: 'education',
     content: data.education, 'content-type': 'education',
     showZoom: true, cover: true,
   });
   store.commit('setFace', {
-    face: 'bottom', name: 'Skills', icon: 'icon-tools',
+    face: 'bottom', name: 'Skills', icon: 'tools',
     content: data.skills, 'content-type': 'skills',
     showZoom: true, cover: true,
   });
   store.commit('setFace', {
-    face: 'back', name: 'Links', icon: 'icon-link',
+    face: 'back', name: 'Links', icon: 'link',
     content: data.info, 'content-type': 'links',
     showZoom: false,
   });

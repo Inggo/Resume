@@ -8,7 +8,7 @@
         :title="face.name"
         :key="face.face"
       >
-        <span class="icon" v-if="face.icon"><i :class="face.icon"></i></span>
+        <span class="icon" v-if="face.icon"><AppIcon :name="face.icon" /></span>
         <span class="label" v-if="!isMobile">{{ face.name }}</span>
       </a>
     </div>

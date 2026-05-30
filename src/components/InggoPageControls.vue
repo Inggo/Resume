@@ -2,12 +2,12 @@
   <div class="page-controls">
     <transition name="fade">
       <button @click="$emit('prev')" v-show="hasPrev" key="prev">
-        <span class="icon"><i class="icon-left"></i></span>
+        <span class="icon"><AppIcon name="left" /></span>
       </button>
     </transition>
     <transition name="fade">
       <button @click="$emit('next')" v-show="hasNext" key="next">
-        <span class="icon"><i class="icon-right"></i></span>
+        <span class="icon"><AppIcon name="right" /></span>
       </button>
     </transition>
   </div>

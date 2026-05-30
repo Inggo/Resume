@@ -15,18 +15,23 @@ export default {
       bgImage(url) {
         if (this.isVisible) this.$store.commit("setBgImage", url);
       },
-      activeImages() {
+      activeImages(images) {
         this.bgIndex = 0;
         this.stopBg();
-        if (this.isVisible) this.startBg();
+        if (this.isVisible) {
+          this.startBg();
+          this.$store.commit("setGalleryImages", images || []);
+        }
       },
       isVisible(now) {
         if (now) {
           this.$store.commit("setBgImage", this.bgImage);
+          this.$store.commit("setGalleryImages", this.activeImages || []);
           this.startBg();
         } else {
           this.stopBg();
           this.$store.commit("setBgImage", null);
+          this.$store.commit("setGalleryImages", []);
         }
       },
     },

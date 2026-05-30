@@ -32,10 +32,7 @@ export default {
     ],
     "Friuli Trattoria": ["portfolio/friuli-trattoria"],
     "Friuli Trattoria (2019)": ["portfolio/friuli-trattoria-2019"],
-    "Custom WordPress Themes and Plugins": [
-      "portfolio/sela",
-      "mateship-stream-sip-2",
-    ],
+    "Custom WordPress Themes and Plugins": ["portfolio/sela"],
 
     // PSBA-Manila
     "Philippine School of Business Administration, Manila": ["portfolio/psba"],
