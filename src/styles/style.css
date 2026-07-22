@@ -499,11 +499,11 @@ a:hover[href] {
 a:hover[href] > * {
   cursor: pointer;
 }
-a:hover:not[href] {
+a:hover:not([href]) {
   color: #aa4139;
   cursor: default;
 }
-a:hover:not[href] > * {
+a:hover:not([href]) > * {
   cursor: default;
 }
 
