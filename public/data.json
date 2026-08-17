@@ -263,6 +263,31 @@
       "category": "University of the Philippines, Diliman",
       "items": [
         {
+          "name": "Office of Student Housing Website Update",
+          "link": "https://studenthousing.upd.edu.ph",
+          "description": "Migration of existing WordPress website to Hugo + Sveltia",
+          "role": "Architect and Full-Stack Developer (as Senior Programmer)",
+          "responsibilities": [
+            "Updated existing website from WordPress to Hugo + Sveltia CMS.",
+            "Provided local admin interface with Git repository-backed data.",
+            "Architected full static site deployment workflow."
+          ],
+          "features": [
+            "Local Sveltia CMS on Office-owned git repository with browser-only interface.",
+            "Push-button deployment and publishing scripts with built-in website documentation.",
+            "Provided revamped Hero, Gallery, Dormitories, and Memos modules.",
+            "Extensible for additional collections/data types.",
+            "Static website ensures speed and security without any exploitable endpoints."
+          ],
+          "technologies": [
+            "Hugo",
+            "Sveltia CMS",
+            "Vanilla CSS and Javascript",
+            "Claude Code"
+          ],
+          "status": "Est. 2026"
+        },
+        {
           "name": "Dorm.Diliman",
           "subtitle": "DormApp & DormDB",
           "description": "Revamping of dormitory applications and management system",
@@ -303,14 +328,14 @@
           "technologies": [
             "WordPress"
           ],
-          "status": "Est. 2025"
+          "status": "Est. 2025; Retired 2026"
         }
       ]
     },
     {
       "category": "Freelance Works",
       "items": [
-      {
+        {
           "name": "Friuli Trattoria",
           "link": "https://friulitrattoria.ph",
           "role": "Designer, Developer, and Host",
