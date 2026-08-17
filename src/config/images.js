@@ -14,7 +14,7 @@ export default {
   // ─── Right face ────────────────────────────────────────────────────────────
   portfolio: {
     // University of the Philippines, Diliman
-    "Office of Student Housing Website Update": ["portfolio/osh-website"],
+    "Office of Student Housing Website Update": ["portfolio/osh-website", "portfolio/osh-sveltia"],
     "Dorm.Diliman": ["portfolio/dorm-diliman"],
     "Office of Student Housing Website": ["portfolio/osh-upd"],
 
