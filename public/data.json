@@ -936,6 +936,34 @@
       "category": "Personal Works",
       "items": [
         {
+          "name": "Stepgen",
+          "subtitle": "ITGMania/StepMania Stepchart Generator",
+          "description": "Automatic stepchart generator for rhythm games",
+          "role": "Developer",
+          "link": {
+            "url": "https://github.com/Inggo/stepgen",
+            "label": "Inggo/stepgen",
+            "icon": "github"
+          },
+          "features": [
+            "Builds complete song folders from a YouTube URL or local media, including audio, artwork, and background video.",
+            "Continuous BPM and offset detection calibrated against hand-synced charts for accurate timing.",
+            "Foot-model beam search for arrow placement, scoring candidates on double-steps, crossovers, and movement variety.",
+            "Generates five difficulties per song with built-in auditing tools for structural and sync issues.",
+            "Browser-based UI for managing the song library and monitoring build progress."
+          ],
+          "technologies": [
+            "Python 3",
+            "NumPy",
+            "SciPy",
+            "Pillow",
+            "FFmpeg",
+            "yt-dlp",
+            "Git via Github"
+          ],
+          "status": "Est. 2026"
+        },
+        {
           "name": "LottoPh",
           "description": "Native Android app for unofficial Philippine lotto results",
           "role": "Developer",
