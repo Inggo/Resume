@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Mrs. Pebble Lim",
+    "title": "President",
+    "organization": "La Bella Cucina Food Corporation",
+    "phone": "+639178771275",
+    "email": "pebble@friulitrattoria.ph"
+  },
+  {
+    "name": "Dr. Ronahlee Asuncion, RGC, PhD",
+    "title": "Director, Office of Student Housing",
+    "organization": "University of the Philippines, Diliman",
+    "phone": "9818500 loc. 4078",
+    "email": "raasuncion@up.edu.ph"
+  },
+  {
+    "name": "Dr. Tabassam Raza",
+    "title": "Associate Dean and Director, DRM Unit",
+    "organization": "Philippine School of Business Administration – Manila",
+    "phone": "+639178780041",
+    "email": "tabassamr@psba.edu"
+  },
+  {
+    "name": "Mr. Barlaw Kenneth Sytian",
+    "title": "Proprietor and CEO",
+    "organization": "Sytian IT Solutions",
+    "phone": "+639175596699",
+    "email": "kenneth@sytian-productions.com"
+  }
+]

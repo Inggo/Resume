@@ -1,0 +1,241 @@
+[
+  {
+    "category": "Web Development & Systems Architecture",
+    "items": [
+      "Has an excellent understanding of HTML, CSS, and Javascript/Typescript.",
+      "Highly proficient in the PHP web programming language.",
+      "Familiar with SQL syntax and can work with MySQL, SQLite, and MS SQL.",
+      "Adept in working with PHP frameworks, especially Symfony and Laravel.",
+      "Develops and maintains websites using WordPress.",
+      "Familiar with responsive website design and applies current best practices.",
+      "Well-versed in version control systems such as Git and Subversion.",
+      "Knows front-end Javascript frameworks such as Vue, Angular, and React.",
+      "Has working experience using static site builders such as Astro, Hugo, and Nuxt.",
+      "Adapts to front-end CSS frameworks; regularly uses Tailwind & Bootstrap.",
+      "Knows Markdown and able to learn different formatting syntaxes.",
+      "Knows his way with the Unix terminal and can build and maintain web servers.",
+      "Can learn any front-end or back-end framework in a short time frame.",
+      "Familiar with various software architecture concepts and patterns, such as Domain-driven Design (DDD), Model-View-Controller (MVC), Model-View-ViewModel (MVVM), etc. and applies the most appropriate after careful study of product requirements.",
+      "Has led and managed dev teams and is familiar with Agile methodology.",
+      "Uses AI agents such as Claude to speed up development while ensuring generated code is up to standard and compliant."
+    ]
+  },
+  {
+    "category": "Programming",
+    "items": [
+      "Proficient in Python, Java, C#, C++, C, and Ruby programming languages.",
+      "Knowledgeable in procedural, functional, and SOLID object-oriented programming.",
+      "Develops native Android applications using Kotlin and Android Studio.",
+      "Understands and has experience coding in assembly language.",
+      "Able to learn new programming languages in a reasonable amount of time.",
+      "Can write Bash (Unix), batch (MS-DOS), and PowerShell scripts for task automation, deployment, data synchronization, and continuous integration.",
+      "Writes scripts for ArcGIS to simplify and automate tasks including spatial analysis and layouting.",
+      "Able to write custom Scripts and Add-ons using Javascript for Google Sheets, Chromium browser, and Firefox used in various applications.",
+      "Develops code modifications (mods) for Unreal Engine and Unity games."
+    ]
+  },
+  {
+    "category": "Computer Software/Hardware",
+    "items": [
+      "Adept in using Microsoft Office software specifically Word, Excel, and PowerPoint; and their Google or LibreOffice counterparts.",
+      "Proficient in using image editing including Adobe Photoshop, GIMP, and Krita.",
+      "Knows how to edit videos and has experience using Non-Linear Editors such as Adobe Premiere and DaVinci Resolve.",
+      "Has certification in Geographic Information Systems (GIS) fundamentals and can operate GIS software, namely ArcGIS.",
+      "Uses 3D Modelling Software, specifically Blender, to create and edit meshes, apply materials or textures, do basic skeleton rigging, and basic texture editing.",
+      "",
+      "Can build desktop computers using custom manufacturer parts.",
+      "Can touch-type; encodes with excellent speed and accuracy."
+    ]
+  },
+  {
+    "category": "Communication, Project Management, and Research",
+    "items": [
+      "Has outstanding grasp of both English and Filipino Languages.",
+      "Possesses project and personnel management experience and can write project proposals, policies, Gantt charts, and budgets.",
+      "Experienced in using project management tools such as Jira and Trello.",
+      "Has authored, co-authored, proofread, and edited publications and researches.",
+      "Has organized, presented in, and emceed at events, conferences, and seminars.",
+      "Blogs as a hobby; owns and writes a personal food blog."
+    ]
+  },
+  {
+    "category": "Publications",
+    "items": [
+      {
+        "description": "Did content improvement, editing, and visualization for “Extreme weather disasters challenges for sustainable development: Innovating a science and policy framework for disaster-resilient and sustainable Quezon City, Philippines” published in ",
+        "publication": "Progress in Disaster Science, Volume 5 ",
+        "doi": "10.1016/j.pdisas.2020.100066 ",
+        "date": "January 2020"
+      },
+      {
+        "description": "Authored “Role of GIS in PSBA-Manila DRM Unit” presented during the ",
+        "publication": "5th Philippine Esri Education GIS Conference ",
+        "date": "May 2019"
+      },
+      {
+        "description": "Co-authored and edited “Supplementary Document for the GAWAD Kalasag CY 2019 Entry” for PSBA-Manila, which won the ",
+        "publication": "NCR Regional Gawad KALASAG Award 2019",
+        "publicationExtra": "for the Higher Education Institutions category ",
+        "link": "https://psba.edu/2019/07/30/philippine-school-of-business-administration-manila-wins-regional-gawad-kalasag-award-2019/",
+        "date": "March 2019"
+      },
+      {
+        "description": "Co-authored and edited “Enhancing Urban Resilience towards Water Sufficiency during Extreme Weather Disastrous Impact: Sectoral Adaptation Action Plan of Quezon City, Philippines” published as a poster for the ",
+        "publication": "International Conference 'Water Science for Impact’ ",
+        "date": "October 2018"
+      },
+      {
+        "description": "Authored “Personnel Capacity Enhancement of DRM Unit: Lesson Learned from the APRU-IRIDeS Multi-Hazards Summer School” presented during the ",
+        "publication": "3rd International Research Colloquium ",
+        "date": "October 2018"
+      },
+      {
+        "description": "Co-authored and edited “Supplementary Document for the GAWAD Kalasag CY 2018 Entry” for PSBA-Manila, which won the ",
+        "publication": "NCR Regional Gawad KALASAG Award 2018 ",
+        "publicationExtra": "for the Higher Education Institutions category ",
+        "link": "https://psba.edu/2018/08/01/philippine-school-of-business-administration-manila-wins-first-place-in-gawad-kalasag-awards-2018/",
+        "date": "March 2018"
+      }
+    ]
+  },
+  {
+    "category": "Conferences and Events",
+    "items": [
+      {
+        "description": "Organized, presented in, and attended multiple local and international conferences, symposia, colloquia, workshops, and other events, including:",
+        "subitems": [
+          {
+            "description": "4th International Research Colloquium towards Disaster Risk Transfer (4IRC-DRT)",
+            "date": "November 9-10, 2019",
+            "venue": "Quezon City Experience (QCX) Theater, Quezon City Circle",
+            "role": "Organizer"
+          },
+          {
+            "description": "Forum for Local Disaster Risk Reduction and Management Officers of Metro Manila 2019",
+            "date": "July 29, 2019",
+            "venue": "Philippine Information Agency (PIA) conference room, Quezon City",
+            "role": "Attendee"
+          },
+          {
+            "description": "Special Graduation Rites for Pioneer MBA-DRM Program Graduates from Quezon City Local Government Scholars",
+            "date": "July 19, 2019",
+            "venue": "President Manuel L. Quezon Ceremonial Hall, 15th Floor, Main Building, Quezon City Hall",
+            "role": "Emcee and Organizer"
+          },
+          {
+            "description": "2nd International Training Program (2ITP-2019)",
+            "date": "June 20-22, 2019",
+            "venue": "City Planning and Development Office (CPDO) Conference Room, 4th Floor, Civic Center D, City Hall Compound, Quezon City",
+            "role": "Organizer"
+          },
+          {
+            "description": "International Symposium on Disaster Resilience and Sustainable Development",
+            "date": "March 7-8, 2019",
+            "venue": "Asian Institute of Technology (AIT) Conference Center, Thailand",
+            "role": "Attendee"
+          },
+          {
+            "description": "5th Philippine Esri Education GIS Conference",
+            "date": "May 28 to 29, 2019",
+            "venue": "EDSA Shangri-La Hotel, Mandaluyong City",
+            "role": "Resource Speaker",
+            "link": "https://www.facebook.com/media/set/?vanity=GeodataSys&set=a.2794705360556262"
+          },
+          {
+            "description": "3rd International Research Symposium (3IRS)",
+            "date": "March 23, 2019",
+            "venue": "Grand Auditorium, Philippine Heart Center, Quezon City",
+            "role": "Organizer"
+          },
+          {
+            "description": "EduTECH Philippines 2019",
+            "date": "February 20-21, 2019",
+            "venue": "SMX Convention Center, Manila",
+            "role": "Attendee"
+          },
+          {
+            "description": "International Conference Water Science for Impact",
+            "date": "October 16-18, 2018",
+            "venue": "Wageningen University & Research (WUR) in Wageningen, The Netherlands",
+            "role": "Presenter"
+          },
+          {
+            "description": "3rd International Research Colloquium (3IRC)",
+            "date": "October 13, 2018",
+            "venue": "QCX Conference Theatre, Quezon City Circle",
+            "role": "Presenter and Organizer",
+            "link": "https://psba.edu/proceedings/3rd-international-research-colloquium-october-13/"
+          },
+          {
+            "description": "APRU-IRIDeS Multi-Hazards Summer School",
+            "date": "July 24 to 27, 2018",
+            "venue": "Tohoku University, Sendai, Japan",
+            "role": "Attendee",
+            "link": "https://apru.org/event/apru-x-irdes-multi-hazards-summer-school-2018/"
+          },
+          {
+            "description": "International Symposium 2018 – Public-Private Trends in Business Management: Understanding Disaster Risk towards Business Continuity",
+            "date": "January 27-28, 2018",
+            "venue": "QCX Theater, Quezon City Circle",
+            "role": "Organizer"
+          }
+        ]
+      },
+      "Attended the DevCon AngularJS Code Camp 2015 and is among the winners of the mini hackathon, and attended multiple DevCon Summits since 2013.",
+      "Participated in the 2005 ACM Intercollegiate Computer Programming Competition at Ateneo University.",
+      "Participated and won several Programming Competitions within the Computer Science department at the University of the Philippines Diliman."
+    ]
+  },
+  {
+    "category": "Entrepreneurial and Creative Skills",
+    "items": [
+      "Self-taught how to crochet and creates original fashionwear and stuffed toys.",
+      {
+        "description": "Has sales experience, particularly on artist conventions, and has sold his original works as a crocheter on:",
+        "subitems": [
+          {
+            "description": "Patrons of the Arts “Hayop at Halaman”",
+            "date": "February 2026",
+            "venue": "Elements @ Centris, Quezon City."
+          },
+          {
+            "description": "Stickercon Avenue",
+            "date": "December 2025",
+            "venue": "Bonifacio Global City, Taguig City."
+          },
+          {
+            "description": "Patrons of the Arts “Hayop at Halaman”",
+            "date": "April 2025",
+            "venue": "Elements @ Centris, Quezon City"
+          },
+          {
+            "description": "Pokecon 2024",
+            "date": "September 2024",
+            "venue": "Market! Market! Activity Center, Taguig City."
+          },
+          {
+            "description": "Patrons of the Arts “Hayop at Halaman”",
+            "date": "August 2024",
+            "venue": "Elements @ Centris, Quezon City."
+          },
+          {
+            "description": "Patrons of the Arts “Spring Beginnings”",
+            "date": "January 2024",
+            "venue": "Elements @ Centris, Quezon City."
+          },
+          {
+            "description": "Art to Cart 2023",
+            "date": "October 2023",
+            "venue": "Elements @ Centris, Quezon City."
+          },
+          {
+            "description": "Patrons of the Arts",
+            "date": "July 2023",
+            "venue": "Elements @ Centris, Quezon City."
+          }
+        ]
+      },
+      "Knows basic accounting, product costing/pricing, and risk assessment; and applies the knowledge to maximize potential profitability on the above events as well as on other art markets of his life partner."
+    ]
+  }
+]

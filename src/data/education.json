@@ -1,0 +1,39 @@
+{
+  "tertiary": [
+    {
+      "institution": "University of the Philippines",
+      "campus": "Open University",
+      "date": "2018 to 2020",
+      "degree": "Completed coursework towards Bachelor of Education Studies",
+      "link": "https://www.upou.edu.ph"
+    },
+    {
+      "institution": "University of the Philippines",
+      "campus": "Open University",
+      "date": "2009 to 2011",
+      "degree": "Associate in Arts, Faculty of Education",
+      "link": "https://www.upou.edu.ph"
+    },
+    {
+      "institution": "De La Salle – College of Saint Benilde",
+      "date": "2007 to 2009",
+      "degree": "Completed coursework towards B.S. Information Systems",
+      "location": "Manila, Philippines"
+    },
+    {
+      "institution": "University of the Philippines",
+      "campus": "Diliman",
+      "date": "2004 to 2007",
+      "degree": "Completed Coursework towards B.S. Computer Science",
+      "location": "Quezon City, Philippines"
+    }
+  ],
+  "primary-secondary": [
+    {
+      "institution": "University of the Philippines Integrated School",
+      "date": "1994 to 2004",
+      "degree": "Kindergarten to Grade 10, Graduated with Honors",
+      "location": "Quezon City, Philippines"
+    }
+  ]
+}

@@ -13,6 +13,12 @@ export default {
 
   // ─── Right face ────────────────────────────────────────────────────────────
   portfolio: {
+    // Freelance Works (latest)
+    "GS2PreOrder Proof of Concept": [
+      "portfolio/gs2preorder-proof-of-concept",
+      "portfolio/gs2preorder-proof-of-concept-2",
+    ],
+
     // University of the Philippines, Diliman
     "Office of Student Housing Website Update": ["portfolio/osh-website", "portfolio/osh-sveltia"],
     "Dorm.Diliman": ["portfolio/dorm-diliman"],
@@ -29,7 +35,7 @@ export default {
     ],
     "Stream & Sip Festival": [
       "portfolio/mateship-stream-sip",
-      "portfoio/mateship-stream-sip-2",
+      "portfolio/mateship-stream-sip-2",
     ],
     "Friuli Trattoria": ["portfolio/friuli-trattoria"],
     "Friuli Trattoria (2019)": ["portfolio/friuli-trattoria-2019"],

@@ -1,0 +1,133 @@
+[
+  {
+    "company": "University of the Philippines",
+    "location": "Office of Student Housing, Diliman, Quezon City, Philippines",
+    "titles": [
+      {
+        "name": "Senior Programmer",
+        "date": "February 2025 to Present",
+        "responsibilities": [
+          "Revamped the Dorm Application and Dorm Database systems and office website.",
+          "Provides technical support, hands-on training, and administrative assistance during critical events, such as during dormitory applications.",
+          "Collects and organizes data from past and current dorm residents and dorm applicants.",
+          "Maintains and ensures accessibility of online systems and websites."
+        ]
+      }
+    ]
+  },
+  {
+    "company": "La Bella Foods Corporation",
+    "location": "Philippines",
+    "titles": [
+      {
+        "name": "Chief Technology Officer",
+        "date": "2011 to Present",
+        "responsibilities": [
+          "Oversees online technologies; particularly websites, social media, and eCommerce.",
+          "Advises company President on technology-related decisions; including hardware and software acquisition, technological partnerships, and online marketing direction.",
+          "Recommends needed technological solutions afforded by the company.",
+          "Supervises internet-based marketing for the company.",
+          "Seeks out and acquires grants and subsidies towards company growth."
+        ]
+      }
+    ]
+  },
+  {
+    "organization": "Semper Fidelis International",
+    "titles": [
+      {
+        "name": "Senior Consultant",
+        "date": "May 2020 to Present",
+        "responsibilities": [
+          "Provides consultancy and occasional legwork on web projects.",
+          "Trains and supervises junior developers and interns.",
+          "Acts as a scrum master for development teams."
+        ]
+      }
+    ]
+  },
+  {
+    "company": "Philippine School of Business Administration",
+    "location": "Manila, Philippines",
+    "titles": [
+      {
+        "name": "Assistant Manager",
+        "date": "January 2019 to January 2021",
+        "responsibilities": [
+          "Managed projects and research of the School's Disaster Risk Management (DRM) Unit and Information and Communication Technology (ICT) Department.",
+          "Assigned tasks for projects and allocated appropriate resources.",
+          "Acted as managing editor for various School publications.",
+          "Occasionally did legwork including Geographic Information Systems (GIS) analysis and map creation, authoring, research, and data encoding."
+        ]
+      },
+      {
+        "name": "DRM E-Learning Coordinator",
+        "date": "January 2018 to January 2021",
+        "responsibilities": [
+          "Administered and improved the E-Learning Portal for the Institution.",
+          "Acted as managing editor for various School publications.",
+          "Provided assistance for the ICT Department.",
+          "Coordinated for the School's Disaster Risk Management (DRM) Unit."
+        ]
+      }
+    ]
+  },
+  {
+    "company": "Hampton Peak",
+    "location": "Telecommuting to Singapore",
+    "titles": [
+      {
+        "name": "Lead Developer",
+        "date": "July 2015 to July 2017",
+        "responsibilities": [
+          "Led the Company's development team.",
+          "Architected features such as advertising and front-end user management.",
+          "Developed the base themes and modules.",
+          "Set-up domain to tenant mapping.",
+          "Assisted in building and improving of the facilities booking system."
+        ]
+      }
+    ]
+  },
+  {
+    "company": "Sytian IT Solutions",
+    "location": "Quezon City, Philippines",
+    "titles": [
+      {
+        "name": "Chief Technologist",
+        "date": "May 2013 to June 2015",
+        "responsibilities": [
+          "Developed complex websites and web applications for local and international clients.",
+          "Crafted coding standards and style guides utilizing best practices at the time.",
+          "Trained interns and development team on latest technologies and best practices.",
+          "Built, managed, and maintained internal servers and office network.",
+          "Provided consultation on web-based solutions for various clients.",
+          "Ensures high quality of projects handled by developers."
+        ]
+      },
+      {
+        "name": "Senior Web Developer",
+        "date": "December 2012 to May 2013",
+        "responsibilities": [
+          "Developed websites and web applications for local and international clients.",
+          "Transformed Photoshop layouts into working responsive websites.",
+          "Revamped the company website."
+        ]
+      }
+    ]
+  },
+  {
+    "company": "Teleperformance",
+    "location": "Makati City, Philippines",
+    "titles": [
+      {
+        "name": "Technical Support Representative",
+        "date": "January to June 2012",
+        "responsibilities": [
+          "Handled customer concerns via chat and email for Star Wars: The Old Republic™.",
+          "Trained on proper communication protocols for email, chat, and voice."
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "name": "Inggo Espinosa",
+  "full_name": "Ramon Iñigo M. Espinosa",
+  "title": "Senior Full-Stack Web Developer & Crocheter",
+  "links": {
+    "github": "https://github.com/inggo/",
+    "website": "https://inggo.dev",
+    "blog": "https://eat.nyo.me",
+    "email": "inggo@pm.me",
+    "mobile": {
+      "link": "tel:+639162354032",
+      "label": "+63 916 2354032",
+      "tooltip": "I prefer email; SMS only please!"
+    }
+  },
+  "extraLinks": [
+    {
+      "id": "pdf",
+      "bioLabel": "Print / Download PDF",
+      "label": "PDF",
+      "icon": "print",
+      "url": "/a4.pdf",
+      "showPath": false,
+      "tooltip": "Open the A4 PDF version of this resume",
+      "showInBio": true,
+      "showInLinks": false
+    },
+    {
+      "id": "calendly",
+      "bioLabel": "Book time with me",
+      "label": "Book Me",
+      "icon": "calendar",
+      "url": "https://calendly.com/inggo/",
+      "showPath": true,
+      "tooltip": "Book my time for consultations on your online needs",
+      "showInBio": true
+    },
+    {
+      "id": "kofi",
+      "label": "Donate",
+      "icon": "coffee",
+      "url": "https://ko-fi.com/storywriter",
+      "showPath": true,
+      "tooltip": "Enjoy my work? Buy me a ko-fi!"
+    }
+  ],
+  "address": {
+    "line1": "Maginhawa St.",
+    "line2": "UP Village",
+    "city": "Quezon City",
+    "province": "Metro Manila",
+    "country": "Philippines",
+    "zip": "1101"
+  },
+  "copyright": "© 2018-2026 Inggo Espinosa · All Rights Reserved",
+  "photo": "/photo.jpg"
+}

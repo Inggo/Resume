@@ -517,23 +517,35 @@ ul {
 
   #rsh-work-experience-5-1,
   #rsh-skills-1,
-  #rsh-skills-5,
-  #rsh-for-rch-freelance-works-2,
-  #rsh-for-rch-psba-manila-2,
-  #rsh-for-rch-hampton-peak-1,
-  #rsh-for-rch-sytian-it-solutions-2,
-  #rsh-for-rch-personal-works-1 {
+  #rsh-skills-5 {
     padding-top: var(--mt-page);
     display: block;
   }
 
-  #rch-freelance-works-2,
-  #rch-psba-manila-2,
-  #rch-hampton-peak-1,
-  #rch-sytian-it-solutions-2,
-  #rch-personal-works-1 {
+  /* BEGIN portfolio page breaks (tuned by printing in Firefox). Each id forces a new page:
+     #rsh-for-rch-<category id>-<item index> before an item, or #rsh-portfolio-<category index>
+     before a whole category (use that when a category's first item would start the page,
+     otherwise its category bar is left stranded at the bottom of the previous page). */
+  #rsh-for-rch-university-of-the-philippines-diliman-2,
+  #rsh-for-rch-freelance-works-4,
+  #rsh-for-rch-psba-manila-3,
+  #rsh-for-rch-hampton-peak-1,
+  #rsh-for-rch-sytian-it-solutions-2,
+  #rsh-portfolio-6,
+  #rsh-for-rch-personal-works-5 {
+    break-before: page;
+    padding-top: var(--mt-page);
     display: block;
   }
+  #rch-university-of-the-philippines-diliman-2,
+  #rch-freelance-works-4,
+  #rch-psba-manila-3,
+  #rch-hampton-peak-1,
+  #rch-sytian-it-solutions-2,
+  #rch-personal-works-5 {
+    display: block;
+  }
+  /* END portfolio page breaks */
 
   #we-row-5-1 {
     > .col-label {

@@ -1,5 +1,5 @@
 ---
-import data from '../../public/data.json';
+import data from '../data/index.js';
 
 const { info, work_experience, education, skills, portfolio, references } = data;
 
@@ -34,6 +34,16 @@ const structuredCategories = new Set(['Conferences and Events', 'Business and An
 function slug(s) {
   return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
+
+// Unique HTML id per portfolio category. A category name may repeat (e.g. a newer
+// "Freelance Works" block at the top); the LAST occurrence keeps the plain slug so the
+// hand-tuned page-break ids in a4.css stay stable, earlier ones get -2, -3, ...
+const catIds = (() => {
+  const seen = {};
+  return portfolio.map((c) => slug(c.category)).reverse()
+    .map((s) => (seen[s] = (seen[s] || 0) + 1) > 1 ? `${s}-${seen[s]}` : s)
+    .reverse();
+})();
 
 function displayUrl(raw, stripProto = false) {
   if (!raw) return '';
@@ -250,7 +260,7 @@ const SVG_LINK = `<svg class="lr-icon" viewBox="0 0 16 16" width="10" height="10
   {portfolio.map((cat, ci) => (
     <>
     <h2 class="repeat-section-heading" id={`rsh-portfolio-${ci}`}>Featured Project Portfolio</h2>
-    <div class="portfolio-category-block" id={`cat-${slug(cat.category)}`}>
+    <div class="portfolio-category-block" id={`cat-${catIds[ci]}`}>
       <h3 class="cat-heading">{cat.category}</h3>
       {cat.items.filter(item => item.name).map((item, ii) => {
         const url = linkHref(item.link);
@@ -263,8 +273,8 @@ const SVG_LINK = `<svg class="lr-icon" viewBox="0 0 16 16" width="10" height="10
           : displayUrl(url);
         return (
           <>
-          <h2 class="repeat-section-heading" id={`rsh-for-rch-${slug(cat.category)}-${ii}`}>Featured Project Portfolio</h2>
-          <h3 class="repeat-cat-heading" id={`rch-${slug(cat.category)}-${ii}`}>{cat.category}</h3>
+          <h2 class="repeat-section-heading" id={`rsh-for-rch-${catIds[ci]}-${ii}`}>Featured Project Portfolio</h2>
+          <h3 class="repeat-cat-heading" id={`rch-${catIds[ci]}-${ii}`}>{cat.category}</h3>
           <div class="portfolio-item" id={`item-${slug(item.name)}`}>
             <div class="portfolio-item-header">
               <span class="pi-name">{item.name}</span>

@@ -12,7 +12,7 @@ Interactive résumé at [inggo.dev](https://inggo.dev) — a rotating cube built
 
 | Path | What |
 |---|---|
-| `public/data.json` | All résumé content |
+| `src/data/*.json` | All résumé content, one file per section (merged by `src/data/index.js`, served at `/data.json` via `src/pages/data.json.js`) |
 | `src/config/images.js` | Cloudinary public IDs, keyed by entry name |
 | `src/utils/images.js` | URL builder + joins the config into the data |
 | `src/components/` | Cube, faces, per-face content panels, gallery |
@@ -34,28 +34,28 @@ npm run build    # → dist/
 
 ## Adding an entry with a background gallery
 
-Two files: the entry goes in `public/data.json`, its images in `src/config/images.js`.
+Two files: the entry goes in `src/data/<section>.json`, its images in `src/config/images.js`.
 
 ### 1. Upload to Cloudinary
 
-Upload into the folder matching the face, kebab-case (e.g. `portfolio/my-new-project`, `portfolio/my-new-project-2`). Record the **public ID only** — no base URL, no extension; `imageUrl()` requests `.avif` and Cloudinary converts on the fly, so upload PNG/JPG/WebP as-is.
+Upload into the folder matching the face, kebab-case (e.g. `portfolio/my-new-project`, `portfolio/my-new-project-2`). Record the **public ID only** — no base URL, no extension; `imageUrl()` requests `.avif`, and this Cloudinary account does **not** convert on the fly (a PNG upload 404s as `.avif`), so convert first and upload the AVIF: `magick shot.png -quality 60 shot.avif`.
 
 Images render as a 20%-opacity background (`object-fit: cover`, `object-position: top center`) and full-size in the gallery, so wide screenshots (≥1600px) work best.
 
-### 2. Add the entry to `public/data.json`
+### 2. Add the entry to `src/data/<section>.json`
 
 | Face | JSON path | Shape |
 |---|---|---|
-| Portfolio | `portfolio[].items[]` | `{ name, subtitle, description, link, role, responsibilities[], features[], technologies[], samples[], links[] }` — only `name` required |
-| Work | `work_experience[]` | `{ company` or `organization, location, titles[{ name, date, responsibilities[] }] }` |
-| Education | `education.tertiary[]` (and sibling lists) | `{ institution, campus, date, degree, location, link }` |
-| Skills | `skills[]` | `{ category, items[] }` |
+| Portfolio | `portfolio.json` → `[].items[]` | `{ name, subtitle, description, link, role, responsibilities[], features[], technologies[], samples[], links[] }` — only `name` required |
+| Work | `work_experience.json` → `[]` | `{ company` or `organization, location, titles[{ name, date, responsibilities[] }] }` |
+| Education | `education.json` → `tertiary[]` (and sibling lists) | `{ institution, campus, date, degree, location, link }` |
+| Skills | `skills.json` → `[]` | `{ category, items[] }` |
 
 Copy the nearest existing sibling as a template — panels render off field presence, so omitted fields just don't appear.
 
 ### 3. Register the images in `src/config/images.js`
 
-Add one entry under the matching face, keyed by the **exact** string from `data.json`. The lookup is a plain string match; a mismatch fails silently — no gallery button, no background.
+Add one entry under the matching face, keyed by the **exact** string from `src/data/*.json`. The lookup is a plain string match; a mismatch fails silently — no gallery button, no background.
 
 | Face | Key must equal |
 |---|---|
@@ -80,4 +80,4 @@ One image gives a static background and a single-slide gallery; two or more rota
 
 ### 5. Deploy
 
-`./deploy.sh`. Gallery-only changes never affect the PDF, but `data.json` edits do — re-check `/a4` pagination.
+`./deploy.sh`. Gallery-only changes never affect the PDF, but `src/data/*.json` edits do — re-check `/a4` pagination.
